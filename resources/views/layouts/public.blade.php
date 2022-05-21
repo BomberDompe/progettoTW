@@ -1,40 +1,113 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    
     <head>
+
         <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
-        <title>LaProj5 | @yield('title', 'Catalogo')</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Progetto TWeb">
+        <meta name="author" content="Gruppo 24">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+
+        <title>ApartaRent - @yield('title', 'Home')</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+
+        <!-- CSS Files -->
+        <link rel="stylesheet" href="{{ asset('assets/css/fontawesome.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+   
     </head>
+    
     <body>
-        <div id="wrapper">
-            <div id="header">
-                <div id="logo">
-                    <h1><a href="">ACME S.p.A  </a></h1>
-                    <p>i migliori prodotti alla portata di un click</p>
+        <header>
+            <nav class="navbar navbar-expand-lg">
+                <div class="container">
+                    @include('layouts/_navpublic')
                 </div>
-            </div>
-
-            <!-- end #header -->
-            <div id="menu">
-                @include('layouts/_navpublic')
-            </div>
-
-            <!-- end #menu -->
-            <div id="page">
-                <div id="page-bgtop">
-                    <div id="page-bgbtm">
-                        @yield('content')
-                        <div style="clear: both;">&nbsp;</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- end #content -->
-            <div id="footer">
-                <br>
-                <p>universit&agrave; politecnica delle marche - Corso di  <a href="https://learn.univpm.it/course/view.php?id=7098">tecnologie web</a>.</p>
-            </div>
-            <!-- end #footer -->
+            </nav>
+        </header>
+        <!-- end #header/menù -->
+        
+        <div class ="content">
+            @yield('content')
         </div>
+        
+        <!-- Footer Starts Here -->
+        <footer>
+            <div class="container">
+                <div class="row">
+                                <div class="col-md-3 col-sm-6 col-xs-12">
+                                    <div class="footer-item">
+                                        <div class="footer-heading">
+                                            <h2>About Us</h2>
+                                        </div>
+                                        <p>Host Cloud is provided by TemplateMo for free of charge. Anyone can download and use this CSS Bootstrap template for commercial purposes.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-6 col-xs-12">
+                                    <div class="footer-item">
+                                        <div class="footer-heading">
+                                            <h2>Hosting Plans</h2>
+                                        </div>
+              <ul class="footer-list">
+                <li><a href="#">Basic Cloud 5X</a></li>
+                <li><a href="#">Cloud VPS 10X</a></li>
+                <li><a href="#">Advanced Cloud</a></li>
+                <li><a href="#">Custom Designs</a></li>
+                <li><a href="#">Special Solutions</a></li>
+              </ul>
+            </div>
+          </div>
+          
+          
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="footer-item">
+              <div class="footer-heading">
+                <h2>Useful Links</h2>
+              </div>
+              <ul class="footer-list">
+                <li><a href="#">Cloud Hosting Platform</a></li>
+                <li><a href="#">Light Speed Zone</a></li>
+                <li><a href="#">Content Delivery Network</a></li>
+                <li><a href="#">Customer Support</a></li>
+                <li><a href="#">Latest News</a></li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="footer-item">
+              <div class="footer-heading">
+                <h2>More Information</h2>
+              </div>
+              <ul class="footer-list">
+                <li>Phone: <a href="#">010-020-0560</a></li>
+                <li>Email: <a href="#">mail@company.com</a></li>
+                <li>Support: <a href="#">support@company.com</a></li>
+                <li>Website: <a href="#">www.company.com</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="sub-footer">
+              <p>Copyright &copy; 2020 Cloud Hosting Company
+				- Designed by <a rel="nofollow" href="https://templatemo.com">TemplateMo</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+        <!-- Footer Ends Here -->
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+            
+                        
+
+            
+     
     </body>
 </html>
