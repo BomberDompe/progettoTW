@@ -5,10 +5,6 @@ namespace App\Models;
 use App\Models\Resources\Offer;
 
 class Catalog_ {
-
-    public function getAllOffers() {
-        return new Offer;
-    }
     
     public function getByFilters($filters) {
         $catalog = new Offer;

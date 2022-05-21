@@ -12,7 +12,14 @@
  */
 
 
-Route::get('/', 'PublicController@showHome')
+Route::get('/', 'home')
         ->name('home');
-Route::view('/Regolamento', 'rules')
+
+Route::get('/catalog', 'PublicController@showCatalog')
+        ->name('catalog');
+
+Route::get('/faq', 'PublicController@showFaq')
+        ->name('catalog');
+
+Route::view('/rules', 'rules')
         ->name('rules');
