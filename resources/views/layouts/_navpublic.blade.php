@@ -5,18 +5,16 @@
 <div class="collapse navbar-collapse" id="navbarResponsive">
     <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-            <a class="nav-link" href="{{ route('home') }}" title="Home">Home
-                @if($request->is('admin/*'))<span class="sr-only">(current)</span>@endif
-            </a>
+            <a class="nav-link" href="{{ route('home') }}" title="Home">Home</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="about.html">Catalogo</a>
+            <a class="nav-link" href="{{ route('catalog') }}" title="Catalogo">Catalogo</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="services.html">F.A.Q.</a>
+            <a class="nav-link" href="{{ route('faq') }}" title="Faq">F.A.Q.</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{{ route('rules') }}">Regolamento</a>
+            <a class="nav-link" href="{{ route('rules') }}" title="Rules">Regolamento</a>
         </li>
     </ul>
 </div>

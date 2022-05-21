@@ -65,7 +65,7 @@ a.gradient-button:hover {
     background: linear-gradient(145deg, rgba(50,100,245,1) 0%, rgba(114,2,187,1) 100%);
 }
 .section-heading {
-	margin-bottom: 80px;
+	margin-top: 80px;
 }
 .section-heading span {
 	color: #00bcd4;

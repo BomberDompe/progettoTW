@@ -118,8 +118,8 @@
           </div>
              <div class="col-md-6">
                 <div class="left-content">
-                  <div class="mapouter"><div class="gmap_canvas"><iframe width="540" height="470" id="gmap_canvas" src="https://maps.google.com/maps?q=universit%C3%A0%20politecnica%20delle%20marche&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.whatismyip-address.com/divi-discount/">divi discount</a><br><style>.mapouter{position:relative;text-align:right;height:470px;width:540px;}</style><a href="https://www.embedgooglemap.net">google map embed responsive</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:470px;width:540px;}</style></div></div>
-                </div>
+                 <iframe width="450" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.it/maps?f=q&amp;source=s_q&amp;hl=it&amp;geocode=&amp;q=Via+Brecce+Bianche,+12,+Ancona&amp;aq=0&amp;sll=41.442726,12.392578&amp;sspn=23.377375,53.657227&amp;ie=UTF8&amp;hq=&amp;hnear=Via+Brecce+Bianche,+12,+60131+Ancona,+Marche&amp;z=14&amp;ll=43.581248,13.515684&amp;output=embed"></iframe><br /><small><a href="http://maps.google.it/maps?f=q&amp;source=embed&amp;hl=it&amp;geocode=&amp;q=Via+Brecce+Bianche,+12,+Ancona&amp;aq=0&amp;sll=41.442726,12.392578&amp;sspn=23.377375,53.657227&amp;ie=UTF8&amp;hq=&amp;hnear=Via+Brecce+Bianche,+12,+60131+Ancona,+Marche&amp;z=14&amp;ll=43.581248,13.515684" style="color:#0000FF;text-align:left">Visualizzazione ingrandita della mappa</a></small>
+                  </div>
              </div>
           <div class="col-md-6">
             <div class="right-content">
