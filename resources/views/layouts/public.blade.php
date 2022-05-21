@@ -30,6 +30,8 @@
         </header>
         <!-- end #header/menù -->
         
+        <!--Start content-->
+        
         <div class ="content">
             @yield('content')
         </div>
