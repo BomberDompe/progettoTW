@@ -231,17 +231,6 @@ header {
 .services-page .service-item {
 	margin-bottom: 30px;
 }
-.services-section .service-item i {
-	color: #fff;
-	background-color: #00bcd4;
-	display: inline-block;
-	width: 100px;
-	height: 100px;
-	line-height: 100px;
-	text-align: center;
-	border-radius: 50%;
-	font-size: 32px;
-}
 .services-section .service-item h4 {
 	margin-top: 35px;
 	font-size: 19px;

@@ -1,16 +1,5 @@
-@extends('layouts.public')
-
-@section('title', 'Registrazione')
-
-@section('logreg')
 <!-- PopUp Login/Register -->
-    <div id="popup1" class="overlayppu">
-	<div class="popup">
-		<h2>Here i am</h2>
-		<a class="close" href="#">&times;</a>
-		<div class="content">
-			Thank to pop me out of that button, but now i'm done so you can close this window.
-		</div>
-	</div>
+<div style="height: 600px">
+    ciaooo registratii
+	
 </div>
-@endsection
