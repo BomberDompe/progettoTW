@@ -24,8 +24,3 @@ Route::get('/faq', 'PublicController@showFaq')
 Route::view('/rules', 'rules')
         ->name('rules');
 
-Route::view('/log', 'auth\login')
-        ->name('login');
-
-Route::view('/reg', 'auth\register')
-        ->name('register');
