@@ -52,7 +52,7 @@ a.gradient-button {
 	border: none;
 	margin-left: 10px;
 	background: rgb(114,2,187);
-    background: linear-gradient(145deg, rgba(114,2,187,1) 0%, rgba(50,100,245,1) 100%);
+        background: linear-gradient(145deg, rgba(114,2,187,1) 0%, rgba(50,100,245,1) 100%);
 	color: #fff;
 	text-transform: uppercase;
 	font-size: 15px;
@@ -62,7 +62,7 @@ a.gradient-button {
 }
 a.gradient-button:hover {
 	background: rgb(114,2,187);
-    background: linear-gradient(145deg, rgba(50,100,245,1) 0%, rgba(114,2,187,1) 100%);
+        background: linear-gradient(145deg, rgba(50,100,245,1) 0%, rgba(114,2,187,1) 100%);
 }
 .section-heading {
 	margin-bottom: 80px;
@@ -87,7 +87,8 @@ a.gradient-button:hover {
 	font-size: 15px;
 }
 .content{
-    padding: 80px 0px;
+    padding-top: 80px;
+    padding-bottom: 20px;
 }
 
 /* Header Style */
@@ -361,6 +362,95 @@ footer .sub-footer a {
 	color: #FFF;
 }
 
+/*Style Catalogo*/
+.prod {
+	margin-bottom: 8px;
+        min-width: 1110px;
+}
+
+.prod .oneitem {
+	padding: 10px 20px 15px 20px;
+	height:200px;
+	border-bottom: 2px solid #00bcd4;
+}
+
+.prod .titlepro {
+	padding-top: 15px;
+	padding-left: 20px;
+	color: #000000;
+}
+
+.prod .titlepro a {
+	color: #000000;
+	border: none;
+}
+
+.prod .metapro {
+	padding-left: 20px;
+	padding-bottom: 5px;
+	text-align: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: italic;
+}
+.prod .imagepro {
+	float:left;
+	text-align: left;
+        width: 230px;
+	height: inherit;
+}
+
+.prod .imagepro .imagefrm {
+        width: 200px;
+	height: 180px;
+	padding-top: 10px;
+}
+
+.prod .infopro{
+	float:left;
+        width: 700px;
+	height: inherit;
+}
+
+.prod .pricebox{
+	float:left;
+        width: 140px;
+	height: inherit;
+        margin-top: 145px;
+}
+
+.prod .pricebox p {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.prod .pricebox .price{
+    color: #424954;
+    font-family: Verdana;
+	padding-right: 10px;
+    font-size: 21px;
+    font-weight: bold;
+    text-align: right;
+}
+
+.prod .pricebox .discprice{
+    color: #CC0000;
+    font-family: Verdana;
+	padding-right: 10px;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: right;
+}
+
+#pagination {
+	text-align :center;
+}
+
+#pagination a {
+	border-bottom:none
+}
+
+
 /* Responsive Style */
 @media (max-width: 1200px) {
 	.banner #search-section input.main-button {
@@ -507,6 +597,8 @@ footer .sub-footer a {
 		letter-spacing: 0px;
 	}
 }
+
+/* Style PopUp*/
 .overlayppu {
   position: fixed;
   top: 0;

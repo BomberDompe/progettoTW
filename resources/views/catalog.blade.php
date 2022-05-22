@@ -6,35 +6,29 @@
 @section('content')
 
 <div class="container">
-    @foreach ($products as $product)
+    
     <div class="prod">
-        <div class="prod-bgtop">
-            <div class="prod-bgbtm">
                 <div class="oneitem">
-                    <div class="image">
-                        @include('helpers/productImg', ['attrs' => 'imagefrm', 'imgFile' => $product->image])
-                    </div>
-                    <div class="info">
-                        <h1 class="title">Prodotto: {{ $product->name }}</h1>
-                        <p class="meta">Descrizione Breve: {{ $product->descShort }}</p>
+                    <div class="imagepro">
+                        <img src="http://localhost/laraProj/public/images/products/gigachad.jpg" class="imagefrm">
+                     </div>
+                    <div class="infopro">
+                        <h2 class="titlepro">Titolo: </h2>
+                        <p class="metapro">Indirizzo </p>
+                        <p class="metapro">Sed lacus. Donec lectus. Nullam pretium nibh ut turpis. Nam bibendum. In nulla tortor, elementum vel, tempor at, varius non, purus. Mauris vitae nisl nec metus placerat consectetuer. Donec ipsum. Proin imperdiet est. Phasellus dapibus semper urna. Pellentesque ornare, orci in consectetuer hendrerit, urna elit eleifend nunc, ut consectetuer nisl felis ac diam. Etiam non felis. Donec ut ante. In id eros. Suspendisse lacus turpis, cursus egestas at sem. Phasellus pellentesque. Mauris quam enim, molestie in, rhoncus ut, lobortis a, est. </p>
+                        
                     </div>
                     <div class="pricebox">
-                        @include('helpers/productPrice')
+                        <div class="functional-buttons">
+                            <ul>
+                                <li><a>Dettagli</a></li>
+                            </ul>
+                        </div>
+                    
                     </div>
-                </div>
-                <div class="entry">
-                    <p>Descrizione Estesa: {!! $product->descLong !!}</p>
                 </div>
             </div>
         </div>
-    </div>
-    @endforeach
-
-    <!--Paginazione-->
-    @include('pagination.paginator', ['paginator' => $products])
-
-  
-</div>
 
 @endsection
 
