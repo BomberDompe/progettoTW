@@ -562,7 +562,7 @@ footer .sub-footer a {
 .popup .close:hover {
   color: #06D85F;
 }
-.popup .content {
+.popup .contentpu {
   max-height: 30%;
   overflow: auto;
 }

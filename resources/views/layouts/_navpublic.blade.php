@@ -52,8 +52,8 @@
 @guest
 <div class="functional-buttons">
     <ul>
-        <li><a href="#popup1">Log in</a></li>
-        <li><a href="#popup1">Registrati</a></li>
+        <li><a href="#popuplog">Log in</a></li>
+        <li><a href="#popupreg">Registrati</a></li>
     </ul>
 </div>
 @endguest
