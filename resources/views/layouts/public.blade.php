@@ -11,9 +11,6 @@
 
         <title>ApartaRent - @yield('title', 'Home')</title>
 
-        <!-- Bootstrap core CSS -->
-        <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-
         <!-- CSS Files -->
         <link rel="stylesheet" href="{{ asset('assets/css/fontawesome.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
@@ -69,13 +66,6 @@
             </div>
         </div>
         <!-- PopUp End -->
-
-        <!-- Bootstrap core JavaScript -->
-        <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
-        <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-
-
-
 
 
     </body>

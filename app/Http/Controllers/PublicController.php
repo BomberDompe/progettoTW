@@ -24,5 +24,9 @@ class PublicController extends Controller {
         return view('faq')
         ->with('faq', $this->faqModel);
     }
+     public function showDetails() {
+        return view('details');
+    }
+    
     
 }

@@ -19,14 +19,15 @@
     </ul>
 </div>
 
- @can('isLocatore')    
+ @can('isLocatore') 
+ <div class="functional-buttons">
     <ul>
         <li><a href="{{ route('locatore') }}">Log out</a></li>
     </ul>
 </div>       
  @endcan
  @can('isUser')
- <div>   
+ <div class="functional-buttons">   
     <ul>
         <li><a href="{{ route('user') }}">Log out</a></li>
     </ul>

@@ -36,9 +36,9 @@
                             3000€
                             
                         </div>
-                        <div class="functional-buttons">
+                        <div class="details-buttons">
                             <ul>
-                                <li><a>Dettagli</a></li>
+                                <li><a href="{{ route('details') }}">Dettagli</a></li>
                             </ul>
                         </div>
                     

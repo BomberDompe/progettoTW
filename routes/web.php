@@ -12,15 +12,20 @@
  */
 
 
-Route::view('/', 'home')
-        ->name('home');
 
+/* Rotte catalogo*/
 Route::get('/catalog', 'PublicController@showCatalog')
         ->name('catalog');
+Route::get('/catalog/dettagli', 'PublicController@showDetails')
+        ->name('details');
 
+/*Rotte faq*/
 Route::get('/faq', 'PublicController@showFaq')
         ->name('faq');
 
+/*Rotte view statiche*/
+Route::view('/', 'home')
+        ->name('home');
 Route::view('/rules', 'rules')
         ->name('rules');
 
