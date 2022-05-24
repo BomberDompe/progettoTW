@@ -3,21 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\Models\Resources\Faq;
-use App\Models\Resources\Offer;
+use App\Models\Catalog;
 
 class PublicController extends Controller {
 
-    protected $offerModel;
+    protected $catalogModel;
     protected $faqModel;
     
     public function __construct() {
-        $this->offerModel = new Offer;
+        $this->catalogModel = new Catalog;
         $this->faqModel = new Faq;
     }
     
     public function showCatalog() {
         return view('catalog')
-        ->with('catalog', $this->offerModel);
+        ->with('catalog', $this->catalogModel->getAllOffers());
     }
     
     public function showFaq() {

@@ -12,14 +12,14 @@
  */
 
 
-Route::get('/', 'home')
+Route::view('/', 'home')
         ->name('home');
 
 Route::get('/catalog', 'PublicController@showCatalog')
         ->name('catalog');
 
-Route::get('/faq', 'PublicController@showFaq')
-        ->name('catalog');
+Route::get('/faqs', 'PublicController@showFaq')
+        ->name('faqs');
 
 Route::view('/rules', 'rules')
         ->name('rules');

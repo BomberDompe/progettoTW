@@ -20,8 +20,8 @@ class UsersMigration extends Migration
             $table->string('cognome', 20);
             $table->unsignedTinyInteger('genere');
             $table->string('data_nascita', 20);
-            $table->string('comune_residenza', 25);
-            $table->string('telefono', 10);
+            $table->string('comune_residenza', 25)->nullable();
+            $table->string('telefono', 10)->nullable();
             $table->unsignedTinyInteger('tipologia');
         });
     }

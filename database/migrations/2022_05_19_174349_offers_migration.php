@@ -15,6 +15,7 @@ class OffersMigration extends Migration
     {
         Schema::create('offerte', function (Blueprint $table) {
             $table->bigIncrements('offerta_id')->unsigned()->index();
+            $table->string('username_id')->index();
             $table->foreign('username_id')->references('username_id')->on('utenti');
             $table->string('titolo',40);
             $table->string('descrizione', 2000);
@@ -23,24 +24,29 @@ class OffersMigration extends Migration
             $table->string('citta', 25);
             $table->string('via', 30);
             $table->unsignedSmallInteger('civico');
-            $table->unsignedTinyInteger('eta_max');
-            $table->unsignedTinyInteger('eta_min');
-            $table->unsignedTinyInteger('genere_locatario');
+            $table->unsignedSmallInteger('eta_max')->nullable();
+            $table->unsignedSmallInteger('eta_min')->nullable();
+            $table->unsignedTinyInteger('genere_locatario')->nullable();
             $table->date('disponibilita_inizio');
             $table->date('disponibilita_fine');
             $table->unsignedTinyInteger('posti_tot');
             $table->unsignedTinyInteger('tipologia');
-            $table->unsignedTinyInteger('sup_appartamento');
-            $table->unsignedTinyInteger('num_camere');
+            $table->unsignedTinyInteger('sup_appartamento')->nullable();
+            $table->unsignedTinyInteger('num_camere')->nullable();
             $table->boolean('cucina');
             $table->boolean('locale_ricreativo');
-            $table->string('servizi', 1000);
-            $table->unsignedTinyInteger('sup_camera');
-            $table->unsignedTinyInteger('posti_camera');
-            $table->boolean('angolo_studio');
+            $table->boolean('climatizzazione');
+            $table->boolean('parcheggi');
+            $table->boolean('farmacia');
+            $table->boolean('supermercato');
+            $table->boolean('ristorazione');
+            $table->boolean('trasporti');
+            $table->unsignedTinyInteger('sup_camera')->nullable();
+            $table->unsignedTinyInteger('posti_camera')->nullable();
+            $table->boolean('angolo_studio')->nullable();
             $table->boolean('opzionabilita');
             $table->date('data_inserimento');
-            $table->date('data_assegnazione');
+            $table->date('data_assegnazione')->nullable();
         });
     }
 
