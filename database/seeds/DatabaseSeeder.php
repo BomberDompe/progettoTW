@@ -48,14 +48,14 @@ class DatabaseSeeder extends Seeder {
         DB::table('faqs')->insert([
             ['faq_id' => 1, 'domanda' => 'Come faccio ad aggiungere le mie offerte al catalogo ApartRent?', 
                 'risposta' => 'Per poter aggiungere le proprie offerte bisogna aver effettuato l\'accesso in un account'
-                . ' di tipo \"Locatore\". Successivamente al login o alla registrazione, apparirà nel menù in alto (barra di'
-                . ' navigazione) la voce \"Area Riservata\". Dall\'Area Riservata, tra le altre funzionalità, vi è anche quella di inserire'
+                . ' di tipo "Locatore". Successivamente al login o alla registrazione, apparirà nel menù in alto (barra di'
+                . ' navigazione) la voce "Area Riservata". Dall\'Area Riservata, tra le altre funzionalità, vi è anche quella di inserire'
                 . ' nuove offerte. Ogni offerta è visibile a tutti gli utenti del sito.'],
             ['faq_id' => 2, 'domanda' => 'Come faccio a contattare il proprietario di un\'alloggio?', 
                 'risposta' => 'ApartRent prevede un sistema interno di messaggistica. Questo è tuttavia realizzato in modo'
                 . ' che la comunicazione tra due utenti possa avvenire soltanto in relazione all\'opzionamento di un\'offerta.'
-                . ' Per poter scrivere al proprietario di un\'offerta è pertanto necessario possedere un account di tipo \"Locatario\",'
-                . ' recarsi nel Catalogo, visualizzare i Dettagli dell\'offerta a cui si è interessati e cliccare su \"Opziona\". Facendo'
+                . ' Per poter scrivere al proprietario di un\'offerta è pertanto necessario possedere un account di tipo "Locatario",'
+                . ' recarsi nel Catalogo, visualizzare i Dettagli dell\'offerta a cui si è interessati e cliccare su "Opziona". Facendo'
                 . ' ciò, si aprirà nella Bacheca Messaggi una nuova conversazione con l\'utente che ha inserito l\'offerta, con un'
                 . ' messaggio predefinito.'],
             ['faq_id' => 3, 'domanda' => 'Sono presenti offerte di vendita di appartamenti?', 
@@ -63,17 +63,17 @@ class DatabaseSeeder extends Seeder {
                 . ' possibile inserire offerte di vendita di alloggi.'],
             ['faq_id' => 4, 'domanda' => 'Il catalogo presenta la funzionalità di filtraggio delle offerte?', 
                 'risposta' => 'Sì, tuttavia gli utenti non registrati, pur potendo visualizzare tutte le offerte, non hanno accesso'
-                . ' alla funzionalità di filtraggio. Suddetta funzionalità è disponibile esclusivamente per utenti di tipo \"Locatario\".'],
+                . ' alla funzionalità di filtraggio. Suddetta funzionalità è disponibile esclusivamente per utenti di tipo "Locatario".'],
             ['faq_id' => 5, 'domanda' => 'Come faccio a cancellare il mio profilo ApartRent e i miei dati personali?',
                 'risposta' => 'Per cancellare il tuo profilo ApartRent, accedi al tuo account inserendo username e password, scelti al'
-                . ' momento della registrazione. Dal menu in alto, clicca sulla voce \"Area Riservata\". In fondo alla pagina troverai il'
-                . ' tasto \"Elimina account\". Una volta eliminato, il tuo profilo non potrà più essere riattivato e dovrai effettuare'
+                . ' momento della registrazione. Dal menu in alto, clicca sulla voce "Area Riservata". In fondo alla pagina troverai il'
+                . ' tasto "Elimina account". Una volta eliminato, il tuo profilo non potrà più essere riattivato e dovrai effettuare'
                 . ' una nuova registrazione.'],
             ['faq_id' => 6, 'domanda' => 'Come posso accettare un proposta di uno studente a una mia offerta?', 
                 'risposta' => 'Per poter accettare una proposta fatta da uno studente in cerca di alloggio bisogna, dopo aver effettuato'
-                . ' l\'accesso al proprio account di tipo \"Locatore\",recarsi nell\'Area Riservata. Da lì, clicca su \"Gestisci le tue'
+                . ' l\'accesso al proprio account di tipo "Locatore", recarsi nell\'Area Riservata. Da lì, clicca su "Gestisci le tue'
                 . ' offerte" per andare alla lista delle offerte da te inserite precedentemente. Per tutte le offerte per cui hai ricevuto'
-                . ' almeno una proposta, un pulsante \"Accetta un proposta\" ti permetterà di scegliere con chi stipulare il contratto. Si'
+                . ' almeno una proposta, un pulsante "Accetta un proposta" ti permetterà di scegliere con chi stipulare il contratto. Si'
                 . ' noti che così facendo, l\'offerta sarà automaticamente resa non più opzionabile (tuttavia è possibile modificare'
                 . ' l\'opzionabilità delle proprie offerte anche manualmente).'
                 . ' nuove offerte. Ogni offerta è visibile a tutti gli utenti del sito.'],
@@ -89,10 +89,10 @@ class DatabaseSeeder extends Seeder {
                 'username_id'  => 'lorelore',
                 'titolo' => 'Affittasi posto letto Ancona zona Tavernelle',
                 'descrizione'  => 'Affittasi posto letto in camera doppia, per studentesse, in appartamento con due camere doppie in'
-                . 'zona Tavernelle in ottime condizioni, completamente ristrutturato recentemente e con mobilia nuova, dotato di'
-                . 'condizionatori a pompa di calore (caldo/freddo) nelle stanze, al prezzo di 200,00 euro al mese.',
+                . ' zona Tavernelle in ottime condizioni, completamente ristrutturato recentemente e con mobilia nuova, dotato di'
+                . ' condizionatori a pompa di calore (caldo/freddo) nelle stanze, al prezzo di 200,00 euro al mese.',
                 'prezzo'  => 200.00,
-                'immagine'  => '[INSERIRE URL]',
+                'immagine'  => 'camera_doppia_01.jpg',
                 'citta'  => 'Ancona',
                 'via'  => 'Via Francesco Petrarca',
                 'civico'  => '45',
@@ -127,7 +127,7 @@ class DatabaseSeeder extends Seeder {
                 . ' arredate, cucina abitabile, bagno luminoso, e si trova al terzo piano senza ascensore. Non si accettano animali. Condiviso con'
                 . ' altre due ragazze. Prezzo €180 mensili con spese condominiali a parte.',
                 'prezzo'  => 180.00,
-                'immagine'  => '[INSERIRE URL]',
+                'immagine'  => 'camera_singola_02.jpg',
                 'citta'  => 'Ancona',
                 'via'  => 'Via Francesco Petrarca',
                 'civico'  => '7',
@@ -162,7 +162,7 @@ class DatabaseSeeder extends Seeder {
                 . ' Lavatrice, televisione, balcone grande. L\'appartamento è composto da 2 camere singole. Una singola è già occupata da un ragazzo,'
                 . ' cerco quindi un altro ragazzo per completare la casa. Contratto da settembre a giugno (inclusi).',
                 'prezzo'  => 250.00,
-                'immagine'  => '[INSERIRE URL]',
+                'immagine'  => 'camera_singola_03.jpg',
                 'citta'  => 'Urbino',
                 'via'  => 'Via Muzio Oddi',
                 'civico'  => '10',
@@ -202,7 +202,7 @@ class DatabaseSeeder extends Seeder {
                 . ' zona è residenziale, silenziosa e alberata e anche molto comoda perché, oltre ad essere servita da negozi e supermercati, è'
                 . ' raggiungibile comodamente a piedi dalla stazione.',
                 'prezzo'  => 750.00,
-                'immagine'  => '[INSERIRE URL]',
+                'immagine'  => 'camera_singola_04.jpg',
                 'citta'  => 'Macerata',
                 'via'  => 'Viale Piave',
                 'civico'  => '38',
@@ -238,7 +238,7 @@ class DatabaseSeeder extends Seeder {
                 . ' appartamento è poi costituito di una camera doppia e una singola ed un bagno finestrato. Il parcheggio è esterno nella corte'
                 . ' condominiale. Pavimentazione in parquet, aria condizionata.',
                 'prezzo'  => 620.00,
-                'immagine'  => '[INSERIRE URL]',
+                'immagine'  => 'appartamento_05.jpg',
                 'citta'  => 'Macerata',
                 'via'  => 'Via Giovanni Verga',
                 'civico'  => '18',
@@ -276,7 +276,7 @@ class DatabaseSeeder extends Seeder {
                 . ' e tre spaziose camere doppie. Estremamente luminoso e con affacci sul corso principale, l’appartamento è dotato di ogni tipo di'
                 . ' comfort (Tv 60” full HD, asciugatrice, lavastoviglie, lavatrice, wifi, aria condizionata regolabile singolarmente in ogni stanza).',
                 'prezzo'  => 840,
-                'immagine'  => '[INSERIRE URL]',
+                'immagine'  => 'appartamento_06.jpg',
                 'citta'  => 'Ancona',
                 'via'  => 'Corso Garibaldi',
                 'civico'  => '119',

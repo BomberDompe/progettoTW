@@ -635,9 +635,9 @@ footer {
 }
 
 .prod .oneitem {
-	padding: 10px 15px 0;
-	height:200px;
-	border-bottom: 2px solid #00bcd4;
+    padding: 10px;
+    height: 250px;
+    border-bottom: 2px solid #00bcd4;
 }
 
 .prod .titlepro {
@@ -747,11 +747,14 @@ footer {
 }
 
 #pagination {
-	text-align :center;
+	display: inline-block;
+        padding-left: 35%;
+        min-width: 1110px;
 }
 
 #pagination a {
-	border-bottom:none
+	border-bottom: none;
+        color: #00bcd4
 }
 
 /* F.A.Q. style */

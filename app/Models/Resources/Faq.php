@@ -11,7 +11,7 @@ class Faq extends Model {
     public $timestamps = false;
     
     public function getAllFaqs() {
-        return Faq::all();
+        return Faq::where('faq_id', '>=', 0)->paginate(3);
     }
 }
 

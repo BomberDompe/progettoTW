@@ -20,7 +20,7 @@ class PublicController extends Controller {
         ->with('catalog', $this->catalogModel->getAllOffers());
     }
     
-    public function showFaq() {
+    public function showFaqs() {
         return view('faqs')
         ->with('faqs', $this->faqModel->getAllFaqs());
     }

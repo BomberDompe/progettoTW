@@ -21,12 +21,13 @@ Route::get('/catalog/dettagli', 'PublicController@showDetails')
         ->name('details');
 
 /*Rotte faq*/
-Route::get('/faq', 'PublicController@showFaq')
+Route::get('/faqs', 'PublicController@showFaqs')
         ->name('faqs');
 
 /*Rotte view statiche*/
 Route::view('/', 'home')
         ->name('home');
+
 Route::view('/rules', 'rules')
         ->name('rules');
 
