@@ -16,12 +16,13 @@
 /* Rotte catalogo*/
 Route::get('/catalog', 'PublicController@showCatalog')
         ->name('catalog');
+
 Route::get('/catalog/dettagli', 'PublicController@showDetails')
         ->name('details');
 
 /*Rotte faq*/
 Route::get('/faq', 'PublicController@showFaq')
-        ->name('faq');
+        ->name('faqs');
 
 /*Rotte view statiche*/
 Route::view('/', 'home')

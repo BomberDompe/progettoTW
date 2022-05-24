@@ -2,33 +2,68 @@
 
 namespace App\Models;
 
-use App\Models\Resources\Category;
-use App\Models\Resources\Product;
+use App\Models\Resources\Offer;
 
 class Catalog {
-
-    public function getTopCats() {
-        return Category::where('parId', 0)->get();
+    
+    public function getAllOffers() {
+        return Offer::where('offerta_id', '>=', 0)->paginate(3);
     }
-
-    public function getCatsByParId($topId) {
-        return Category::whereIn('parId', $topId)->get();
+    
+    public function getByFilters($filters) {
+        $catalog = new Offer;
+        
+        
+        return $catalog;
     }
-
-    // Estrae i prodotti della categoria/e $catId (tutti o solo quelli in sconto), eventualmente ordinati
-    public function getProdsByCat($catId, $paged = 1, $order = null, $discounted = false) {
-
-        $prods = Product::whereIn('catId', $catId)
-                ->orWhereHas('prodCat', function ($query) use ($catId) {
-                        $query->whereIn('parId', $catId);
-        });
-        if ($discounted) {
-            $prods = $prods->where('discounted', true);
-        }
-        if (!is_null($order)) {
-            $prods = $prods->orderBy('discountPerc', $order);
-        }
-        return $prods->paginate($paged);
+    
+    public function getByPrice($catalog, $min_price, $max_price){
+        return $catalog::where('prezzo', '>=', $min_price)
+                ->andWhere('prezzo', '<=', $max_price)->get();
     }
-
+    
+    public function getByOfferType($catalog, $offerType){
+        return $catalog::where('tipologia', $offerType)->get();
+    }
+    
+    public function getByTotBedNumber($catalog, $min_bed, $max_bed) {
+        return $catalog::where('posti_tot', '>=', $min_bed)
+                ->andWhere('posti_tot','<=', $max_bed)->get();
+    }
+    
+    public function getByApartmentArea($catalog, $min_area, $max_area) {
+        return $catalog::where('sup_appartamento', '>=', $min_area)
+                ->andWhere('sup_appartamento', '<=', $max_area)->get();
+    }
+    
+    public function getByRoomNumber($catalog, $min_room, $max_room) {
+        return $catalog::where('num_camere', '>=', $min_room)
+                ->andWhere('num_camere', '<=', $max_room)->get();
+    }
+    
+    public function getByCucina($catalog, $cucina) {
+        return $catalog::where('cucina', $cucina)->get();
+    }
+    
+    public function getByLocaleRicreativo($catalog, $localeRicreativo) {
+        return $catalog::where('locale_ricreativo', $localeRicreativo)->get();
+    }
+    
+    public function getByRoomArea($catalog, $min_area, $max_area) {
+        return $catalog::where('sup_camera', '>=', $min_area)
+                ->andWhere('sup_camera', '<=', $max_area)->get();
+    }
+    
+    public function getByRoomType($catalog, $roomType) {
+        return $catalog::where('posti_camera', $roomType)->get();
+    }
+    
+    public function getByAngoloStudio($catalog, $angoloStudio) {
+        return $catalog::where('angolo_studio', $angoloStudio)->get();
+    }
+    
+    public function getByPeriod($catalog, $start_date, $end_date){
+        return $catalog::where('disponibilita_inizio', '<=', $end_date)
+                ->andWhere('disponibilita_fine', '>=', $start_date)->get();
+    }
 }

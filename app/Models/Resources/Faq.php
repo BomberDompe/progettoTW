@@ -11,6 +11,8 @@ class Faq extends Model {
     public $timestamps = false;
     
     public function getAllFaqs() {
-        return $this;
+        return Faq::all();
     }
 }
+
+

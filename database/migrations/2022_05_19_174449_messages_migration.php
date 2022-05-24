@@ -15,6 +15,7 @@ class MessagesMigration extends Migration
     {
         Schema::create('messaggi', function (Blueprint $table) {
             $table->bigIncrements('messaggio_id')->unsigned()->index();
+            $table->bigInteger('conversazione_id')->unsigned()->index();
             $table->foreign('conversazione_id')->references('conversazione_id')->on('conversazioni');
             $table->string('contenuto', 1000);
             $table->timestamp('timestamp');

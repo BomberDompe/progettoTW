@@ -6,37 +6,26 @@
 @section('content')
 
 <div class="container">
-    
+  @isset($catalog)
+    @foreach ($catalog as $offer)
     <div class="prod">
                 <div class="oneitem">
                     <div class="imagepro">
                         <img src="http://localhost/laraProj/public/images/products/gigachad.jpg" class="imagefrm">
                      </div>
                     <div class="infopro">
-                        <h2 class="titlepro">Titolo</h2>
+                        <h2 class="titlepro"> {{ $offer->titolo }} </h2>
                         <div class="adress">
-                            Via cesare cremonini 25
+                            <p>{{ $offer->citta}}, {{ $offer->via }} {{ $offer->civico }}</p>
                         </div>
-                        <div class="propapp">
-                            <div class="casel">
-                                IO
-                            </div>
-                            <div class="casel">
-                                SONO
-                            </div>
-                            <div class="casel">
-                                AGENDA
-                            </div>
-                            
-                        </div>
-                        <p class="metapro">Sed lacus. Donec lectus. Nullam pretium nibh ut turpis. Nam bibendum. In nulla tortor, elementum vel, tempor at, varius non, purus. Mauris vitae nisl nec metus placerat consectetuer. Donec ipsum. Proin imperdiet est. Phasellus dapibus semper urna. Pellentesque ornare, orci in consectetuer hendrerit, urna elit eleifend nunc, ut consectetuer nisl felis ac diam. Etiam non felis. Donec ut ante. In id eros. Suspendisse lacus turpis, cursus egestas at sem. Phasellus pellentesque. Mauris quam enim, molestie in, rhoncus ut, lobortis a, est. </p>
+                        <p class="metapro"> {{ $offer->descrizione }} </p>
                     </div>
                     <div class="pricebox">
                         <div class="price">
-                            3000€
+                            {{ $offer->prezzo }}
                             
                         </div>
-                        <div class="details-buttons">
+                        <div class="functional-buttons">
                             <ul>
                                 <li><a href="{{ route('details') }}">Dettagli</a></li>
                             </ul>
@@ -45,6 +34,12 @@
                     </div>
                 </div>
             </div>
+    @endforeach
+  
+    <!--Paginazione-->
+    @include('pagination.paginator', ['paginator' => $catalog])
+    
+  @endisset()
         </div>
 
 @endsection

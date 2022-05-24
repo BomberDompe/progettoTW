@@ -1,4 +1,4 @@
-<a class="navbar-brand" href="{{ route('home') }}" title="Home" ><h2>ApartaRent</h2></a>
+<a class="navbar-brand" href="{{ route('home') }}" title="Home" ><h2>ApartRent</h2></a>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
 </button>
@@ -11,7 +11,7 @@
             <a class="nav-link" href="{{ route('catalog') }}" title="Catalogo">Catalogo</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{{ route('faq') }}" title="Faq">F.A.Q.</a>
+            <a class="nav-link" href="{{ route('faqs') }}" title="Faq">F.A.Q.</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{ route('rules') }}" title="Rules">Regolamento</a>
@@ -19,15 +19,14 @@
     </ul>
 </div>
 
- @can('isLocatore') 
- <div class="functional-buttons">
+ @can('isLocatore')    
     <ul>
         <li><a href="{{ route('locatore') }}">Log out</a></li>
     </ul>
 </div>       
  @endcan
  @can('isUser')
- <div class="functional-buttons">   
+ <div>   
     <ul>
         <li><a href="{{ route('user') }}">Log out</a></li>
     </ul>
