@@ -15,11 +15,11 @@ class UsersMigration extends Migration
     {
         Schema::create('utenti', function (Blueprint $table) {
             $table->string('username_id', 20)->index();
-            $table->string('password', 20);
-            $table->string('nome', 20);
-            $table->string('cognome', 20);
-            $table->unsignedTinyInteger('genere');
-            $table->string('data_nascita', 20);
+            $table->string('password', 191);
+            $table->string('nome', 20)->nullable();
+            $table->string('cognome', 20)->nullable();
+            $table->unsignedTinyInteger('genere')->nullable();
+            $table->string('data_nascita', 20)->nullable();
             $table->string('comune_residenza', 25)->nullable();
             $table->string('telefono', 10)->nullable();
             $table->unsignedTinyInteger('tipologia');

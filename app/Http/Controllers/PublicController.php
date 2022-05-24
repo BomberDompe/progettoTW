@@ -22,7 +22,7 @@ class PublicController extends Controller {
     
     public function showFaq() {
         return view('faq')
-        ->with('faqs', $this->faqModel);
+        ->with('faqs', $this->faqModel->getAllFaqs());
     }
     
 }

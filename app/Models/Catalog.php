@@ -7,7 +7,7 @@ use App\Models\Resources\Offer;
 class Catalog {
     
     public function getAllOffers() {
-        return new Offer;
+        return Offer::where('offerta_id', '>=', 0)->paginate(3);
     }
     
     public function getByFilters($filters) {

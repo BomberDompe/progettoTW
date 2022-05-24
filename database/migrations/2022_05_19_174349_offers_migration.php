@@ -17,7 +17,7 @@ class OffersMigration extends Migration
             $table->bigIncrements('offerta_id')->unsigned()->index();
             $table->string('username_id')->index();
             $table->foreign('username_id')->references('username_id')->on('utenti');
-            $table->string('titolo',40);
+            $table->string('titolo', 100);
             $table->string('descrizione', 2000);
             $table->float('prezzo');
             $table->string('immagine', 100);

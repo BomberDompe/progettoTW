@@ -12,11 +12,44 @@ class DatabaseSeeder extends Seeder {
      */
     public function run() {
 
+        DB::table('utenti')->insert([
+            ['username_id' => 'lorelore',
+                'password' => Hash::make('Cz6LW7t4'),
+                'nome' => 'Mario',
+                'cognome' => 'Rossi',
+                'genere' => 0, // Uomo
+                'data_nascita' => Carbon::parse('2000-10-27'),
+                'comune_residenza' => 'Urbisaglia (MC)',
+                'telefono' => '3492814204',
+                'tipologia' => 2 // Locatore
+                ],
+            ['username_id' => 'lariolario',
+                'password' => Hash::make('Cz6LW7t4'),
+                'nome' => 'Giuseppe',
+                'cognome' => 'Verdi',
+                'genere' => 0, // Uomo
+                'data_nascita' => Carbon::parse('2000-10-27'),
+                'comune_residenza' => 'Urbisaglia (MC)',
+                'telefono' => '3482994204',
+                'tipologia' => 3 // Locatario
+                ],
+            ['username_id' => 'adminadmin',
+                'password' => Hash::make('Cz6LW7t4'),
+                'nome' => null,
+                'cognome' => null,
+                'genere' => null,
+                'data_nascita' => null,
+                'comune_residenza' => null,
+                'telefono' => null,
+                'tipologia' => 4 // Amministratore
+                ],
+        ]);
+        
         DB::table('faqs')->insert([
             ['faq_id' => 1, 'domanda' => 'Come faccio ad aggiungere le mie offerte al catalogo ApartRent?', 
                 'risposta' => 'Per poter aggiungere le proprie offerte bisogna aver effettuato l\'accesso in un account'
                 . ' di tipo \"Locatore\". Successivamente al login o alla registrazione, apparirà nel menù in alto (barra di'
-                . ' navigazione) la voce \"Area Riservata". Dall\'Area Riservata, tra le altre funzionalità, vi è anche quella di inserire'
+                . ' navigazione) la voce \"Area Riservata\". Dall\'Area Riservata, tra le altre funzionalità, vi è anche quella di inserire'
                 . ' nuove offerte. Ogni offerta è visibile a tutti gli utenti del sito.'],
             ['faq_id' => 2, 'domanda' => 'Come faccio a contattare il proprietario di un\'alloggio?', 
                 'risposta' => 'ApartRent prevede un sistema interno di messaggistica. Questo è tuttavia realizzato in modo'
@@ -271,36 +304,6 @@ class DatabaseSeeder extends Seeder {
                 'data_inserimento'  => Carbon::parse('2022-05-02'),
                 'data_assegnazione'  => null
             ],
-        ]);
-
-        DB::table('utenti')->insert([
-            ['username_id' => 'lorelore',
-                'password' => Hash::make('Cz6LW7t4'),
-                'nome' => 'Mario',
-                'cognome' => 'Rossi',
-                'genere' => 0, // Uomo
-                'data_nascita' => Carbon::parse('2000-10-27'),
-                'comune_residenza' => 'Urbisaglia (MC)',
-                'telefono' => '3492814204',
-                'tipologia' => 2, // Locatore
-                'created_at' => date("Y-m-d H:i:s"),
-                'updated_at' => date("Y-m-d H:i:s")],
-            ['username_id' => 'lariolario',
-                'password' => Hash::make('Cz6LW7t4'),
-                'nome' => 'Giuseppe',
-                'cognome' => 'Verdi',
-                'genere' => 0, // Uomo
-                'data_nascita' => Carbon::parse('2000-10-27'),
-                'comune_residenza' => 'Urbisaglia (MC)',
-                'telefono' => '3482994204',
-                'tipologia' => 3, // Locatario
-                'created_at' => date("Y-m-d H:i:s"),
-                'updated_at' => date("Y-m-d H:i:s")],
-            ['username_id' => 'adminadmin',
-                'password' => Hash::make('Cz6LW7t4'),
-                'tipologia' => 4, // Amministratore
-                'created_at' => date("Y-m-d H:i:s"),
-                'updated_at' => date("Y-m-d H:i:s")],
         ]);
     }
 
