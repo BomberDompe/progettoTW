@@ -4,8 +4,41 @@
 
 @section('content')
 <div class="container">
-  <br><center><h1>Chi siamo</h1></center><br>
-  <p>Sed lacus. Donec lectus. Nullam pretium nibh ut turpis. Nam bibendum. In nulla tortor, elementum vel, tempor at, varius non, purus. Mauris vitae nisl nec metus placerat consectetuer. Donec ipsum. Proin imperdiet est. Phasellus dapibus semper urna. Pellentesque ornare, orci in consectetuer hendrerit, urna elit eleifend nunc, ut consectetuer nisl felis ac diam. Etiam non felis. Donec ut ante. In id eros. Suspendisse lacus turpis, cursus egestas at sem. Phasellus pellentesque. Mauris quam enim, molestie in, rhoncus ut, lobortis a, est.</p>
-  <p>Sed lacus. Donec lectus. Nullam pretium nibh ut turpis. Nam bibendum. In nulla tortor, elementum vel, tempor at, varius non, purus. Mauris vitae nisl nec metus placerat consectetuer. Donec ipsum. Proin imperdiet est. Phasellus dapibus semper urna. Pellentesque ornare, orci in consectetuer hendrerit, urna elit eleifend nunc, ut consectetuer nisl felis ac diam. Etiam non felis. Donec ut ante. In id eros. Suspendisse lacus turpis, cursus egestas at sem. Phasellus pellentesque. Mauris quam enim, molestie in, rhoncus ut, lobortis a, est.</p>
-</div>
+    <h1 style=" text-align: center; padding-top: 20px;">Titolo</h1>
+    <div style=" margin: 20px 0;">
+        <div style=" text-align: center; margin-bottom: 10px;">
+            <img src="http://localhost/laraProj/public/images/products/gigachad.jpg" style=" width: 770px; height: 470px;">
+        </div>
+        <table>
+<caption>Tabelle spese di Marzo</caption>
+<thead>
+<tr>
+<th>Data</th>
+<th>Operazione</th>
+<th>Importo €</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01/03</td>
+<td>Amazon</td>
+<td>26</td>
+</tr>
+<tr>
+<td>03/03</td>
+<td>Internet</td>
+<td>40</td>
+</tr>
+<tr>
+<td>05/03</td>
+<td>Spesa</td>
+<td>85</td>
+</tr>
+<tr>
+<td colspan="2">Totale</td>
+<td>151</td>
+</tr>
+</tbody>
+</table>
+        </div>
 @endsection

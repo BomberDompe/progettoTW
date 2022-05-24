@@ -13,7 +13,7 @@
                         <img src="http://localhost/laraProj/public/images/products/gigachad.jpg" class="imagefrm">
                      </div>
                     <div class="infopro">
-                        <h2 class="titlepro">Indirizzo </h2>
+                        <h2 class="titlepro">Titolo</h2>
                         <div class="adress">
                             Via cesare cremonini 25
                         </div>
