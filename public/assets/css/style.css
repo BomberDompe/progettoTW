@@ -190,9 +190,10 @@ header {
 	background-image: url(../images/banner-bg.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
-	padding: 300px 0px;
+	padding-top: 100px;
+        padding-bottom: 500px;
 	background-position: center center;
-        max-height: 700px
+        max-height: 700px;
 }
 .banner .caption {
 	text-align: center;
@@ -330,6 +331,7 @@ footer {
 .fa-facebook {
   background: #3B5998;
   color: white;
+  width: 67.86px
 }
 
 .fa-twitter {
@@ -358,14 +360,14 @@ footer {
 }
 
 .prod .oneitem {
-	padding: 10px 20px 15px 20px;
+	padding: 10px 15px 0;
 	height:200px;
 	border-bottom: 2px solid #00bcd4;
 }
 
 .prod .titlepro {
-	padding-top: 15px;
 	padding-left: 20px;
+        margin-bottom: 0;
 	color: #000000;
 }
 
@@ -373,14 +375,17 @@ footer {
 	color: #000000;
 	border: none;
 }
-
+.prod .adress{
+    padding-left: 20px;
+    
+}
 .prod .metapro {
 	padding-left: 20px;
-	padding-bottom: 5px;
 	text-align: left;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 11px;
 	font-style: italic;
+        clear: both;
 }
 .prod .imagepro {
 	float:left;
@@ -392,7 +397,7 @@ footer {
 .prod .imagepro .imagefrm {
         width: 200px;
 	height: 180px;
-	padding-top: 10px;
+	
 }
 
 .prod .infopro{
@@ -401,22 +406,32 @@ footer {
 	height: inherit;
 }
 
+.prod .infopro .propapp{
+    
+    height: 20px;
+    width: inherit;
+    float: left;
+    padding-left: 20px;
+    margin-bottom: 5px;
+    
+}
+
+.prod .infopro .propapp .casel{
+    float: left;
+    margin-right: 10px;
+}
+
+
 .prod .pricebox{
 	float:left;
         width: 140px;
-	height: inherit;
-        margin-top: 145px;
-}
-
-.prod .pricebox p {
-	margin-top: 5px;
-	margin-bottom: 5px;
+	margin-top: 115px;
 }
 
 .prod .pricebox .price{
     color: #424954;
     font-family: Verdana;
-	padding-right: 10px;
+    padding-right: 10px;
     font-size: 21px;
     font-weight: bold;
     text-align: right;
@@ -425,7 +440,7 @@ footer {
 .prod .pricebox .discprice{
     color: #CC0000;
     font-family: Verdana;
-	padding-right: 10px;
+    padding-right: 10px;
     font-size: 12px;
     font-weight: bold;
     text-align: right;
