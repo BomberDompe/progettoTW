@@ -17,7 +17,7 @@
 Route::get('/catalog', 'PublicController@showCatalog')
         ->name('catalog');
 
-Route::get('/catalog/dettagli', 'PublicController@showDetails')
+Route::get('/catalog/details/{offerId}', 'PublicController@showDetails')
         ->name('details');
 
 /*Rotte faq*/

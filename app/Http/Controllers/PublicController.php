@@ -24,8 +24,9 @@ class PublicController extends Controller {
         return view('faqs')
         ->with('faqs', $this->faqModel->getAllFaqs());
     }
-    public function showDetails() {
-        return view('details');
+    public function showDetails($offerId) {
+        return view('details')
+        ->with('offer', $this->catalogModel->getOfferById($offerId));
     }
     
 }

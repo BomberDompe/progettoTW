@@ -10,6 +10,10 @@ class Catalog {
         return Offer::where('offerta_id', '>=', 0)->paginate(3);
     }
     
+    public function getOfferById($offerId) {
+        return Offer::find($offerId);
+    }
+    
     public function getByFilters($filters) {
         $catalog = new Offer;
         
