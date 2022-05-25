@@ -49,7 +49,7 @@
         <div id="popuplog" class="overlayppu">
             <div class="popup">
                 <h2>Here i am</h2>
-                <a class="close" href="">&times;</a>
+                <a class="close" href="#">&times;</a>
                 <div class="contentpu">
                   @include('auth/login')
                 </div>
@@ -59,7 +59,7 @@
         <div id="popupreg" class="overlayppu">
             <div class="popup">
                 <h2>Here i am</h2>
-                <a class="close" href="">&times;</a>
+                <a class="close" href="#">&times;</a>
                 <div class="contentpu">
                  @include('auth/register') 
                 </div>

@@ -31,3 +31,10 @@ Route::view('/', 'home')
 Route::view('/rules', 'rules')
         ->name('rules');
 
+/*Rotte registrazione e login*/
+Route::post('/register', 'PublicController@showfaqs')
+        ->name('register');
+
+Route::post('/login', 'PublicController@showfaqs')
+        ->name('login');
+
