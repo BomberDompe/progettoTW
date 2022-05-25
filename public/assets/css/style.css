@@ -656,7 +656,7 @@ footer {
 }
 .prod .metapro {
 	padding-left: 20px;
-	font-size: 11px;
+	font-size: 14px;
 	font-style: italic;
         clear: both;
 }
@@ -983,3 +983,19 @@ footer {
     width: 70%;
   }
 }
+
+/* Truncating Text */
+.line-clamp {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;  
+}
+
+/* Prevents Div Overlapping */
+.no-overlap {
+  min-width: 400px;
+}
+
+
+

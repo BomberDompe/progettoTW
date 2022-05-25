@@ -57,3 +57,8 @@
     </ul>
 </div>
 @endguest
+
+<!--
+Include file JavaScript per il Toggle del menù
+-->
+<script type="text/javascript" src="{{ asset("assets/js/toggleButton.js") }}"></script>

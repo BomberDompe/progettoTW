@@ -14,11 +14,11 @@
                         @include('helpers/offerImg', ['attrs' => 'imagefrm', 'imgFile' => $offer->immagine])
                      </div>
                     <div class="infopro">
-                        <h2 class="titlepro"> {{ $offer->titolo }} </h2>
+                        <h3 class="titlepro"> {{ $offer->titolo }} </h3>
                         <div class="adress">
                             {{ $offer->citta}}, {{ $offer->via }} {{ $offer->civico }}
                         </div>
-                        <p class="metapro"> {{ $offer->descrizione }} </p>
+                        <p class="metapro line-clamp" > {{ $offer->descrizione }} </p>
                     </div>
                     <div class="pricebox">
                         <div class="price">
