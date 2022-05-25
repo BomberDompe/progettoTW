@@ -44,25 +44,19 @@
             </div>
         </footer>
         <!-- Footer Ends Here -->
-        
+
         <!-- PopUp Start -->    
         <div id="popuplog" class="overlayppu">
-            <div class="popup">
-                <h2>Here i am</h2>
+            <div class="popuplog">
                 <a class="close" href="#">&times;</a>
-                <div class="contentpu">
-                  @include('auth/login')
-                </div>
+                @include('auth/login')
             </div>
         </div>
-        
+
         <div id="popupreg" class="overlayppu">
-            <div class="popup">
-                <h2>Here i am</h2>
+            <div class="popupreg">
                 <a class="close" href="#">&times;</a>
-                <div class="contentpu">
-                 @include('auth/register') 
-                </div>
+                @include('auth/register') 
             </div>
         </div>
         <!-- PopUp End -->
@@ -70,3 +64,4 @@
 
     </body>
 </html>
+ 

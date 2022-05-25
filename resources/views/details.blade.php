@@ -5,40 +5,218 @@
 @section('content')
 <div class="container">
     <div class="details">
-        <h1>Titolo</h1>
+        <h1>{{ $offer->titolo }}</h1>
         <div class="imgdet">
-            <img src="http://localhost/laraProj/public/images/offers/gigachad.jpg" style=" width: 770px; height: 470px;">
+            @include('helpers/offerImg', ['attrs' => 'imgsize', 'imgFile' => $offer->immagine])
         </div>
         <div class="descr">
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Sed aliquam ultrices mauris. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Praesent adipiscing. Phasellus ullamcorper ipsum rutrum nunc. Nunc nonummy metus. Vestib
+            {{ $offer->descrizione }}
         </div>
         <div class="tablecar">
             <table>
                 <tr>
-                    <th></th>
-                    <th></th>
+                    <th colspan="2">Informazioni di base</th>
                 </tr>
                 <tr>
-                    <td>Prezzo mensile</td>
+                    <td>Indirizzo</td>
                     <td>
-                        {{ 
+                        {{ $offer->citta }}, {{ $offer->via }} {{ $offer->civico }}
                     </td>
                 </tr>
                 <tr>
-                    <td>Lois</td>
-
-                    <td>$150</td>
+                    <td>Tipologia</td>
+                    @if($offer->tipologia == 0)
+                        <td>Appartamento</td>
+                    @else
+                        <td>Posto letto
+                        @if($offer->posti_camera == 1)
+                            in camera singola
+                        @elseif($offer->posti_camera == 2)
+                            in camera doppia
+                        @endif
+                        </td>
+                    @endif
                 </tr>
                 <tr>
-                    <td>Joe</td>
-
-                    <td>$300</td>
+                    <td>Canone di affitto</td>
+                    <td>{{ number_format($offer->prezzo, 2, ',', '.') }} €</td>
                 </tr>
                 <tr>
-                    <td>Cleveland</td>
-
-                    <td>$250</td>
+                    <td>Periodo di disponibilità</td>
+                    <td>Dal {{ $offer->disponibilita_inizio }} al {{ $offer->disponibilita_fine }} </td>
                 </tr>
+                <tr>
+                    <th colspan="2">Vincoli sullo studente</th>
+                </tr>
+                <tr>
+                    <td>Età massima studente</td>
+                    @isset($offer->eta_max)
+                        <td>{{ $offer->eta_max }}</td>
+                    @else
+                        <td>Nessun vincolo</td>
+                    @endisset
+                </tr>
+                <tr>
+                    <td>Età minima studente</td>
+                    @isset($offer->eta_min)
+                        <td>{{ $offer->eta_min }}</td>
+                    @else
+                        <td>Nessun vincolo</td>
+                    @endisset
+                </tr>
+                <tr>
+                    <td>Genere studente</td>
+                        @isset($offer->genere_locatario)
+                            @if($offer->genere_locatario == 0)
+                                <td>Uomo</td>
+                            @else
+                                <td>Donna</td>
+                        @endif
+                        @else
+                            <td>Nessun vincolo</td>
+                        @endisset
+                </tr>
+                <tr>
+                    <th colspan="2">Caratteristiche dell'alloggio</th>
+                </tr>
+                @isset($offer->sup_appartamento)
+                    <tr>
+                        <td>Superficie dell'appartamento</td>
+                        <td>
+                            {{ $offer->sup_appartamento }}
+                        </td>
+                    </tr>
+                @endisset
+                @isset($offer->num_camere)
+                    <tr>
+                        <td>Numero di camere nell'alloggio</td>
+                        <td>
+                            {{ $offer->num_camere }}
+                        </td>
+                    </tr>
+                @endisset
+                @isset($offer->sup_camera)
+                    <tr>
+                        <td>Superficie della camera</td>
+                        <td>
+                            {{ $offer->sup_camera }}
+                        </td>
+                    </tr>
+                @endisset
+                @isset($offer->posti_camera)
+                    <tr>
+                        <td>Posti letto nella camera</td>
+                        <td>
+                            {{ $offer->posti_camera }}
+                        </td>
+                    </tr>
+                @endisset
+                <tr>
+                    <td>Posti letto totali nell'alloggio</td>
+                    <td>
+                        {{ $offer->posti_tot }}
+                    </td>
+                </tr>
+                @isset($offer->angolo_studio)
+                    <tr>
+                        <td>Angolo Studio</td>
+                        @if($offer->angolo_studio)
+                            <td>
+                                @include('icons/checkmark')
+                            </td>  
+                        @else
+                            <td></td> 
+                        @endif
+                    </tr>
+                @endisset
+                <tr>
+                    <td>Climatizzazione</td>
+                    @if($offer->climatizzazione)
+                        <td>
+                            @include('icons/checkmark')
+                        </td>  
+                    @else
+                        <td></td> 
+                    @endif
+                </tr>
+                <tr>
+                    <td>Cucina</td>
+                    @if($offer->cucina)
+                        <td>
+                            @include('icons/checkmark')
+                        </td>  
+                    @else
+                        <td></td> 
+                    @endif
+                </tr>
+                <tr>
+                    <td>Locale ricreativo</td>
+                    @if($offer->locale_ricreativo)
+                        <td>
+                            @include('icons/checkmark')
+                        </td>  
+                    @else
+                        <td></td> 
+                    @endif
+                </tr>
+                <tr>
+                    <th colspan="2">Servizi disponibili nelle vicinanze</th>
+                </tr>
+                <tr>
+                    <td>Parcheggi</td>
+                    @if($offer->parcheggi)
+                        <td>
+                            @include('icons/checkmark')
+                        </td>  
+                    @else
+                        <td></td> 
+                    @endif
+                </tr>
+                <tr>
+                    <td>Farmacia</td>
+                    @if($offer->farmacia)
+                        <td>
+                            @include('icons/checkmark')
+                        </td>  
+                    @else
+                        <td></td> 
+                    @endif
+                </tr>
+                <tr>
+                    <td>Supermercato</td>
+                    @if($offer->supermercato)
+                        <td>
+                            @include('icons/checkmark')
+                        </td>  
+                    @else
+                        <td></td> 
+                    @endif
+                </tr>
+                <tr>
+                    <td>Ristorazione</td>
+                    @if($offer->ristorazione)
+                        <td>
+                            @include('icons/checkmark')
+                        </td>  
+                    @else
+                        <td></td> 
+                    @endif
+                </tr>
+                <tr>
+                    <td>Trasporti pubblici</td>
+                    @if($offer->trasporti)
+                        <td>
+                            @include('icons/checkmark')
+                        </td>  
+                    @else
+                        <td></td> 
+                    @endif
+                </tr>
+                @auth
+                <tr>
+                    <th colspan="2">Informazioni sul proprietario</th>
+                </tr>
+                @endauth
             </table>
         </div>
     </div>

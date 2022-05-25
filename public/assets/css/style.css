@@ -776,7 +776,9 @@ footer {
     padding: 8px;
 }
 
-.details .tablecar  tr:nth-child(even){background-color: #f2f2f2;}
+.details .tablecar  tr:nth-child(even){
+    background-color: #f2f2f2;
+}
 
 .details .tablecar  th {
     background-color: #00bcd4;
@@ -993,7 +995,7 @@ footer {
     bottom: 0;
     left: 0;
     right: 0;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.5);
     visibility: hidden;
     opacity: 0;
 }
@@ -1001,37 +1003,203 @@ footer {
     visibility: visible;
     opacity: 1;
 }
+.screen {
+    background: linear-gradient(90deg, #00BCD2, #7C78B8);
+    position: relative;
+    height: 600px;
+    min-width: 360px;
+}
+.screen__content {
+    z-index: 1;
+    position: relative;
+    height: 100%;
+}
+.screen__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    -webkit-clip-path: inset(0 0 0 0);
+    clip-path: inset(0 0 0 0);
+}
+.screen__background__shape {
+    transform: rotate(45deg);
+    position: absolute;
+}
+.screen__background__shape1 {
+    height: 520px;
+    width: 520px;
+    background: #FFF;
+    top: -50px;
+    right: 120px;
+    border-radius: 72px;
+}
 
-.popup {
+/*Log-In Style*/
+.popuplog {
     margin: 70px auto;
     padding: 20px;
-    background: #fff;
     border-radius: 5px;
     width: 30%;
     position: relative;
-}
 
-.popup h2 {
-    margin-top: 0;
-    color: #00bcd4;
-    font-family: 'Roboto', sans-serif;
 }
-.popup .close {
+.popuplog .close {
     position: absolute;
-    top: 20px;
-    right: 30px;
+    top: 13px;
+    right: -20px;
     transition: all 200ms;
     font-size: 30px;
     font-weight: bold;
     text-decoration: none;
-    color: #333;
+    color: white;
 }
-.popup .close:hover {
+.popuplog .close:hover {
     color: #06D85F;
 }
-.popup .contentpu {
-    max-height: 30%;
-    overflow: auto;
+.login {
+    width: 320px;
+    padding: 30px;
+    padding-top: 50px;
+}
+.login__field {
+    padding: 20px 0px;
+    position: relative;
+}
+.login__input {
+    border: none;
+    border-bottom: 2px solid #D1D1D4;
+    background: none;
+    padding: 10px;
+    padding-left: 24px;
+    font-weight: 700;
+    width: 75%;
+    transition: .2s;
+}
+.login__input:active,
+.login__input:focus,
+.login__input:hover {
+    outline: none;
+    border-bottom-color: #6A679E;
+}
+.login__submit {
+    background: #fff;
+    font-size: 14px;
+    margin-top: 30px;
+    padding: 16px 20px;
+    border-radius: 26px;
+    border: 1px solid #00BCD5;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    width: 50%;
+    color: #4C489D;
+    box-shadow: 0px 2px 2px #5c5696;
+    cursor: pointer;
+    transition: .2s;
+}
+.login__submit:active,
+.login__submit:focus,
+.login__submit:hover {
+    border-color: #6A679E;
+    outline: none;
+}
+
+.popupreg {
+    margin: 70px auto;
+    padding: 20px;
+    border-radius: 5px;
+    width: 50%;
+    position: relative;
+
+}
+.popupreg .close {
+    position: absolute;
+    top: 13px;
+    right: 0px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
+.popupreg .close:hover {
+    color: #06D85F;
+}
+.register {
+    width: inherit;
+    padding: 30px;
+    padding-top: 50px;
+}
+.register__field {
+    padding-right: 113px;
+    padding-top: 30px;
+    position: relative;
+}
+.register__icon {
+    position: absolute;
+    top: 30px;
+    color: #7875B5;
+}
+.register__input {
+    border: none;
+    border-bottom: 2px solid #D1D1D4;
+    background: none;
+    padding: 10px;
+    padding-left: 24px;
+    font-weight: 700;
+    width: 75%;
+    transition: .2s;
+}
+.register__input:active,
+.register__input:focus,
+.register__input:hover {
+    outline: none;
+    border-bottom-color: #6A679E;
+}
+.register__submit {
+    background: #fff;
+    font-size: 14px;
+    margin-top: 30px;
+    padding: 16px 90px;
+    border-radius: 26px;
+    border: 1px solid #00BCD5;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    width: 50%;
+    color: #4C489D;
+    box-shadow: 0px 2px 2px #5c5696;
+    cursor: pointer;
+    transition: .2s;
+}
+.register__submit:active,
+.register__submit:focus,
+.register__submit:hover {
+    border-color: #6A679E;
+    outline: none;
+}
+
+#contentreg {
+
+    margin:auto;
+    overflow: hidden;
+    display: inline-flex;
+
+}
+#leftreg{
+
+    width: 300px;
+
+}
+#rightreg {
+
+    width:700px;
+
 }
 
 @media screen and (max-width: 700px){

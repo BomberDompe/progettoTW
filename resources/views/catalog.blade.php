@@ -16,7 +16,7 @@
                     <div class="infopro">
                         <h3 class="titlepro"> {{ $offer->titolo }} </h3>
                         <div class="adress">
-                            {{ $offer->citta}}, {{ $offer->via }} {{ $offer->civico }}
+                            {{ $offer->citta }}, {{ $offer->via }} {{ $offer->civico }}
                         </div>
                         <p class="metapro line-clamp" > {{ $offer->descrizione }} </p>
                     </div>
@@ -27,7 +27,7 @@
                         </div>
                         <div class="functional-buttons">
                             <ul>
-                                <li><a href="{{ route('details') }}">Dettagli</a></li>
+                                <li><a href="{{ route('details', [$offer->offerta_id]) }}">Dettagli</a></li>
                             </ul>
                         </div>
                     
@@ -39,7 +39,7 @@
     <!--Paginazione-->
     @include('pagination.paginator', ['paginator' => $catalog])
     
-  @endisset()
+  @endisset
         </div>
 
 @endsection
