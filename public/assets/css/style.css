@@ -750,6 +750,7 @@ footer {
     color: #00bcd4;
     display: flex;
     justify-content: center;
+    margin-top: 20px
 }
 .details .imgdet{
     text-align: center;
@@ -1222,6 +1223,12 @@ footer {
 /* Prevents Div Overlapping */
 .no-overlap {
     min-width: 400px;
+}
+
+/* Sets Image Size in "details.blade.php" */
+.imgsize {
+    width: 600px;
+    height: 400px;
 }
 
 
