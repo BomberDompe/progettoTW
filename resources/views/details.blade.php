@@ -4,41 +4,43 @@
 
 @section('content')
 <div class="container">
-    <h1 style=" text-align: center; padding-top: 20px;">Titolo</h1>
-    <div style=" margin: 20px 0;">
-        <div style=" text-align: center; margin-bottom: 10px;">
-            <img src="http://localhost/laraProj/public/images/products/gigachad.jpg" style=" width: 770px; height: 470px;">
+    <div class="details">
+        <h1>Titolo</h1>
+        <div class="imgdet">
+            <img src="http://localhost/laraProj/public/images/offers/gigachad.jpg" style=" width: 770px; height: 470px;">
         </div>
-        <table>
-<caption>Tabelle spese di Marzo</caption>
-<thead>
-<tr>
-<th>Data</th>
-<th>Operazione</th>
-<th>Importo €</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>01/03</td>
-<td>Amazon</td>
-<td>26</td>
-</tr>
-<tr>
-<td>03/03</td>
-<td>Internet</td>
-<td>40</td>
-</tr>
-<tr>
-<td>05/03</td>
-<td>Spesa</td>
-<td>85</td>
-</tr>
-<tr>
-<td colspan="2">Totale</td>
-<td>151</td>
-</tr>
-</tbody>
-</table>
+        <div class="descr">
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Sed aliquam ultrices mauris. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Praesent adipiscing. Phasellus ullamcorper ipsum rutrum nunc. Nunc nonummy metus. Vestib
         </div>
+        <div class="tablecar">
+            <table>
+                <tr>
+                    <th></th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td>Prezzo mensile</td>
+                    <td>
+                        {{ 
+                    </td>
+                </tr>
+                <tr>
+                    <td>Lois</td>
+
+                    <td>$150</td>
+                </tr>
+                <tr>
+                    <td>Joe</td>
+
+                    <td>$300</td>
+                </tr>
+                <tr>
+                    <td>Cleveland</td>
+
+                    <td>$250</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
 @endsection
