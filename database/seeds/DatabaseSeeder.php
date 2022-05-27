@@ -12,36 +12,42 @@ class DatabaseSeeder extends Seeder {
      */
     public function run() {
 
-        DB::table('utenti')->insert([
-            ['username_id' => 'lorelore',
+        DB::table('users')->insert([
+            ['username' => 'lorelore',
                 'password' => Hash::make('Cz6LW7t4'),
-                'nome' => 'Mario',
-                'cognome' => 'Rossi',
-                'genere' => 0, // Uomo
+                'name' => 'Mario',
+                'surname' => 'Rossi',
+                'genere' => 'Uomo',
                 'data_nascita' => Carbon::parse('2000-10-27'),
                 'comune_residenza' => 'Urbisaglia (MC)',
                 'telefono' => '3492814204',
-                'tipologia' => 2 // Locatore
+                'role' => 'locatore',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
                 ],
-            ['username_id' => 'lariolario',
+            ['username' => 'lariolario',
                 'password' => Hash::make('Cz6LW7t4'),
-                'nome' => 'Giuseppe',
-                'cognome' => 'Verdi',
-                'genere' => 0, // Uomo
+                'name' => 'Giuseppe',
+                'surname' => 'Verdi',
+                'genere' => 'Uomo',
                 'data_nascita' => Carbon::parse('2000-10-27'),
-                'comune_residenza' => 'Urbisaglia (MC)',
-                'telefono' => '3482994204',
-                'tipologia' => 3 // Locatario
+                'comune_residenza' => 'Jesi (AN)',
+                'telefono' => '3379220442',
+                'role' => 'locatario',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
                 ],
-            ['username_id' => 'adminadmin',
+            ['username' => 'adminadmin',
                 'password' => Hash::make('Cz6LW7t4'),
-                'nome' => null,
-                'cognome' => null,
+                'name' => null,
+                'surname' => null,
                 'genere' => null,
                 'data_nascita' => null,
                 'comune_residenza' => null,
                 'telefono' => null,
-                'tipologia' => 4 // Amministratore
+                'role' => 'admin',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
                 ],
         ]);
         

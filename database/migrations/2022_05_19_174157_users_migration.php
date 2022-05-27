@@ -13,16 +13,21 @@ class UsersMigration extends Migration
      */
     public function up()
     {
-        Schema::create('utenti', function (Blueprint $table) {
-            $table->string('username_id', 20)->index();
+        Schema::create('users', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('username', 20)->index();
             $table->string('password', 191);
-            $table->string('nome', 20)->nullable();
-            $table->string('cognome', 20)->nullable();
-            $table->unsignedTinyInteger('genere')->nullable();
+            $table->string('name', 20)->nullable();
+            $table->string('surname', 20)->nullable();
+            $table->string('genere', 10)->nullable();
             $table->string('data_nascita', 20)->nullable();
             $table->string('comune_residenza', 25)->nullable();
             $table->string('telefono', 10)->nullable();
-            $table->unsignedTinyInteger('tipologia');
+            $table->string('role', 10);
+            $table->string('email')->nullable();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->rememberToken();
+            $table->timestamps();   
         });
     }
 
