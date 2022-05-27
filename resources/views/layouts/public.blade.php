@@ -35,7 +35,11 @@
 
         <!-- Footer Starts Here -->
         <footer>
-            <div class="container">
+            <div class="container" style="height: 40px;">
+                <h2 style="color: white;">ApartaRent </h2>
+                <h4 style="color: whitesmoke;position: relative;left: 350px;font-size: small;font-style: oblique;font-family: cursive;">l'appartamento giusto per voi</h4>
+            </div>
+            <div class="container" style="border-top: outset;">
                 <a href="#" class="fa fa-facebook"></a>
                 <a href="#" class="fa fa-twitter"></a>
                 <a href="#" class="fa fa-linkedin"></a>
@@ -64,4 +68,3 @@
 
     </body>
 </html>
- 
