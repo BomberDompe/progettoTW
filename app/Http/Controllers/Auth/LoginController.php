@@ -32,14 +32,7 @@ use AuthenticatesUsers;
      * @var string
      */
     protected function redirectTo() {        
-        $role = auth()->user()->role;
-        switch ($role) {
-            case 'admin': return '/admin';
-                break;
-            case 'user': return '/user';
-                break;
-            default: return '/';
-        };
+        return '/account';
     }
 
     /**

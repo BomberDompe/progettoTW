@@ -43,7 +43,9 @@
                 </tr>
                 <tr>
                     <td>Periodo di disponibilità</td>
-                    <td>Dal {{ $offer->disponibilita_inizio }} al {{ $offer->disponibilita_fine }} </td>
+                    <td>
+                         @include('helpers/dateFormatter', ['inizio' => $offer->disponibilita_inizio, 'fine' => $offer->disponibilita_fine])
+                    </td>
                 </tr>
                 <tr>
                     <th colspan="2">Vincoli sullo studente</th>
