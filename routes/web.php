@@ -31,10 +31,18 @@ Route::view('/', 'home')
 Route::view('/rules', 'rules')
         ->name('rules');
 
-/*Rotte registrazione e login*/
-Route::post('/register', 'PublicController@showfaqs')
+// Rotte per l'autenticazione
+Route::get('login', 'Auth\LoginController@showLoginForm')
+        ->name('login');
+
+Route::post('login', 'Auth\LoginController@login');
+
+Route::post('logout', 'Auth\LoginController@logout')
+        ->name('logout');
+
+// Rotte per la registrazione
+Route::get('register', 'Auth\RegisterController@showRegistrationForm')
         ->name('register');
 
-Route::post('/login', 'PublicController@showfaqs')
-        ->name('login');
+Route::post('register', 'Auth\RegisterController@register');
 

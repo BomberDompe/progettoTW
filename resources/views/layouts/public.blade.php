@@ -49,22 +49,5 @@
         </footer>
         <!-- Footer Ends Here -->
 
-        <!-- PopUp Start -->    
-        <div id="popuplog" class="overlayppu">
-            <div class="popuplog">
-                <a class="close" href="#">&times;</a>
-                @include('auth/login')
-            </div>
-        </div>
-
-        <div id="popupreg" class="overlayppu">
-            <div class="popupreg">
-                <a class="close" href="#">&times;</a>
-                @include('auth/register') 
-            </div>
-        </div>
-        <!-- PopUp End -->
-
-
     </body>
 </html>

@@ -19,26 +19,26 @@
     </ul>
 </div>
 
- @can('isLocatore')    
-    <ul>
-        <li><a href="{{ route('locatore') }}">Log out</a></li>
-    </ul>
+@can('isLocatore')    
+<ul>
+    <li><a href="{{ route('locatore') }}">Log out</a></li>
+</ul>
 </div>       
- @endcan
- @can('isUser')
- <div>   
+@endcan
+@can('isUser')
+<div>   
     <ul>
         <li><a href="{{ route('user') }}">Log out</a></li>
     </ul>
 </div>
- @endcan
- @can('isAdmin')
- <div class="functional-buttons">
+@endcan
+@can('isAdmin')
+<div class="functional-buttons">
     <ul>
         <li><a href="{{ route('admin') }}">Log out</a></li>
     </ul>
 </div>
- @endcan
+@endcan
 
 
 <!--
@@ -52,8 +52,8 @@
 @guest
 <div class="functional-buttons">
     <ul>
-        <li><a href="#popuplog">Log in</a></li>
-        <li><a href="#popupreg">Registrati</a></li>
+        <li><a href="{{ route('login') }}">Log in</a></li>
+        <li><a href="{{ route('register') }}">Registrati</a></li>
     </ul>
 </div>
 @endguest

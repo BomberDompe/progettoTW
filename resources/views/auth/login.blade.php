@@ -1,47 +1,52 @@
-<!-- PopUp Login/Register -->
+@extends('layouts.public')
 
-<div class="screen">
-    <div class="screen__content">
+@section('title', 'Regolamento')
 
-        {{ Form::open(array('route' => 'login', 'class' => 'login')) }}
+@section('content')
+<div class="container">
+    <div class="screenlog">
+        <div class="screen__contentlog">
 
-        <h3>Login</h3>     
-        <div  class="login__field">
-            {{ Form::label('username', 'Username', ['class' => '']) }}
-            {{ Form::text('username', '', ['class' => 'login__input', 'id' => 'username', 'placeholder' => 'username']) }}
-            @if ($errors->first('username'))
-            <ul class="errors">
-                @foreach ($errors->get('username') as $message)
-                <li>{{ $message }}</li>
-                @endforeach
-            </ul>
-            @endif
-        </div>
+            {{ Form::open(array('route' => 'login', 'class' => 'login')) }}
 
-        <div  class="login__field">
-            {{ Form::label('password', 'Password', ['class' => '']) }}
-            {{ Form::password('password', ['class' => 'login__input', 'id' => 'password']) }}
-            @if ($errors->first('password'))
-            <ul class="errors">
-                @foreach ($errors->get('password') as $message)
-                <li>{{ $message }}</li>
-                @endforeach
-            </ul>
-            @endif
-        </div>
+            <h3>Login</h3>     
+            <div  class="login__field">
+                {{ Form::label('username', 'Username', ['class' => '']) }}
+                {{ Form::text('username', '', ['class' => 'login__input', 'id' => 'username', 'placeholder' => 'username']) }}
+                @if ($errors->first('username'))
+                <ul class="errors">
+                    @foreach ($errors->get('username') as $message)
+                    <li>{{ $message }}</li>
+                    @endforeach
+                </ul>
+                @endif
+            </div>
 
-                       
+            <div  class="login__field">
+                {{ Form::label('password', 'Password', ['class' => '']) }}
+                {{ Form::password('password', ['class' => 'login__input', 'id' => 'password']) }}
+                @if ($errors->first('password'))
+                <ul class="errors">
+                    @foreach ($errors->get('password') as $message)
+                    <li>{{ $message }}</li>
+                    @endforeach
+                </ul>
+                @endif
+            </div>
+
+
             {{ Form::submit('Login', ['class' => 'login__submit']) }}
-        
 
-        {{ Form::close() }}
 
-    </div>
+            {{ Form::close() }}
 
-    <div class="screen__background">
+        </div>
 
-        <span class="screen__background__shape screen__background__shape1"></span>
-    </div>
-</div> 
+        <div class="screen__backgroundlog">
 
+            <span class="screen__background__shapelog screen__background__shape1log"></span>
+        </div>
+    </div> 
+</div>
+@endsection
 
