@@ -22,27 +22,16 @@
 
 <div class="functional-buttons">
     <ul>
-        @can('isLocatore')
-        <li><a href="{{ route('locatore') }}">Account</a></li>
-        @endcan
-        @can('isLocatario')
-        <li><a href="{{ route('locatario') }}">Account</a></li>
-        @endcan
-        @can('isAdmin')
-        <li><a href="{{ route('admin') }}">Account</a></li>
-        @endcan
         @auth
+        <li><a href="{{ route('utente') }}">Account</a></li>
         <li><a href="" title="Esci dal sito" class="highlight" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
             {{ csrf_field() }}
         </form>
         @endauth  
         @guest
-
         <li><a href="{{ route('login') }}">Log in</a></li>
         <li><a href="{{ route('register') }}">Registrati</a></li>
-
-
         @endguest
     </ul>
 </div>

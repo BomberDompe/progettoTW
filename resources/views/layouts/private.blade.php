@@ -25,14 +25,24 @@
                 </div>
             </nav>
         </header>
-        <!-- end #header/menù --> 
+        <!-- end #header/menù -->
 
-        <!--Start content-->
-
-        <div class ="content">
-            @yield('content')
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <!-- Start SideBar  -->
+                    <div class="content">
+                        @include('layouts/_sidebar')
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <!--Start content-->
+                    <div class ="content">
+                        @yield('content')
+                    </div>
+                </div>
+            </div>
         </div>
-
         <!-- Footer Starts Here -->
         <footer>
             <div class="container" style="height: 40px;">

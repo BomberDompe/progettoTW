@@ -26,7 +26,7 @@ Route::get('/faqs', 'PublicController@showFaqs')
 
 /*Rotte account*/
 Route::get('/account', 'UserController@index')
-        ->name('locatario');
+        ->name('utente');
 
 
 /*Rotte view statiche*/

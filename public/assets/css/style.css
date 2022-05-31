@@ -1198,6 +1198,23 @@ footer {
     width: 600px;
     height: 400px;
 }
+/*Style SideBar*/
+.sidebar{
+   position: stiky;
+ 
+}
+.sidebar a{
+   display: block;
+   padding: 10px 20px;
+   color: #1e1e1e;
+   text-decoration: none;
+   font-family: 'Roboto', sans-serif;
+   letter-spacing: 1px;
+}
 
-
+.sidebar a:hover{
+   color: #00bcd4;
+   margin-left: 20px;
+   transition: 0.4s;
+}
 
