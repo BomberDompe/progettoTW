@@ -1,9 +1,9 @@
-@extends('layouts.user')
+@extends('layouts.private')
 
-@section('title', 'Area User')
+@section('title', 'Account')
 
 @section('content')
-<div class="static">
+<div class="container">
     <h3>Area Utente</h3>
     <p>Benvenuto {{ Auth::user()->name }} {{ Auth::user()->surname }}</p>
     <p>Seleziona la funzione da attivare</p>

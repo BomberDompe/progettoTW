@@ -24,6 +24,11 @@ Route::get('/catalog/details/{offerId}', 'PublicController@showDetails')
 Route::get('/faqs', 'PublicController@showFaqs')
         ->name('faqs');
 
+/*Rotte account*/
+Route::get('/account', 'UserController@index')
+        ->name('locatario');
+
+
 /*Rotte view statiche*/
 Route::view('/', 'home')
         ->name('home');
@@ -45,4 +50,8 @@ Route::get('register', 'Auth\RegisterController@showRegistrationForm')
         ->name('register');
 
 Route::post('register', 'Auth\RegisterController@register');
+
+
+
+
 

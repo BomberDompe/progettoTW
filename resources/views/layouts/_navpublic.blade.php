@@ -19,44 +19,33 @@
     </ul>
 </div>
 
-@can('isLocatore')    
-<ul>
-    <li><a href="{{ route('locatore') }}">Log out</a></li>
-</ul>
-</div>       
-@endcan
-@can('isUser')
-<div>   
-    <ul>
-        <li><a href="{{ route('user') }}">Log out</a></li>
-    </ul>
-</div>
-@endcan
-@can('isAdmin')
+
 <div class="functional-buttons">
     <ul>
-        <li><a href="{{ route('admin') }}">Log out</a></li>
-    </ul>
-</div>
-@endcan
+        @can('isLocatore')
+        <li><a href="{{ route('locatore') }}">Account</a></li>
+        @endcan
+        @can('isLocatario')
+        <li><a href="{{ route('locatario') }}">Account</a></li>
+        @endcan
+        @can('isAdmin')
+        <li><a href="{{ route('admin') }}">Account</a></li>
+        @endcan
+        @auth
+        <li><a href="" title="Esci dal sito" class="highlight" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            {{ csrf_field() }}
+        </form>
+        @endauth  
+        @guest
 
-
-<!--
-@auth
-.
-.
-.
-@endauth
--->
-
-@guest
-<div class="functional-buttons">
-    <ul>
         <li><a href="{{ route('login') }}">Log in</a></li>
         <li><a href="{{ route('register') }}">Registrati</a></li>
+
+
+        @endguest
     </ul>
 </div>
-@endguest
 
 <!--
 Include file JavaScript per il Toggle del menù
