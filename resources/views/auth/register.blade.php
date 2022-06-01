@@ -63,16 +63,16 @@
                     </div>
                     <div class="col-md-4">
                         <div  class="register__field">
-                            <div class="genere">
+
                             {{ Form::label('maschio', 'M', ['class' => '']) }}
                             {{ Form::radio('genere', '', ['class' => '', 'id' => 'maschio']) }}
 
                             {{ Form::label('femmina', 'F', ['class' => '']) }}
                             {{ Form::radio('genere', '', false, ['class' => '', 'id' => 'femmina']) }}
-                            </div>
-                                
+
+
                         </div>
-                            <div  class="register__field">
+                        <div  class="register__field">
                             <div class="calendario">
                                 {{ Form::label('data_nascita', 'Data di nascita', ['class' => '']) }}
                                 {{ Form::date('data_nascita','', ['class' => '', 'id' => 'data_nascita','min' => '2000-01-01']) }}
@@ -122,6 +122,7 @@
                             {{ Form::submit('Registra', ['class' => 'register__submit']) }}
                         </div>
                     </div>
+                    {{ Form::close() }}
                 </div>
             </div>
         </div>
@@ -130,5 +131,4 @@
         </div>
     </div>
 </div>
-
 @endsection
