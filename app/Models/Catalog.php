@@ -6,68 +6,93 @@ use App\Models\Resources\Offer;
 
 class Catalog {
     
-    public function getAllOffers() {
-        return Offer::where('offerta_id', '>=', 0)->paginate(3);
+    protected $offerModel;
+    
+    public function __construct() {
+        $this->offerModel = new Offer;
+    }
+    
+    public function getAllOffers($elemEachPage = 0) {
+        return $this->offerModel->getAllOffers($elemEachPage);
     }
     
     public function getOfferById($offerId) {
-        return Offer::find($offerId);
+        return $this->offerModel->find($offerId);
     }
     
     public function getByFilters($filters) {
-        $catalog = new Offer;
+        $catalog = $this->getAllOffers();
         
+        if (!is_null($filters["min_price"])) {
+            $catalog = $catalog->where('prezzo', '>=', $filters["min_price"]);
+        }
+        if (!is_null($filters["max_price"])) {
+            $catalog = $catalog->where('prezzo', '<=', $filters["max_price"]);
+        }
+        if (!is_null($filters["start_date"])) {
+            $catalog = $catalog->where('disponibilita_fine', '>=', $filters["start_date"]);
+        }
+        if (!is_null($filters["end_date"])) {
+            $catalog = $catalog->where('disponibilita_inizio', '<=', $filters["end_date"]);
+        }
+        if (!is_null($filters["posti_tot"])) {
+            $catalog = $catalog->where('posti_tot', $filters["posti_tot"]);
+        }
+        if (array_key_exists("cucina", $filters)) {
+            $catalog = $catalog->where('cucina', true);
+        }
+        if (array_key_exists("locale_ricreativo", $filters)) {
+            $catalog = $catalog->where('locale_ricreativo', true);
+        }
+        if (array_key_exists("climatizzazione", $filters)) {
+            $catalog = $catalog->where('climatizzazione', true);
+        }
+        if (array_key_exists("parcheggi", $filters)) {
+            $catalog = $catalog->where('parcheggi', true);
+        }
+        if (array_key_exists("farmacia", $filters)) {
+            $catalog = $catalog->where('farmacia', true);
+        }
+        if (array_key_exists("supermercato", $filters)) {
+            $catalog = $catalog->where('supermercato', true);
+        }
+        if (array_key_exists("ristorazione", $filters)) {
+            $catalog = $catalog->where('ristorazione', true);
+        }
+        if (array_key_exists("trasporti", $filters)) {
+            $catalog = $catalog->where('trasporti', true);
+        }
+        if (array_key_exists("opzionabilita", $filters)) {
+            $catalog = $catalog->where('opzionabilita', true);
+        }
         
-        return $catalog;
+        if ($filters["type"] === '0') {
+            $catalog = $catalog->where('tipologia', 0);
+            if (array_key_exists("sup_appartamento", $filters) && 
+                    !is_null($filters["sup_appartamento"])) {
+                $catalog = $catalog->where('sup_appartamento', $filters["sup_appartamento"]);
+            }
+            if (array_key_exists("num_camere", $filters) && 
+                    !is_null($filters["num_camere"])) {
+                $catalog = $catalog->where('num_camere', $filters["num_camere"]);
+            }
+            
+        } elseif ($filters["type"] === '1') {
+            $catalog = $catalog->where('tipologia', 1);
+            if (array_key_exists("sup_appartamento", $filters) && 
+                    !is_null($filters["sup_camera"])) {
+                $catalog = $catalog->where('sup_camera', $filters["sup_camera"]);
+            }
+            if (array_key_exists("posti_camera", $filters) && 
+                    !is_null($filters["posti_camera"])) {
+                $catalog = $catalog->where('posti_camera', $filters["posti_camera"]);
+            }
+            if (array_key_exists("angolo_studio", $filters)) {
+                $catalog = $catalog->where('angolo_studio', true);
+            }
+        }
+        
+        return $catalog->get();
     }
     
-    public function getByPrice($catalog, $min_price, $max_price){
-        return $catalog::where('prezzo', '>=', $min_price)
-                ->andWhere('prezzo', '<=', $max_price)->get();
-    }
-    
-    public function getByOfferType($catalog, $offerType){
-        return $catalog::where('tipologia', $offerType)->get();
-    }
-    
-    public function getByTotBedNumber($catalog, $min_bed, $max_bed) {
-        return $catalog::where('posti_tot', '>=', $min_bed)
-                ->andWhere('posti_tot','<=', $max_bed)->get();
-    }
-    
-    public function getByApartmentArea($catalog, $min_area, $max_area) {
-        return $catalog::where('sup_appartamento', '>=', $min_area)
-                ->andWhere('sup_appartamento', '<=', $max_area)->get();
-    }
-    
-    public function getByRoomNumber($catalog, $min_room, $max_room) {
-        return $catalog::where('num_camere', '>=', $min_room)
-                ->andWhere('num_camere', '<=', $max_room)->get();
-    }
-    
-    public function getByCucina($catalog, $cucina) {
-        return $catalog::where('cucina', $cucina)->get();
-    }
-    
-    public function getByLocaleRicreativo($catalog, $localeRicreativo) {
-        return $catalog::where('locale_ricreativo', $localeRicreativo)->get();
-    }
-    
-    public function getByRoomArea($catalog, $min_area, $max_area) {
-        return $catalog::where('sup_camera', '>=', $min_area)
-                ->andWhere('sup_camera', '<=', $max_area)->get();
-    }
-    
-    public function getByRoomType($catalog, $roomType) {
-        return $catalog::where('posti_camera', $roomType)->get();
-    }
-    
-    public function getByAngoloStudio($catalog, $angoloStudio) {
-        return $catalog::where('angolo_studio', $angoloStudio)->get();
-    }
-    
-    public function getByPeriod($catalog, $start_date, $end_date){
-        return $catalog::where('disponibilita_inizio', '<=', $end_date)
-                ->andWhere('disponibilita_fine', '>=', $start_date)->get();
-    }
 }

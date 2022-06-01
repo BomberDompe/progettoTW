@@ -1,3 +1,5 @@
+
+<!-- Navbar -->
 <a class="navbar-brand" href="{{ route('home') }}" title="Home" ><h2>ApartRent</h2></a>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -58,7 +60,6 @@
 </div>
 @endguest
 
-<!--
-Include file JavaScript per il Toggle del menù
--->
+
+<!-- Include file JavaScript per il Toggle del menù -->
 <script type="text/javascript" src="{{ asset("assets/js/toggleButton.js") }}"></script>

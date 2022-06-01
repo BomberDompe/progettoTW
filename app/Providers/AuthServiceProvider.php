@@ -24,16 +24,16 @@ class AuthServiceProvider extends ServiceProvider
     public function boot() {
         $this->registerPolicies();
 
+        Gate::define('isLocatario', function ($user) {
+            return $user->hasRole('locatario');
+        });
+
+        Gate::define('isLocatore', function ($user) {
+            return $user->hasRole('locatore');
+        });
+
         Gate::define('isAdmin', function ($user) {
             return $user->hasRole('admin');
-        });
-
-        Gate::define('isUser', function ($user) {
-            return $user->hasRole('user');
-        });
-
-        Gate::define('show-discount', function ($user) {
-            return $user->hasRole(['user', 'admin']);
         });
     }
 }

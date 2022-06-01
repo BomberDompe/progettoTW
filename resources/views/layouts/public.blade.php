@@ -15,9 +15,13 @@
         <link rel="stylesheet" href="{{ asset('assets/css/fontawesome.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 
+        <!-- Include file JavaScript -->
+        @stack('custom-scripts')
+
     </head>
 
     <body>
+        <!-- Start Header -->
         <header>
             <nav class="navbar navbar-expand-lg">
                 <div class="container">
@@ -64,7 +68,5 @@
             </div>
         </div>
         <!-- PopUp End -->
-
-
     </body>
 </html>

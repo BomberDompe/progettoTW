@@ -53,7 +53,7 @@
                 <tr>
                     <td>Età massima studente</td>
                     @isset($offer->eta_max)
-                        <td>{{ $offer->eta_max }}</td>
+                        <td>{{ $offer->eta_max }} anni</td>
                     @else
                         <td>Nessun vincolo</td>
                     @endisset
@@ -61,7 +61,7 @@
                 <tr>
                     <td>Età minima studente</td>
                     @isset($offer->eta_min)
-                        <td>{{ $offer->eta_min }}</td>
+                        <td>{{ $offer->eta_min }} anni</td>
                     @else
                         <td>Nessun vincolo</td>
                     @endisset
@@ -85,7 +85,7 @@
                     <tr>
                         <td>Superficie dell'appartamento</td>
                         <td>
-                            {{ $offer->sup_appartamento }}
+                            {{ $offer->sup_appartamento }} mq
                         </td>
                     </tr>
                 @endisset
@@ -101,7 +101,7 @@
                     <tr>
                         <td>Superficie della camera</td>
                         <td>
-                            {{ $offer->sup_camera }}
+                            {{ $offer->sup_camera }} mq
                         </td>
                     </tr>
                 @endisset
