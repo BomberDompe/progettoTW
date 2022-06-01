@@ -10,6 +10,8 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
 
         <title>ApartaRent - @yield('title', 'Home')</title>
+        
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
 
         <!-- CSS Files -->
         <link rel="stylesheet" href="{{ asset('assets/css/fontawesome.css') }}">
