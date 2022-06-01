@@ -64,11 +64,11 @@
                     <div class="col-md-4">
                         <div  class="register__field">
 
-                            {{ Form::label('maschio', 'M', ['class' => '']) }}
-                            {{ Form::radio('genere', '', ['class' => '', 'id' => 'maschio']) }}
+                            {{ Form::label('maschio', 'Uomo', ['class' => '']) }}
+                            {{ Form::radio('genere', 'Uomo', true, ['class' => '', 'id' => 'maschio']) }}
 
-                            {{ Form::label('femmina', 'F', ['class' => '']) }}
-                            {{ Form::radio('genere', '', false, ['class' => '', 'id' => 'femmina']) }}
+                            {{ Form::label('femmina', 'Donna', ['class' => '']) }}
+                            {{ Form::radio('genere', 'Donna', false, ['class' => '', 'id' => 'femmina']) }}
 
 
                         </div>
@@ -98,24 +98,15 @@
                     <div class="col-md-4">
                         <div  class="register__field">
                             {{ Form::label('telefono', 'Numero di telefono', ['class' => '']) }}
-                            {{ Form::number('telefono', '', ['class' => 'register__input', 'id' => 'telefono']) }}
-                            @if ($errors->first('telefono'))
-                            <ul class="errors">
-                                @foreach ($errors->get('telefono') as $message)
-                                <li>{{ $message }}</li>
-                                @endforeach
-                            </ul>
-                            @endif
+                            {{ Form::text('telefono', '', ['class' => 'register__input', 'id' => 'telefono']) }}
                         </div>
                         <div class="tipologia">
                             {{ Form::label('locatario', 'Locatario', ['class' => '']) }}
-                            {{ Form::radio('role', '', ['class' => '', 'id' => 'locatario']) }}
+                            {{ Form::radio('role', 'locatario', ['class' => '', 'id' => 'locatario']) }}
 
                             {{ Form::label('locatore', 'Locatore', ['class' => '']) }}
-                            {{ Form::radio('role', '', false, ['class' => '', 'id' => 'locatore']) }}
+                            {{ Form::radio('role', 'locatore', false, ['class' => '', 'id' => 'locatore']) }}
                         </div>
-
-
                     </div>
                     <div class="col-md-12">
                         <div class="container-form-btn">                
