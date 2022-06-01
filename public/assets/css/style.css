@@ -1649,7 +1649,7 @@ footer {
 	margin-bottom:5px;
 }
 #chat .message{
-	padding:15px;
+	padding:10px 15px;
 	color:#fff;
 	line-height:25px;
 	max-width:85%;
