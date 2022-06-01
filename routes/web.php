@@ -13,9 +13,14 @@
 
 
 
+
 /* Rotte catalogo*/
+
 Route::get('/catalog', 'PublicController@showCatalog')
         ->name('catalog');
+
+Route::post('/catalog', 'LocatarioController@showFilteredCatalog')
+        ->name('catalog.filtered');
 
 Route::get('/catalog/details/{offerId}', 'PublicController@showDetails')
         ->name('details');
@@ -50,6 +55,11 @@ Route::get('register', 'Auth\RegisterController@showRegistrationForm')
         ->name('register');
 
 Route::post('register', 'Auth\RegisterController@register');
+
+// Rotta per la chat
+Route::view('/chat', 'chat')
+        ->name('chat');
+
 
 
 

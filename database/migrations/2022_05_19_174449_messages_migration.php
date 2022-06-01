@@ -15,12 +15,15 @@ class MessagesMigration extends Migration
     {
         Schema::create('messaggi', function (Blueprint $table) {
             $table->bigIncrements('messaggio_id')->unsigned()->index();
-            $table->bigInteger('conversazione_id')->unsigned()->index();
-            $table->foreign('conversazione_id')->references('conversazione_id')->on('conversazioni');
+            $table->string('locatore_id')->index();
+            $table->foreign('locatore_id')->references('username')->on('users');
+            $table->string('locatario_id')->index();
+            $table->foreign('locatario_id')->references('username')->on('users');
+            $table->bigInteger('offerta_id')->unsigned()->index();
+            $table->foreign('offerta_id')->references('offerta_id')->on('offerte');
             $table->string('contenuto', 1000);
             $table->timestamp('timestamp');
             $table->boolean('visualizzato');
-            $table->boolean('inviato_locatore');
         });
     }
 

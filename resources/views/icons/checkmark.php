@@ -1,5 +1,7 @@
-<span class="checkmark">
-    <div class="checkmark_circle"></div>
-    <div class="checkmark_stem"></div>
-    <div class="checkmark_kick"></div>
-</span>
+<div class="flex-center">
+    <span class="checkmark">
+        <div class="checkmark_circle"></div>
+        <div class="checkmark_stem"></div>
+        <div class="checkmark_kick"></div>
+    </span>
+</div>

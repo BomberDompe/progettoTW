@@ -1141,7 +1141,7 @@ footer {
     outline: none;
 }
 .genere{
-   
+
     position: inherit;
     top: 26px;
     left: 18px;
@@ -1164,22 +1164,6 @@ footer {
 
 }
 
-.formerror {
-    background: none repeat scroll 0 0 #FFECEC;
-    border: 3px solid #f93d00;
-    height: auto;
-    margin: 0 0 1px;
-    text-align: center;
-
-}
-.errors {
-    color: #f93d00;
-    font-size: 12px;
-}
-.errors ul {
-    line-height: 100%;
-}
-
 /* Truncating Text */
 .line-clamp {
     overflow: hidden;
@@ -1200,21 +1184,497 @@ footer {
 }
 /*Style SideBar*/
 .sidebar{
-   position: stiky;
- 
+    position: stiky;
+
 }
 .sidebar a{
-   display: block;
-   padding: 10px 20px;
-   color: #1e1e1e;
-   text-decoration: none;
-   font-family: 'Roboto', sans-serif;
-   letter-spacing: 1px;
+    display: block;
+    padding: 10px 20px;
+    color: #1e1e1e;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 1px;
 }
-
 .sidebar a:hover{
-   color: #00bcd4;
-   margin-left: 20px;
-   transition: 0.4s;
+    color: #00bcd4;
+    margin-left: 20px;
+    transition: 0.4s;
 }
 
+/* CSS for filters " */
+.filters-section {
+    margin-top: 50px;
+    background-color: #f7f7f7;
+    z-index: 9999;
+}
+
+.filter-section-floating {
+    position: fixed;
+    border-style: solid;
+    border-color: #333;
+    margin-top: -100px;
+}
+
+#filter-adapter {
+    height: 100px;
+}
+
+.filter-hide {
+    display: none;
+}
+
+.filter-form {
+    min-width: 1110px;
+    padding: 10px 0px;
+}
+
+.filter-fieldset {
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+.section-heading {
+    text-align: center;
+}
+
+.filter-wrap {
+    display: flex;
+    justify-content: center;
+    float: left;
+    width: 50%;
+}
+
+.filter-label {
+    text-align: right;
+    line-height: 30px;
+    margin-right: 5px;
+}
+
+.filter-postinput {
+    line-height: 30px;
+    margin-left: 5px;
+}
+
+.filter-input {
+    text-align: right;
+    width: 150px
+}
+
+/* CSS for Radio Button in Filters */
+.filter-wrap-radio {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.filter-wrap-radio .filter-wrap {
+    display: flex;
+    justify-content: left;
+    align-content: center;
+    float: left;
+    width: 100%;
+}
+
+.filter-radio-input {
+    margin-left: 20%;
+    margin-top: 8px
+}
+
+.filter-radio-label {
+    line-height: 30px;
+    margin-left: 10px;
+}
+
+/* Grid Wrapper */
+.filter-wrap-checkbox {
+    display: grid;
+    grid-template-columns: 45% 25% 30%;
+    gap: 10px;
+}
+
+.filter-wrap-checkbox .filter-wrap {
+    display: flex;
+    justify-content: left;
+    align-content: center;
+    float: left;
+    width: 100%;
+}
+
+.filter-checkbox-input {
+    margin-left: 10%;
+    margin-top: 8px
+}
+
+.filter-checkbox-label {
+    line-height: 30px;
+    margin-left: 10px;
+}
+
+.filter-wrap-checkbox .filter-label {
+    margin-right: 0px;
+}
+
+.filter-wrap-inline {
+    display: inline-block;
+    width: 100%;
+}
+
+.filter-wrap-inline .filter-label {
+    float: left;
+    margin-left: 5px;
+    margin-right: 0px;
+}
+
+.filter-wrap-inline .filter-input {
+    float: right;
+    width: 100px;
+    margin-right: 5px;
+}
+
+/* Filter Form Buttons */
+.flex-center-filter-button {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin-top: 10%
+}
+
+.functional-buttons-dark {
+    margin-left: 10px;
+    background-color: #333;
+    border: 2px solid #333;
+    text-transform: uppercase;
+    font-size: 13px;
+    color: #fff;
+    padding: 6px 20px;
+    letter-spacing: 0.5px;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.functional-buttons-dark:hover {
+    color: #000000;
+    background-color: #fff;
+}
+
+/* Style the navbar (filters) */
+#filter-navbar {
+    overflow: hidden;
+    background-color: #333;
+    cursor: pointer;
+
+}
+
+/* Navbar text (filters) */
+.filter-section-title {
+    float: left;
+    display: inline-block;
+    padding: 10px;
+}
+
+#filter-title {
+    color: #f7f7f7;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+.filter-section-icon {
+    display: flex;
+    padding: 14px;
+    margin-bottom: 0px;
+    align-content: center;
+}
+
+/* Toggle Button Animations */
+.nav-icon{
+    width: 25px;
+    height: 20px;
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+}
+.nav-icon span{
+    background-color:#f7f7f7;
+    position: absolute;
+    border-radius: 2px;
+    transition: .3s cubic-bezier(.8, .5, .2, 1.4);
+}
+.nav-icon span:nth-child(1){
+    width: 100%;
+    height:  4px;
+    display: block;
+    top: 0px;
+    left: 0px;
+}
+.nav-icon span:nth-child(2){
+    width: 100%;
+    height:  4px;
+    display: block;
+    top: 8px;
+    left: 0px;
+}
+.nav-icon span:nth-child(3){
+    width: 100%;
+    height:  4px;
+    display: block;
+    bottom: 0px;
+    left: 0px;
+}
+
+.nav-icon.open span:nth-child(1){
+    left:0px;
+    top: 9px;
+    width: 25px;
+    transition: .3s cubic-bezier(.8, .5, .2, 1.4);
+    transform: rotate(90deg);
+    transition-delay: 100ms;
+}
+.nav-icon.open span:nth-child(2){
+    left:0px;
+    top: 15px;
+    width: 15px;
+    transition: .3s cubic-bezier(.8, .5, .2, 1.4);
+    transform: rotate(45deg);
+    transition-delay: 100ms;
+}
+.nav-icon.open span:nth-child(3){
+    left:10px;
+    top: 15px;
+    width: 15px;
+    transition: .3s cubic-bezier(.8, .5, .2, 1.4);
+    transform: rotate(-45deg);
+    transition-delay: 100ms;
+}
+
+/* Classi di errori */
+.errors {
+    color: red;
+    margin-bottom: 0px;
+}
+
+.validation-error {
+    background-color: #f3e4e4;
+    border: solid 2px #ff0000;
+}
+
+/* Classi per la chat */
+#chat-container{
+    box-sizing: border-box;
+    width:850px;
+    height:800px;
+    background:#eff3f7;
+    margin:0 auto;
+    font-size:0;
+    border-radius:5px;
+    overflow:hidden;
+}
+.chat-aside{
+    width:35%;
+    height:800px;
+    background-color:#3b3e49;
+    display:inline-block;
+    font-size:15px;
+    vertical-align:top;
+}
+.chat-main{
+    width:65%;
+    height:800px;
+    display:inline-block;
+    font-size:15px;
+    vertical-align:top;
+}
+
+.chat-aside .chat-header{
+    padding:30px 20px;
+}
+.chat-aside input{
+    width:100%;
+    height:50px;
+    line-height:50px;
+    padding:0 50px 0 20px;
+    background-color:#5e616a;
+    border:none;
+    border-radius:3px;
+    color:#fff;
+    background-image:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/ico_search.png);
+    background-repeat:no-repeat;
+    background-position:170px;
+    background-size:40px;
+}
+.chat-aside input::placeholder{
+    color:#fff;
+}
+.chat-aside ul{
+    padding-left:0;
+    margin:0;
+    list-style-type:none;
+    overflow-y:scroll;
+    height:690px;
+}
+.chat-aside li{
+    padding:10px 0;
+}
+.chat-aside li:hover{
+    background-color:#5e616a;
+}
+#chat-container h2,h3{
+    margin:0;
+}
+.chat-aside li img{
+    border-radius:50%;
+    margin-left:20px;
+    margin-right:8px;
+}
+.chat-aside li div{
+    display:inline-block;
+    vertical-align:top;
+    margin-top:12px;
+}
+.chat-aside li h2{
+    font-size:14px;
+    color:#fff;
+    font-weight:normal;
+    margin-bottom:5px;
+}
+.chat-aside li h3{
+    font-size:12px;
+    color:#7e818a;
+    font-weight:normal;
+}
+
+.status{
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    display:inline-block;
+    margin-right:7px;
+}
+.green{
+    background-color:#58b666;
+}
+.orange{
+    background-color:#ff725d;
+}
+.blue{
+    background-color:#6fbced;
+    margin-right:0;
+    margin-left:7px;
+}
+
+.chat-main .chat-header{
+    height:110px;
+    padding:30px 20px 30px 40px;
+}
+.chat-main .chat-header > *{
+    display:inline-block;
+    vertical-align:top;
+}
+.chat-main .chat-header img:first-child{
+    border-radius:50%;
+}
+.chat-main .chat-header img:last-child{
+    width:24px;
+    margin-top:8px;
+}
+.chat-main .chat-header div{
+    margin-left:10px;
+    margin-right:145px;
+}
+.chat-main .chat-header h2{
+    font-size:16px;
+    margin-bottom:5px;
+}
+.chat-main .chat-header h3{
+    font-size:14px;
+    font-weight:normal;
+    color:#7e818a;
+}
+
+#chat{
+    padding-left:0;
+    margin:0;
+    list-style-type:none;
+    overflow-y:scroll;
+    height:535px;
+    border-top:2px solid #fff;
+    border-bottom:2px solid #fff;
+}
+#chat li{
+    padding:10px 30px;
+}
+#chat h2,#chat h3{
+    display:inline-block;
+    font-size:13px;
+    font-weight:normal;
+}
+#chat h3{
+    color:#bbb;
+}
+#chat .entete{
+    margin-bottom:5px;
+}
+#chat .message{
+    padding:10px 15px;
+    color:#fff;
+    line-height:25px;
+    max-width:85%;
+    display:inline-block;
+    text-align:left;
+    border-radius:5px;
+}
+#chat .me{
+    text-align:right;
+}
+#chat .you .message{
+    background-color:#58b666;
+}
+#chat .me .message{
+    background-color:#6fbced;
+}
+#chat .triangle{
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 10px 10px 10px;
+}
+#chat .you .triangle{
+    border-color: transparent transparent #58b666 transparent;
+    margin-left:15px;
+}
+#chat .me .triangle{
+    border-color: transparent transparent #6fbced transparent;
+    margin-left:375px;
+}
+
+.chat-main .chat-footer{
+    height:155px;
+    padding:20px 30px 10px 20px;
+}
+.chat-main .chat-footer textarea{
+    resize:none;
+    border:none;
+    display:block;
+    width:100%;
+    height:80px;
+    border-radius:3px;
+    padding:20px;
+    font-size:13px;
+    margin-bottom:13px;
+}
+.chat-main .chat-footer textarea::placeholder{
+    color:#ddd;
+}
+.chat-main .chat-footer img{
+    height:30px;
+    cursor:pointer;
+}
+.chat-main .chat-footer a{
+    text-decoration:none;
+    text-transform:uppercase;
+    font-weight:bold;
+    color:#6fbced;
+    vertical-align:top;
+    margin-left:333px;
+    margin-top:5px;
+    display:inline-block;
+}

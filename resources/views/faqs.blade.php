@@ -1,6 +1,6 @@
 @extends('layouts.public')
 
-@section('title', 'F.A.Q.')
+@section('title', 'Faq')
 
 @section('content')
 <div class="container">
