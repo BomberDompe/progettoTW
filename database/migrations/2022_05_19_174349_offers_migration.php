@@ -15,8 +15,8 @@ class OffersMigration extends Migration
     {
         Schema::create('offerte', function (Blueprint $table) {
             $table->bigIncrements('offerta_id')->unsigned()->index();
-            $table->string('username_id')->index();
-            $table->foreign('username_id')->references('username')->on('users');
+            $table->unsignedBigInteger('user_id')->index();
+            $table->foreign('user_id')->references('id')->on('users');
             $table->string('titolo', 100);
             $table->string('descrizione', 2000);
             $table->float('prezzo');

@@ -17,17 +17,17 @@ class PublicController extends Controller {
     
     public function showCatalog() {
         return view('catalog')
-        ->with('catalog', $this->catalogModel->getAllOffers(3))
-        ->with('pagination', true);
+            ->with('catalog', $this->catalogModel->getAllOffers(3))
+            ->with('pagination', true);
     }
     
     public function showFaqs() {
         return view('faqs')
-        ->with('faqs', $this->faqModel->getAllFaqs(3));
+            ->with('faqs', $this->faqModel->getAllFaqs(3));
     }
     public function showDetails($offerId) {
         return view('details')
-        ->with('offer', $this->catalogModel->getOfferById($offerId));
+            ->with('offer', $this->catalogModel->getOfferById($offerId));
     }
     
 }

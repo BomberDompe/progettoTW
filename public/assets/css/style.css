@@ -86,7 +86,8 @@ button,select{
     padding-right:15px;
     padding-left:15px;
     margin-right:auto;
-    margin-left:auto
+    margin-left:auto;
+    min-width:auto;
 }
 @media (min-width:576px){
     .container{
@@ -357,7 +358,7 @@ a.gradient-button:hover {
 .section-heading p {
     font-size: 15px;
 }
-.content {
+.content{
     padding-top: 80px;
     padding-bottom: 20px;
 }
@@ -731,11 +732,11 @@ footer {
     background-color: #fff;
 }
 /* Paginetor Style*/
-#pagination{
+#pagination {
     display: flex;
     min-width: 1110px;
     justify-content: center;
-    font-size: 20px;
+    font-size: 25px;
 }
 #pagination a {
     border-bottom: none;
@@ -772,16 +773,13 @@ footer {
     border-collapse: collapse;
     width: 100%;
 }
-
 .details .tablecar  th, td {
     text-align: center;
     padding: 8px;
 }
-
 .details .tablecar  tr:nth-child(even){
     background-color: #f2f2f2;
 }
-
 .details .tablecar  th {
     background-color: #00bcd4;
     color: white;
@@ -818,12 +816,6 @@ footer {
     background-color:#fff;
     left:8px;
     top:12px;
-}
-
-.flex-center {
-    display: flex;
-    align-content: center;        
-    justify-content: center;
 }
 
 /* F.A.Q. style */
@@ -993,26 +985,25 @@ footer {
     }
 }
 
-/* Style PopUp*/
-.overlayppu {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.5);
-    visibility: hidden;
-    opacity: 0;
-}
-.overlayppu:target {
-    visibility: visible;
-    opacity: 1;
+/* Style BackGround Register-Login*/
+.bg_image{
+    background: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url("../images/bg-logreg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 100px;
+    padding-bottom: 300px;
+    background-position: center center;
 }
 .screen {
-    background: linear-gradient(90deg, #00BCD2, #7C78B8);
+    background: linear-gradient(90deg, #00BCD2, #3b5998);
     position: relative;
-    height: 600px;
-    min-width: 360px;
+    height: 700px;
+    min-width: 800px;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    border-radius: 120px;
 }
 .screen__content {
     z-index: 1;
@@ -1033,41 +1024,21 @@ footer {
     transform: rotate(45deg);
     position: absolute;
 }
-.screen__background__shape1 {
-    height: 520px;
-    width: 520px;
+.screen__background__shape {
+    height: 620px;
+    width: 620px;
     background: #FFF;
-    top: -50px;
-    right: 120px;
+    top: 39px;
+    right: 92px;
     border-radius: 72px;
 }
 
 /*Log-In Style*/
-.popuplog {
-    margin: 70px auto;
-    padding: 20px;
-    border-radius: 5px;
-    width: 30%;
-    position: relative;
-
-}
-.popuplog .close {
-    position: absolute;
-    top: 13px;
-    right: -20px;
-    transition: all 200ms;
-    font-size: 30px;
-    font-weight: bold;
-    text-decoration: none;
-    color: white;
-}
-.popuplog .close:hover {
-    color: #06D85F;
-}
 .login {
-    width: 320px;
-    padding: 30px;
-    padding-top: 50px;
+    width: 340px;
+    padding: 10px 60px;
+    padding-top: 137px;
+    margin: 0 auto;
 }
 .login__field {
     padding: 20px 0px;
@@ -1113,32 +1084,14 @@ footer {
     outline: none;
 }
 
-.popupreg {
-    margin: 70px auto;
-    padding: 20px;
-    border-radius: 5px;
-    width: 50%;
-    position: relative;
-    min-width: 600px;
-
-}
-.popupreg .close {
-    position: absolute;
-    top: 13px;
-    right: 0px;
-    transition: all 200ms;
-    font-size: 30px;
-    font-weight: bold;
-    text-decoration: none;
-    color: white;
-}
-.popupreg .close:hover {
-    color: #06D85F;
-}
+/* Register Style */
 .register {
-    width: inherit;
-    padding: 30px;
-    padding-top: 50px;
+    width: 100%;
+    padding-left: 95px;
+    padding-top: 63px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
 }
 .register__field {
     padding-top: 20px;
@@ -1189,13 +1142,17 @@ footer {
     outline: none;
 }
 .genere{
-        width: 90px;
-    margin-right: 30px;
-    padding-top: 18px;
-    margin-left: 20px;
+
+    position: inherit;
+    top: 26px;
+    left: 18px;
+
+}
+.calendario{
+    margin:31px 0;
 }
 .tipologia{
-    margin-left: 60px; 
+    margin-top: 100px;
 }
 #leftreg{
 
@@ -1206,15 +1163,6 @@ footer {
 
     width:300px;
 
-}
-
-@media screen and (max-width: 700px){
-    .box{
-        width: 70%;
-    }
-    .popup{
-        width: 70%;
-    }
 }
 
 /* Truncating Text */
@@ -1235,7 +1183,25 @@ footer {
     width: 600px;
     height: 400px;
 }
-    
+/*Style SideBar*/
+.sidebar{
+    position: fixed;
+
+}
+.sidebar a{
+    display: block;
+    padding: 10px 20px;
+    color: #1e1e1e;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 1px;
+}
+.sidebar a:hover{
+    color: #00bcd4;
+    margin-left: 20px;
+    transition: 0.4s;
+}
+
 /* CSS for filters " */
 .filters-section {
     margin-top: 50px;
@@ -1362,14 +1328,14 @@ footer {
 
 .filter-wrap-inline .filter-input {
     float: right;
-    width: 100px;        
+    width: 100px;
     margin-right: 5px;
 }
 
 /* Filter Form Buttons */
 .flex-center-filter-button {
     display: flex;
-    align-content: center;        
+    align-content: center;
     justify-content: center;
     margin-top: 10%
 }
@@ -1394,23 +1360,23 @@ footer {
 
 /* Style the navbar (filters) */
 #filter-navbar {
-  overflow: hidden;
-  background-color: #333;
-  cursor: pointer;
-  
+    overflow: hidden;
+    background-color: #333;
+    cursor: pointer;
+
 }
 
 /* Navbar text (filters) */
 .filter-section-title {
-  float: left;
-  display: inline-block;
-  padding: 10px;
+    float: left;
+    display: inline-block;
+    padding: 10px;
 }
 
 #filter-title {
-   color: #f7f7f7;
-   text-align: center;
-   margin-bottom: 0px;
+    color: #f7f7f7;
+    text-align: center;
+    margin-bottom: 0px;
 }
 
 .filter-section-icon {
@@ -1422,63 +1388,63 @@ footer {
 
 /* Toggle Button Animations */
 .nav-icon{
-  width: 25px;
-  height: 20px;
-  position: relative;
-  cursor: pointer;
-  display: inline-block;
+    width: 25px;
+    height: 20px;
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
 }
 .nav-icon span{
-  background-color:#f7f7f7;
-  position: absolute;
-  border-radius: 2px;
-  transition: .3s cubic-bezier(.8, .5, .2, 1.4);
+    background-color:#f7f7f7;
+    position: absolute;
+    border-radius: 2px;
+    transition: .3s cubic-bezier(.8, .5, .2, 1.4);
 }
 .nav-icon span:nth-child(1){
-  width: 100%;
-  height:  4px;
-  display: block;
-  top: 0px;
-  left: 0px;
+    width: 100%;
+    height:  4px;
+    display: block;
+    top: 0px;
+    left: 0px;
 }
 .nav-icon span:nth-child(2){
-  width: 100%;
-  height:  4px;
-  display: block;
-  top: 8px;
-  left: 0px;
+    width: 100%;
+    height:  4px;
+    display: block;
+    top: 8px;
+    left: 0px;
 }
 .nav-icon span:nth-child(3){
-  width: 100%;
-  height:  4px;
-  display: block;
-  bottom: 0px;
-  left: 0px;
+    width: 100%;
+    height:  4px;
+    display: block;
+    bottom: 0px;
+    left: 0px;
 }
 
 .nav-icon.open span:nth-child(1){
-  left:0px;
-  top: 9px;
-  width: 25px;
-  transition: .3s cubic-bezier(.8, .5, .2, 1.4);
-  transform: rotate(90deg);
-  transition-delay: 100ms;
+    left:0px;
+    top: 9px;
+    width: 25px;
+    transition: .3s cubic-bezier(.8, .5, .2, 1.4);
+    transform: rotate(90deg);
+    transition-delay: 100ms;
 }
 .nav-icon.open span:nth-child(2){
-  left:0px;
-  top: 15px;
-  width: 15px;
-  transition: .3s cubic-bezier(.8, .5, .2, 1.4);
-  transform: rotate(45deg);
-  transition-delay: 100ms;
+    left:0px;
+    top: 15px;
+    width: 15px;
+    transition: .3s cubic-bezier(.8, .5, .2, 1.4);
+    transform: rotate(45deg);
+    transition-delay: 100ms;
 }
 .nav-icon.open span:nth-child(3){
-  left:10px;
-  top: 15px;
-  width: 15px;
-  transition: .3s cubic-bezier(.8, .5, .2, 1.4);
-  transform: rotate(-45deg);
-  transition-delay: 100ms;
+    left:10px;
+    top: 15px;
+    width: 15px;
+    transition: .3s cubic-bezier(.8, .5, .2, 1.4);
+    transform: rotate(-45deg);
+    transition-delay: 100ms;
 }
 
 /* Classi di errori */
@@ -1709,7 +1675,8 @@ footer {
 	font-weight:bold;
 	color:#6fbced;
 	vertical-align:top;
-	margin-left:333px;
+	margin-right:10px;
 	margin-top:5px;
-	display:inline-block;
+        justify-content:right;
+	display:flex;
 }

@@ -15,8 +15,8 @@ class ContractsMigration extends Migration
     {
         Schema::create('contratti', function (Blueprint $table) {
             $table->bigIncrements('contratto_id')->unsigned()->index();
-            $table->string('locatore_id')->index();
-            $table->foreign('locatore_id')->references('username')->on('users');
+            $table->unsignedBigInteger('offerta_id')->index();
+            $table->foreign('offerta_id')->references('offerta_id')->on('offerte');
             $table->string('documento', 100);
             $table->date('data_stipulazione');
             $table->unsignedTinyInteger('tipologia_offerta');

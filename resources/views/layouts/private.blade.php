@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
@@ -10,17 +9,11 @@
         <meta name="author" content="Gruppo 24">
         <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
 
-        <title>ApartaRent - @yield('title', 'Home')</title>
-        
-        <!-- Icona -->
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
+        <title>ApartRent - @yield('title', 'Home')</title>
 
         <!-- CSS Files -->
         <link rel="stylesheet" href="{{ asset('assets/css/fontawesome.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
-
-         <!-- Include file JavaScript -->
-        @stack('custom-scripts')
 
     </head>
 
@@ -32,18 +25,28 @@
                 </div>
             </nav>
         </header>
-        <!-- end #header/menù --> 
+        <!-- end #header/menù -->
 
-        <!--Start content-->
-
-        <div class ="content">
-            @yield('content')
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <!-- Start SideBar  -->
+                    <div class="content">
+                        @include('layouts/_sidebar')
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <!--Start content-->
+                    <div class ="content">
+                        @yield('content')
+                    </div>
+                </div>
+            </div>
         </div>
-
         <!-- Footer Starts Here -->
         <footer>
             <div class="container" style="height: 40px;">
-                <h2 style="color: white;">ApartaRent </h2>
+                <h2 style="color: white;">ApartRent </h2>
                 <h4 style="color: whitesmoke;position: relative;left: 350px;font-size: small;font-style: oblique;font-family: cursive;">l'appartamento giusto per voi</h4>
             </div>
             <div class="container" style="border-top: outset;">

@@ -1,5 +1,3 @@
-
-<!-- Navbar -->
 <a class="navbar-brand" href="{{ route('home') }}" title="Home" ><h2>ApartRent</h2></a>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -21,45 +19,24 @@
     </ul>
 </div>
 
- @can('isLocatore')    
-    <ul>
-        <li><a href="{{ route('locatore') }}">Log out</a></li>
-    </ul>
-</div>       
- @endcan
- @can('isUser')
- <div>   
-    <ul>
-        <li><a href="{{ route('user') }}">Log out</a></li>
-    </ul>
-</div>
- @endcan
- @can('isAdmin')
- <div class="functional-buttons">
-    <ul>
-        <li><a href="{{ route('admin') }}">Log out</a></li>
-    </ul>
-</div>
- @endcan
 
-
-<!--
-@auth
-.
-.
-.
-@endauth
--->
-
-@guest
 <div class="functional-buttons">
     <ul>
-        <li><a href="#popuplog">Log in</a></li>
-        <li><a href="#popupreg">Registrati</a></li>
+        @auth
+        <li><a href="{{ route('utente') }}">Account</a></li>
+        <li><a href="" title="Esci dal sito" class="highlight" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            {{ csrf_field() }}
+        </form>
+        @endauth  
+        @guest
+        <li><a href="{{ route('login') }}">Log in</a></li>
+        <li><a href="{{ route('register') }}">Registrati</a></li>
+        @endguest
     </ul>
 </div>
-@endguest
 
-
-<!-- Include file JavaScript per il Toggle del menù -->
+<!--
+Include file JavaScript per il Toggle del menù
+-->
 <script type="text/javascript" src="{{ asset("assets/js/toggleButton.js") }}"></script>
