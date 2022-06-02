@@ -8,6 +8,7 @@
     <a href="">Offerte selezionate</a>
     @endcan
     @can('isLocatore')
-    <a href="">Alloggi</a>
+    <a href="{{ route('offerview') }}">Le tue offerte</a>
+    <a href="">Modifica offerte</a>
     @endcan
 </div>

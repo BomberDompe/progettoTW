@@ -141,6 +141,10 @@ button,select{
     flex:0 0 33.333333%;
     max-width:33.333333%
 }
+.col-md-3{
+    -ms-flex:0 0 25%;
+    flex:0 0 25%;
+    max-width:25%}
 .col-md-6{
     -ms-flex:0 0 50%;
     flex:0 0 50%;
@@ -150,6 +154,11 @@ button,select{
     -ms-flex:0 0 66.666667%;
     flex:0 0 66.666667%;
     max-width:66.666667%
+}
+.col-md-9{
+    -ms-flex:0 0 75%;
+    flex:0 0 75%;
+    max-width:75%
 }
 .col-md-12{
     -ms-flex:0 0 100%;
@@ -360,6 +369,8 @@ a.gradient-button:hover {
 }
 .content{
     padding-top: 80px;
+    padding-bottom: 20px;
+    
 }
 
 /* Header Style */
@@ -991,6 +1002,7 @@ footer {
     background-repeat: no-repeat;
     padding-top: 100px;
     padding-bottom: 300px;
+    margin-bottom: -20px;
     background-position: center center;
 }
 .screen {
@@ -1677,4 +1689,20 @@ footer {
     margin-left:333px;
     margin-top:5px;
     display:inline-block;
+}
+
+
+/* Style list offer */
+.container-listoffer{
+    margin-top: 10px;
+}
+.element-list{
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid #00bcd4;
+}
+.offerta{
+    border-left:1px solid #00bcd4;
+    border-bottom: 1px solid #00bcd4;
+    border-right: 1px solid #00bcd4;
 }

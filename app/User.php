@@ -25,7 +25,7 @@ class User extends Authenticatable {
      * @var array
      */
     protected $hidden = [
-        'username', 'password', 'remember_token',
+         'username', 'password', 'remember_token',
     ];
 
     /**
@@ -36,6 +36,10 @@ class User extends Authenticatable {
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    
+    
+    
+    
     
     public function hasRole($role) {
         $role = (array)$role;

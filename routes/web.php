@@ -14,7 +14,7 @@
 
 
 
-/* Rotte catalogo*/
+/* Rotte catalogo */
 
 Route::get('/catalog', 'PublicController@showCatalog')
         ->name('catalog');
@@ -25,16 +25,19 @@ Route::post('/catalog', 'LocatarioController@showFilteredCatalog')
 Route::get('/catalog/details/{offerId}', 'PublicController@showDetails')
         ->name('details');
 
-/*Rotte faq*/
+/* Rotte faq */
 Route::get('/faqs', 'PublicController@showFaqs')
         ->name('faqs');
 
-/*Rotte account*/
+/* Rotte account */
 Route::get('/account', 'UserController@index')
         ->name('utente');
 
+/* Rotte locatore */
+Route::get('/offerview', 'LocatoreController@showOfferList')
+        ->name('offerview');           
 
-/*Rotte view statiche*/
+/* Rotte view statiche */
 Route::view('/', 'home')
         ->name('home');
 
@@ -59,9 +62,4 @@ Route::post('register', 'Auth\RegisterController@register');
 // Rotta per la chat
 Route::view('/chat', 'chat')
         ->name('chat');
-
-
-
-
-
 
