@@ -51,7 +51,7 @@ function disableFilters() {
     });
 };
 
-
+// Reset dei campi della form
 function resetFilters(){
     $('#resetButton').on('click', function(){
         $('.filter-form').trigger('reset');

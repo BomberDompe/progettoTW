@@ -56,9 +56,12 @@ Route::get('register', 'Auth\RegisterController@showRegistrationForm')
 
 Route::post('register', 'Auth\RegisterController@register');
 
-// Rotta per la chat
+// Rotte per la chat
 Route::get('/chat', 'RegisteredUserController@showChat')
         ->name('chat');
+
+Route::post('/chat', 'RegisteredUserController@saveMessage')
+        ->name('chat.message');
 
 
 

@@ -42,13 +42,8 @@ class User extends Authenticatable {
         return in_array($this->role, $role);
     }
     
-    public function getByUsername($userId) {
+    public function getUserById($userId) {
         return $this->find($userId);
-    }
-    
-    public function getUsernameById($id) {
-        return $this->where('id', $id)
-            ->select('username')->first();
     }
 
 }

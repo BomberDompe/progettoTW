@@ -1468,6 +1468,7 @@ footer {
 	font-size:0;
 	border-radius:5px;
 	overflow:hidden;
+        box-shadow: rgba(0, 0, 0, 0.15) 5px 5px 10px;
 }
 .chat-aside{
 	width:35%;
@@ -1488,19 +1489,15 @@ footer {
 .chat-aside .chat-header{
 	padding:30px 20px;
 }
-.chat-aside input{
+.chat-aside .chat-header div{
 	width:100%;
 	height:50px;
 	line-height:50px;
-	padding:0 50px 0 20px;
+	padding:12px 0px 0px 20px;
 	background-color:#5e616a;
 	border:none;
 	border-radius:3px;
 	color:#fff;
-	background-image:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/ico_search.png);
-	background-repeat:no-repeat;
-	background-position:170px;
-	background-size:40px;
 }
 .chat-aside input::placeholder{
 	color:#fff;
@@ -1518,13 +1515,41 @@ footer {
 .chat-aside li:hover{
 	background-color:#5e616a;
 }
+
+.chat-aside .clicked{
+	background-color:#5e616a;
+        
+}
+
 #chat-container h2,h3{
 	margin:0;
+}
+.chat-aside .profile-picture{
+    border-radius: 50%;
+    margin-top: 0px;
+    margin-left: 20px;
+    margin-right: 8px;
+    height: 50px;
+    width: 50px;
+    background-color: #fff;
+}
+.chat-aside .profile-picture div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #00a4b9;
+    font-size: 25px;
+    height: 50px;
+    width: 50px;
+    margin: 0;
+    
 }
 .chat-aside li img{
 	border-radius:50%;
 	margin-left:20px;
 	margin-right:8px;
+        width: 50px;
+        height: 50px;
 }
 .chat-aside li div{
 	display:inline-block;
@@ -1554,36 +1579,64 @@ footer {
 	background-color:#58b666;
 }
 .orange{
-	background-color:#ff725d;
+	background-color:#f6be5d;
+}
+.blue-default{
+	background-color:#6fbced;
 }
 .blue{
 	background-color:#6fbced;
 	margin-right:0;
 	margin-left:7px;
 }
+.chat-main .chat-header .profile-picture{
+    border-radius: 50%;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 8px;
+    height: 60px;
+    width: 60px;
+    background-color: #fff;
+}
+.chat-main .chat-header .profile-picture div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #00a4b9;
+    font-size: 28px;
+    height: 60px;
+    width: 60px;
+    margin: 0;
+}
 
 .chat-main .chat-header{
 	height:110px;
-	padding:30px 20px 30px 40px;
+	padding:25px 20px 20px 40px;
 }
 .chat-main .chat-header > *{
 	display:inline-block;
 	vertical-align:top;
 }
-.chat-main .chat-header img:first-child{
+.chat-main .chat-header img{
 	border-radius:50%;
-}
-.chat-main .chat-header img:last-child{
-	width:24px;
-	margin-top:8px;
+	margin-left:0px;
+	margin-right:8px;
+        width: 60px;
+        height: 60px;
 }
 .chat-main .chat-header div{
 	margin-left:10px;
 	margin-right:145px;
 }
+.chat-main .chat-header h1{
+	font-size:20px;
+        margin-bottom: 0px;
+}
 .chat-main .chat-header h2{
-	font-size:16px;
-	margin-bottom:5px;
+	font-size:15px;
+	margin-bottom:0px;
+	font-weight:normal;
+	color:#555;
 }
 .chat-main .chat-header h3{
 	font-size:14px;
@@ -1651,6 +1704,18 @@ footer {
 	height:155px;
 	padding:20px 30px 10px 20px;
 }
+.chat-main .chat-footer .default-div{
+	resize:none;
+	border:none;
+        background-color: #fff;
+	display:block;
+	width:100%;
+	height:80px;
+	border-radius:3px;
+	padding:20px;
+	font-size:13px;
+	margin-bottom:13px;
+}
 .chat-main .chat-footer textarea{
 	resize:none;
 	border:none;
@@ -1669,14 +1734,41 @@ footer {
 	height:30px;
 	cursor:pointer;
 }
-.chat-main .chat-footer a{
+.chat-main .chat-footer input{
 	text-decoration:none;
 	text-transform:uppercase;
 	font-weight:bold;
-	color:#6fbced;
+	color:#fff;
+        background-color:#6fbced;
+        border-color:#6fbced;
 	vertical-align:top;
-	margin-right:10px;
-	margin-top:5px;
-        justify-content:right;
-	display:flex;
+	margin:0px 10px 5px 20px;
+        display: inline-block;
+        float: right;
+}
+
+.chat-main .chat-footer h5{
+	text-decoration:none;
+	vertical-align:top;
+	margin-top:7px;
+        display: inline-block;
+        float: left;
+}
+
+.chat-main .hidden {
+    display: none;
+}
+
+/* Popup con i dettagli del Locatario */
+#pop{
+    position             : absolute;
+    z-index              : 999;
+    padding              : 10px;
+    background           : #eee;
+    border               : 1px solid #A2ADBC;
+    -moz-border-radius   : 20px;
+    -webkit-border-radius: 20px;
+    margin               : 0px;
+    -webkit-box-shadow   : 0px 0px 5px 0px rgba(164, 164, 164, 1);
+    box-shadow           : 0px 0px 5px 0px rgba(164, 164, 164, 1);
 }

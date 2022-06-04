@@ -16,6 +16,10 @@ class Catalog {
         return $this->offerModel->getAllOffers($elemEachPage);
     }
     
+    public function getOfferById($offerId) {
+        return $this->offerModel->find($offerId);
+    }
+    
     public function getByFilters($filters) {
         $catalog = $this->getAllOffers();
         
