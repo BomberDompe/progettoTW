@@ -8,28 +8,25 @@ class Message extends Model {
 
     protected $table = 'messaggi';
     protected $primaryKey = 'messaggio_id';
+    protected $guarded = ['messaggio_id'];
     public $timestamps = false;
     
     public function getMessagesBySender($username) {
         return $this->where('mittente_id', $username);
     }
     
-    public function getSenders($username) {
-        $y = $this->getMessagesByReceiver($username)->pluck('mittente_id');
-        foreach ($y as $x) {
-            print $x;}
-        return array_unique(array(
-            $this->getMessagesByReceiver($username)->pluck('mittente_id')));
+    public function getReceivers($username) {
+        return array_unique(
+            $this->getMessagesBySender($username)->pluck('destinatario_id')->toArray());
     }
     
     public function getMessagesByReceiver($username) {
         return $this->where('destinatario_id', $username);
     }
     
-    public function getReceivers($username) {
-        print $this->getMessagesBySender($username)->pluck('destinatario_id');
-        return array_unique(array(
-            $this->getMessagesBySender($username)->pluck('destinatario_id')));
+    public function getSenders($username) {
+        return array_unique(
+            $this->getMessagesByReceiver($username)->pluck('mittente_id')->toArray());
     }
     
     public function getMessagesByConversation($usernames) {
@@ -37,10 +34,9 @@ class Message extends Model {
             ->whereIn('destinatario_id', $usernames);
     }
     
-    public function getNumUnreadMessages($username) {
-        return $this->getMessagesByReceiver($username)
-            ->where('visualizzato', false)->count();
+    public function getUnreadMessagesByConversation($usernames) {
+        return $this->getMessagesByConversation($usernames)
+            ->where('visualizzato', false);
     }
-    
     
 }

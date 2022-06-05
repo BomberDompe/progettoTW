@@ -16,10 +16,12 @@ class OptionsMigration extends Migration
         Schema::create('opzionamenti', function (Blueprint $table) {
             $table->bigIncrements('opzionamento_id')->unsigned()->index();
             $table->unsignedBigInteger('locatario_id')->index();
-            $table->foreign('locatario_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('locatario_id')->references('id')->on('users');
             $table->bigInteger('offerta_id')->unsigned()->index();
-            $table->foreign('offerta_id')->references('offerta_id')->on('offerte')->onDelete('cascade');
+            $table->foreign('offerta_id')->references('offerta_id')->on('offerte');
             $table->date('data_opzionamento');
+            $table->date('data_assegnamento')->nullable();
+            $table->string('documento', 100)->nullable();
         });
     }
 

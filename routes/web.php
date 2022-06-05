@@ -30,6 +30,7 @@ Route::get('/faqs', 'PublicController@showFaqs')
         ->name('faqs');
 
 /*Rotte account*/
+
 Route::get('/account', 'UserController@index')
         ->name('utente');
 
@@ -44,7 +45,6 @@ Route::get('/optionedview', 'LocatarioController@showOptionedList')
 
 Route::get('/optionedview/{offerId}', 'LocatarioController@deleteOption')
         ->name('optionedview.delete');
-
 
 
 /*Rotte view statiche*/
@@ -69,10 +69,29 @@ Route::get('register', 'Auth\RegisterController@showRegistrationForm')
 
 Route::post('register', 'Auth\RegisterController@register');
 
-// Rotta per la chat
+// Rotte per la chat
 Route::get('/chat', 'RegisteredUserController@showChat')
         ->name('chat');
 
+Route::post('/chat/unread', 'RegisteredUserController@updateUnreadMessages')
+        ->name('chat.unread');
+
+Route::post('/chat/message', 'RegisteredUserController@saveMessage')
+        ->name('chat.message');
+
+// Rotte per l'inserimento delle offerte
+Route::view('/offerview/insert', 'offer\insert')
+        ->name('offer.insertview')->middleware('can:isLocatore');
+
+Route::post('/offerview/insert', 'LocatoreController@insertOffer')
+        ->name('offer.insert');
+
+// Rotte per la modifica delle offerte
+Route::get('/offerview/update', 'LocatoreController@getOffer')
+        ->name('offer.updateview');
+
+Route::post('/offerview/update', 'LocatoreController@updateOffer')
+        ->name('offer.update');
 
 
 

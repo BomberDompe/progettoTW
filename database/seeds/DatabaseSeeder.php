@@ -314,9 +314,9 @@ class DatabaseSeeder extends Seeder {
             ['messaggio_id' => 1,
                 'mittente_id' => 2,
                 'destinatario_id' => 1,
-                'contenuto' => 'Salve, io e alcuni miei amici alla sua offerta di appartamento ad Ancona. Volevo chiederle se fosse'
-                . ' possibile prendere l\'appartamento in affitto con 4 studenti anche se i posti letto totali sono 6, magari a un'
-                . ' prezzo un po\' più basso di quello previsto per l\'alloggio al completo.',
+                'contenuto' => 'Salve, io e alcuni miei amici siamo interessati alla sua offerta di appartamento ad Ancona. Volevo'
+                . ' chiederle se fosse possibile prendere l\'appartamento in affitto con 4 studenti anche se i posti letto totali'
+                . ' sono 6, magari a un prezzo un po\' più basso di quello previsto per l\'alloggio al completo.',
                 'timestamp' => '2022-06-01 09:27:42',
                 'visualizzato' => true
             ],
@@ -361,19 +361,10 @@ class DatabaseSeeder extends Seeder {
             ['opzionamento_id' => 1,
                 'locatario_id' => 2,
                 'offerta_id' => 6,
-                'data_opzionamento' => '2022-06-04'
+                'data_opzionamento' => '2022-06-04',
+                'data_assegnamento' => null,
+                'documento' => null,
             ],
-            ['opzionamento_id' => 2,
-                'locatario_id' => 2,
-                'offerta_id' => 3,
-                'data_opzionamento' => '2022-06-04'
-            ],
-            ['opzionamento_id' => 3,
-                'locatario_id' => 2,
-                'offerta_id' => 1,
-                'data_opzionamento' => '2022-06-04'
-            ],
-            
         ]);
     }
 }

@@ -5,24 +5,24 @@ namespace App\Models;
 use App\Models\Resources\Offer;
 
 class Catalog {
-
+    
     protected $offerModel;
-
+    
     public function __construct() {
         $this->offerModel = new Offer;
     }
-
+    
     public function getAllOffers($elemEachPage = 0) {
         return $this->offerModel->getAllOffers($elemEachPage);
     }
-
+    
     public function getOfferById($offerId) {
         return $this->offerModel->find($offerId);
     }
-
+    
     public function getByFilters($filters) {
         $catalog = $this->getAllOffers();
-
+        
         if (!is_null($filters["min_price"])) {
             $catalog = $catalog->where('prezzo', '>=', $filters["min_price"]);
         }
@@ -65,24 +65,25 @@ class Catalog {
         if (array_key_exists("opzionabilita", $filters)) {
             $catalog = $catalog->where('opzionabilita', true);
         }
-
+        
         if ($filters["type"] === '0') {
             $catalog = $catalog->where('tipologia', 0);
-            if (array_key_exists("sup_appartamento", $filters) &&
+            if (array_key_exists("sup_appartamento", $filters) && 
                     !is_null($filters["sup_appartamento"])) {
                 $catalog = $catalog->where('sup_appartamento', $filters["sup_appartamento"]);
             }
-            if (array_key_exists("num_camere", $filters) &&
+            if (array_key_exists("num_camere", $filters) && 
                     !is_null($filters["num_camere"])) {
                 $catalog = $catalog->where('num_camere', $filters["num_camere"]);
             }
+            
         } elseif ($filters["type"] === '1') {
             $catalog = $catalog->where('tipologia', 1);
-            if (array_key_exists("sup_appartamento", $filters) &&
+            if (array_key_exists("sup_appartamento", $filters) && 
                     !is_null($filters["sup_camera"])) {
                 $catalog = $catalog->where('sup_camera', $filters["sup_camera"]);
             }
-            if (array_key_exists("posti_camera", $filters) &&
+            if (array_key_exists("posti_camera", $filters) && 
                     !is_null($filters["posti_camera"])) {
                 $catalog = $catalog->where('posti_camera', $filters["posti_camera"]);
             }
@@ -90,8 +91,8 @@ class Catalog {
                 $catalog = $catalog->where('angolo_studio', true);
             }
         }
-
+        
         return $catalog->get();
     }
-
+    
 }

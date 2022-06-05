@@ -9,5 +9,5 @@
     @can('isLocatore')
     <a href="{{ route('offerview') }}">Le tue offerte</a>
     @endcan
-    <a href="">Messaggi</a>
+    <a href="{{ route('chat') }}">Messaggi</a>
 </div>
