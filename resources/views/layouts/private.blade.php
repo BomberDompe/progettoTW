@@ -10,10 +10,15 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
 
         <title>ApartRent - @yield('title', 'Home')</title>
+         <!-- Icona -->
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
 
         <!-- CSS Files -->
         <link rel="stylesheet" href="{{ asset('assets/css/fontawesome.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+        
+        <!-- Include file JavaScript -->
+        @stack('custom-scripts')
 
     </head>
 
@@ -27,15 +32,15 @@
         </header>
         <!-- end #header/menù -->
 
-        <div class="container">
+        <div class="container notover">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <!-- Start SideBar  -->
                     <div class="content">
                         @include('layouts/_sidebar')
                     </div>
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-9">
                     <!--Start content-->
                     <div class ="content">
                         @yield('content')

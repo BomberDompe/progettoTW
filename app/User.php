@@ -45,5 +45,5 @@ class User extends Authenticatable {
     public function getUserById($userId) {
         return $this->find($userId);
     }
-
+    
 }

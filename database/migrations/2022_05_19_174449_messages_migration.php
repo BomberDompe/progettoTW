@@ -16,9 +16,9 @@ class MessagesMigration extends Migration
         Schema::create('messaggi', function (Blueprint $table) {
             $table->bigIncrements('messaggio_id')->unsigned()->index();
             $table->unsignedBigInteger('mittente_id')->index();
-            $table->foreign('mittente_id')->references('id')->on('users');
+            $table->foreign('mittente_id')->references('id')->on('users')->onDelete('cascade');
             $table->unsignedBigInteger('destinatario_id')->index();
-            $table->foreign('destinatario_id')->references('id')->on('users');
+            $table->foreign('destinatario_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('contenuto', 1000);
             $table->timestamp('timestamp');
             $table->boolean('visualizzato');

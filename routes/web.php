@@ -30,8 +30,21 @@ Route::get('/faqs', 'PublicController@showFaqs')
         ->name('faqs');
 
 /*Rotte account*/
+
 Route::get('/account', 'UserController@index')
         ->name('utente');
+
+Route::get('/offerview', 'LocatoreController@showOfferList')
+        ->name('offerview');
+
+Route::get('/offerview/{offerId}', 'LocatoreController@deleteOffer')
+        ->name('offerview.delete');
+
+Route::get('/optionedview', 'LocatarioController@showOptionedList')
+        ->name('optionedview');
+
+Route::get('/optionedview/{offerId}', 'LocatarioController@deleteOption')
+        ->name('optionedview.delete');
 
 
 /*Rotte view statiche*/

@@ -1778,3 +1778,120 @@ footer {
     -webkit-box-shadow   : 0px 0px 5px 0px rgba(164, 164, 164, 1);
     box-shadow           : 0px 0px 5px 0px rgba(164, 164, 164, 1);
 }
+
+/* Style list offer */
+.container-listoffer{
+    margin-top: 10px;
+
+}
+.element-list{
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid #00bcd4;
+    margin-bottom:10px;
+}
+.element-list:hover{
+    background-color: #F0FFFF;
+}
+.titolo-indirizzo{
+    padding: 0;
+    list-style: none;
+    padding-top: 6%;
+
+}
+.titolo-indirizzo li{
+    margin-bottom: 10px;
+
+}
+.offerlist-buttons {
+    margin-left: 11%;
+}
+.offerlist-buttons	ul {
+    margin: 0;
+    margin-top: 7%;
+    padding: 0;
+}
+.offerlist-buttons	ul li {
+    display: inline-block;
+    margin-bottom: 11px;
+}
+.offerlist-buttons	ul li a {
+    background-color: #00bcd4;
+    border: 2px solid #00bcd4;
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-size: 13px;
+    color: #fff;
+    padding: 6px 15px;
+    transition: all 0.5s;
+}
+.offerlist-buttons	ul li a:hover {
+    color: #00bcd4;
+    background-color: #fff;
+}
+.offerta{
+    padding-top: 10px;
+    border-left:1px solid #00bcd4;
+    border-bottom: 1px solid #00bcd4;
+    border-right: 1px solid #00bcd4;
+    margin-top: -10px;
+    background-color: #F0FFFF;
+    margin-bottom: 10px;
+}
+.offerta table{
+    margin: 50px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.img-list{
+    height: 100px;
+    width: 120px;
+    margin: 6px 0px;
+}
+
+.prop{
+    padding-top: 10px;
+    border-left:1px solid #00bcd4;
+    border-bottom: 1px solid #00bcd4;
+    border-right: 1px solid #00bcd4;
+    margin-top: -10px;
+    background-color: #F0FFFF;
+    margin-bottom: 10px;
+}
+
+.notover{
+    min-width: 1000px;
+}
+.col-md-9{
+    -ms-flex:0 0 75%;
+    flex:0 0 75%;
+    max-width:75%
+}
+.col-md-3{
+    -ms-flex:0 0 25%;
+    flex:0 0 25%;
+    max-width:25%
+}
+
+.center_lario{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+
+}
+.data_lario{
+
+    font-family: 'Roboto', sans-serif;
+    font-size: larger;
+    font-weight: bold;
+    color: black;
+
+}
+.nada_prop{
+    font-size: x-large;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: midnightblue;
+}
