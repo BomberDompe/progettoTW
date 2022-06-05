@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\Resources\Message;
 use App\User;
+use DateTime;
 
 class Conversation {
     
@@ -65,12 +66,21 @@ class Conversation {
     public function createNewMessage($data, $authId) {
         $this->messageModel->fill($data->validated());
         $this->messageModel->mittente_id = $authId;
-        $this->messageModel->timestamp = null;
+        $this->messageModel->timestamp = date('Y-m-d G:i:s');
         $this->messageModel->visualizzato = false;
         $this->messageModel->save();
         
-        return $this->messageModel;
+        $dateTime = DateTime::createFromFormat(
+                'Y-m-d G:i:s', $this->messageModel->timestamp)->format('d/m/Y G:i');
+        return array("contenuto" => $this->messageModel->contenuto,
+            "timestamp" => $dateTime);
     }
     
+    public function updateUnreadMessages($data, $authId) {
+        $users = array($authId, $data->userId);
+        $this->messageModel->getUnreadMessagesByConversation($users)
+            ->where('destinatario_id', $authId)->update(['visualizzato' => true]);
+        
+    }
 
 }

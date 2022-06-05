@@ -60,7 +60,11 @@ Route::post('register', 'Auth\RegisterController@register');
 Route::get('/chat', 'RegisteredUserController@showChat')
         ->name('chat');
 
-Route::post('/chat', 'RegisteredUserController@saveMessage')
+
+Route::post('/chat/unread', 'RegisteredUserController@updateUnreadMessages')
+        ->name('chat.unread');
+
+Route::post('/chat/message', 'RegisteredUserController@saveMessage')
         ->name('chat.message');
 
 

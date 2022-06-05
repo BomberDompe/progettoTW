@@ -10,7 +10,7 @@ use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Contracts\Validation\Validator;
 use Symfony\Component\HttpFoundation\Response;
 
-class NewMessageRequest extends FormRequest {
+class UpdateUnreadRequest extends FormRequest {
 
     /**
      * Determine if the user is authorized to make this request.
@@ -30,16 +30,7 @@ class NewMessageRequest extends FormRequest {
      */
     public function rules() {
         return [
-            'contenuto' => ['required', 'string', 'min:1', 'max:1000'],
-            'destinatario_id' => ['required', 'numeric'],
-        ];
-    }
-    
-    // Messaggi di errore personalizzati
-    public function messages(){
-        return [
-            'contenuto.required' => 'Il messaggio non può essere vuoto',
-            'contenuto.max' => 'Il messaggio è troppo lungo',
+            'userId' => ['required', 'numeric']
         ];
     }
     

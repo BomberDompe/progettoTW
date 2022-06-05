@@ -8,6 +8,7 @@ class Message extends Model {
 
     protected $table = 'messaggi';
     protected $primaryKey = 'messaggio_id';
+    protected $guarded = ['messaggio_id'];
     public $timestamps = false;
     
     public function getMessagesBySender($username) {
@@ -31,6 +32,11 @@ class Message extends Model {
     public function getMessagesByConversation($usernames) {
         return $this->whereIn('mittente_id', $usernames)
             ->whereIn('destinatario_id', $usernames);
+    }
+    
+    public function getUnreadMessagesByConversation($usernames) {
+        return $this->getMessagesByConversation($usernames)
+            ->where('visualizzato', false);
     }
     
 }

@@ -18,6 +18,7 @@
 		<div class="chat-header">
                     <div>
                         <h4>Conversazioni</h4>
+                        <h5> Login effettuato come "{{ Auth::user()->name }} {{ Auth::user()->surname }}"</h5>
                     </div>
 		</div>
             
@@ -40,7 +41,7 @@
                                             {{ $conversation["userData"]->name }}
                                             {{ $conversation["userData"]->surname }}
                                         </h2>
-					<h3>
+					<h3 id="unreadNotifier">
                                         @if($conversation["messageList"]["numUnread"] == 0)
 						<span class="status green"></span>
 						Nessun nuovo messaggio
@@ -88,7 +89,7 @@
                             <div>
                                     <h1> Chat con {{ $conversation["userData"]->name }}
                                                   {{ $conversation["userData"]->surname }}</h1>
-                                    <h2>Già {{ $conversation["messageList"]["messages"]->count() }} messaggi</h2>
+                                    <h2 id="counter">Già {{ $conversation["messageList"]["messages"]->count() }} messaggi</h2>
                             </div>
                             @can('isLocatore')
                             <div class="hidden" id="pop">
@@ -128,7 +129,7 @@
                                             <h2>{{ $conversation["userData"]->name }}</h2>
                                             <h3> - @include('helpers/timestampFormatter', ['timestamp' => $message->timestamp])</h3>
                                             @if($message->visualizzato == false)
-                                                <h2 id='unRead'>(Nuovo)</h2>
+                                                <h2 id='unread'>(Nuovo)</h2>
                                             @endif
                                     </div>
                                     <div class="triangle"></div>
@@ -140,10 +141,9 @@
                     @endforeach
                     </ul>
                     <div class="chat-footer">
-                        {{ Form::open(array('route' => 'chat.message', 'id' => 'form_'.$conversation["userData"]->id, 'class' => '')) }}
+                        {{ Form::open(array('id' => 'form_'.$conversation["userData"]->id, 'class' => '')) }}
                         {{ Form::textarea('contenuto', '', ['placeholder' => 'Scrivi un messaggio', 'id' => 'message_'.$conversation["userData"]->id ]) }}
                         <div>
-                            <h5> Login effettuato come "{{ Auth::user()->name }} {{ Auth::user()->surname }}"</h5>
                             {{ Form::submit('Invia', ['id' => 'submitButton']) }}
                         </div>
                         {{ Form::close() }}
@@ -189,9 +189,6 @@
                     <div class="chat-footer">
                         <div class= "default-div">
                             Chat disabilitata
-                        </div>
-                        <div>
-                            <h5> Login effettuato come "{{ Auth::user()->name }} {{ Auth::user()->surname }}"</h5>
                         </div>
                     </div>
                 </div>
