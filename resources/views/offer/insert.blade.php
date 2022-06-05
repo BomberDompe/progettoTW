@@ -3,12 +3,19 @@
 @section('title', 'Nuova Offerta')
 
 @section('content')
-<div class="">
+<div class="container">
     <h3>Aggiungi Offerte</h3>
     <p>Utilizza questa form per inserire una nuova offerta nel Catalogo</p>
 
     <div class="">
         <div class="">
+            
+            
+            
+            
+            
+            
+            
             {{ Form::open(array('route' => 'offer.insert', 'id' => 'addoffer', 'files' => true, 'class' => '')) }}
             <div  class="">
                 {{ Form::label('name', 'Nome Prodotto', ['class' => '']) }}
