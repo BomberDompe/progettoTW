@@ -119,7 +119,6 @@
 				<h2>Chat with Vincent Porter</h2>
 				<h3>already 1902 messages</h3>
 			</div>
-			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/ico_star.png" alt="">
 		</div>
 		<ul id="chat">
 			<li class="you">
@@ -190,10 +189,8 @@
 			</li>
 		</ul>
 		<div class="chat-footer">
-			<textarea placeholder="Type your message"></textarea>
-			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/ico_picture.png" alt="">
-			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/ico_file.png" alt="">
-			<a href="#">Send</a>
+                    <textarea placeholder="Type your message"></textarea>
+                    <a href="#">Send</a>
 		</div>
 	</div>
     </div>       

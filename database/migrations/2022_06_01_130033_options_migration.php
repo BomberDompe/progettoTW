@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class ContractsMigration extends Migration
+class OptionsMigration extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class ContractsMigration extends Migration
      */
     public function up()
     {
-        Schema::create('contratti', function (Blueprint $table) {
-            $table->bigIncrements('contratto_id')->unsigned()->index();
-            $table->unsignedBigInteger('offerta_id')->index();
+        Schema::create('opzionamenti', function (Blueprint $table) {
+            $table->bigIncrements('opzionamento_id')->unsigned()->index();
+            $table->unsignedBigInteger('locatario_id')->index();
+            $table->foreign('locatario_id')->references('id')->on('users')->onDelete('cascade');
+            $table->bigInteger('offerta_id')->unsigned()->index();
             $table->foreign('offerta_id')->references('offerta_id')->on('offerte')->onDelete('cascade');
-            $table->string('documento', 100);
-            $table->date('data_stipulazione');
-            $table->unsignedTinyInteger('tipologia_offerta');
+            $table->date('data_opzionamento');
         });
     }
 
@@ -30,6 +30,6 @@ class ContractsMigration extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('contratti');
+        //
     }
 }

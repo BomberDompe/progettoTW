@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder {
                 'name' => 'Mario',
                 'surname' => 'Rossi',
                 'genere' => 'Uomo',
-                'data_nascita' => Carbon::parse('2000-10-27'),
+                'data_nascita' => '2000-10-27',
                 'comune_residenza' => 'Urbisaglia (MC)',
                 'telefono' => '3492814204',
                 'role' => 'locatore',
@@ -30,7 +30,7 @@ class DatabaseSeeder extends Seeder {
                 'name' => 'Giuseppe',
                 'surname' => 'Verdi',
                 'genere' => 'Uomo',
-                'data_nascita' => Carbon::parse('2000-10-27'),
+                'data_nascita' => '1999-03-12',
                 'comune_residenza' => 'Jesi (AN)',
                 'telefono' => '3379220442',
                 'role' => 'locatario',
@@ -86,13 +86,11 @@ class DatabaseSeeder extends Seeder {
         ]);
 
         /**
-         * genere_locatario: 0 -> Uomo, 1 -> Donna
          * tipologia: 0 -> Appartamento, 1 -> Posto Letto
-         * 
          */
         DB::table('offerte')->insert([
             ['offerta_id'  => 1,
-                'username_id'  => 'lorelore',
+                'user_id'  => 1,
                 'titolo' => 'Affittasi posto letto Ancona zona Tavernelle',
                 'descrizione'  => 'Affittasi posto letto in camera doppia, per studentesse, in appartamento con due camere doppie in'
                 . ' zona Tavernelle in ottime condizioni, completamente ristrutturato recentemente e con mobilia nuova, dotato di'
@@ -127,7 +125,7 @@ class DatabaseSeeder extends Seeder {
                 'data_assegnazione'  => null
             ],
             ['offerta_id'  => 2,
-                'username_id'  => 'lorelore',
+                'user_id'  => 1,
                 'titolo' => 'Posto letto per studenti in appartamento periferia Fermo',
                 'descrizione'  => 'Si affitta posto letto in stanza singola a Fermo zona San Lorenzo. L\'alloggio è composto da tre camere singole'
                 . ' arredate, cucina abitabile, bagno luminoso, e si trova al terzo piano senza ascensore. Non si accettano animali. Condiviso con'
@@ -162,7 +160,7 @@ class DatabaseSeeder extends Seeder {
                 'data_assegnazione'  => null
             ],
             ['offerta_id'  => 3,
-                'username_id'  => 'lorelore',
+                'user_id'  => 1,
                 'titolo' => 'Camera singola a Urbino',
                 'descrizione'  => 'Camera singola, completamente arredata in appartamento con disimpegno, bagno, cucina e salotto molto luminoso.'
                 . ' Lavatrice, televisione, balcone grande. L\'appartamento è composto da 2 camere singole. Una singola è già occupata da un ragazzo,'
@@ -197,7 +195,7 @@ class DatabaseSeeder extends Seeder {
                 'data_assegnazione'  => null
             ],
             ['offerta_id'  => 4,
-                'username_id'  => 'lorelore',
+                'user_id'  => 1,
                 'titolo' => 'Appartamento grande in centro a Macerata',
                 'descrizione'  => '5 camere singole libere dal 1° settembre in appartamento poco fuori le mura (via Don Mario Lerda n.17). Le'
                 . ' camere sono molto ampie (come visibile in foto), luminose e ben arredate. Sono provviste di letti ad una piazza e mezza ed'
@@ -237,7 +235,7 @@ class DatabaseSeeder extends Seeder {
                 'data_assegnazione'  => null
             ],
             ['offerta_id'  => 5,
-                'username_id'  => 'lorelore',
+                'user_id'  => 1,
                 'titolo' => 'Appartamento con balcone panoramico',
                 'descrizione'  => 'Appartamento al secondo piano di una piccola palazzina in zona residenziale sud a Macerata. Il soggiorno è'
                 . ' molto luminoso ed ampio, con balcone panoramico da cui osservare le colline marchigiane. La cucina è abitabile con veranda. L\''
@@ -273,7 +271,7 @@ class DatabaseSeeder extends Seeder {
                 'data_assegnazione'  => null
             ],
             ['offerta_id'  => 6,
-                'username_id'  => 'lorelore',
+                'user_id'  => 1,
                 'titolo' => 'Appartamento in via Garibaldi a Ancona',
                 'descrizione'  => 'Immerso nel cuore della città di Ancona, a due passi dal suggestivo Teatro delle Muse e dal porto, in'
                 . ' C. so Garibaldi, proponiamo in affitto appartamento al quarto piano di un elegante edificio storico, completamente'
@@ -311,6 +309,71 @@ class DatabaseSeeder extends Seeder {
                 'data_assegnazione'  => null
             ],
         ]);
+        
+        DB::table('messaggi')->insert([
+            ['messaggio_id' => 1,
+                'mittente_id' => 2,
+                'destinatario_id' => 1,
+                'contenuto' => 'Salve, io e alcuni miei amici alla sua offerta di appartamento ad Ancona. Volevo chiederle se fosse'
+                . ' possibile prendere l\'appartamento in affitto con 4 studenti anche se i posti letto totali sono 6, magari a un'
+                . ' prezzo un po\' più basso di quello previsto per l\'alloggio al completo.',
+                'timestamp' => '2022-06-01 09:27:42',
+                'visualizzato' => true
+            ],
+            ['messaggio_id' => 2,
+                'mittente_id' => 2,
+                'destinatario_id' => 1,
+                'contenuto' => 'Pensavamo intorno ai 600 € mensili.',
+                'timestamp' => '2022-06-01 09:29:35',
+                'visualizzato' => true
+            ],
+            ['messaggio_id' => 3,
+                'mittente_id' => 1,
+                'destinatario_id' => 2,
+                'contenuto' => 'Ciao, va bene se facciamo 650?',
+                'timestamp' => '2022-06-03 18:02:24',
+                'visualizzato' => true
+            ],
+            ['messaggio_id' => 4,
+                'mittente_id' => 2,
+                'destinatario_id' => 1,
+                'contenuto' => 'Ne parlerò con i miei amici e le farò sapere.',
+                'timestamp' => '2022-06-04 14:52:09',
+                'visualizzato' => true
+            ],
+            ['messaggio_id' => 5,
+                'mittente_id' => 2,
+                'destinatario_id' => 1,
+                'contenuto' => 'Abbiamo deciso di accettare la sua offerta, grazie.',
+                'timestamp' => '2022-06-04 21:33:17',
+                'visualizzato' => true
+            ],
+            ['messaggio_id' => 6,
+                'mittente_id' => 1,
+                'destinatario_id' => 2,
+                'contenuto' => 'Grazie a voi... procedo ad assegnare l\'offerta.',
+                'timestamp' => '2022-06-05 12:46:03',
+                'visualizzato' => false
+            ],
+        ]);
+        
+        DB::table('opzionamenti')->insert([
+            ['opzionamento_id' => 1,
+                'locatario_id' => 2,
+                'offerta_id' => 6,
+                'data_opzionamento' => '2022-06-04'
+            ],
+            ['opzionamento_id' => 2,
+                'locatario_id' => 2,
+                'offerta_id' => 3,
+                'data_opzionamento' => '2022-06-04'
+            ],
+            ['opzionamento_id' => 3,
+                'locatario_id' => 2,
+                'offerta_id' => 1,
+                'data_opzionamento' => '2022-06-04'
+            ],
+            
+        ]);
     }
-
 }

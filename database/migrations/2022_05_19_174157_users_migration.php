@@ -14,7 +14,7 @@ class UsersMigration extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->bigIncrements('id')->unsigned()->index();
             $table->string('username', 20)->index();
             $table->string('password', 191);
             $table->string('name', 20)->nullable();
@@ -27,7 +27,7 @@ class UsersMigration extends Migration
             $table->string('email')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
-            $table->timestamps();   
+            $table->timestamps();
         });
     }
 

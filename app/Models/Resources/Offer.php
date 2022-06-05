@@ -17,5 +17,14 @@ class Offer extends Model {
             return $this->where('offerta_id', '>=', 0);
         }
     }
+    
+    public function getOfferById($offer_id){
+        return $this->find($offer_id);
+    }
+    
+    public function getOffersIdByLoreId($user_id){
+                return $this->where('user_id', $user_id)->pluck('offerta_id')->toArray();
+
+    }
 }
 

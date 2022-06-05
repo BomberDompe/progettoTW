@@ -32,7 +32,7 @@
         </header>
         <!-- end #header/menù -->
 
-        <div class="container">
+        <div class="container notover">
             <div class="row">
                 <div class="col-md-3">
                     <!-- Start SideBar  -->
