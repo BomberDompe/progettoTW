@@ -361,7 +361,9 @@ class DatabaseSeeder extends Seeder {
             ['opzionamento_id' => 1,
                 'locatario_id' => 2,
                 'offerta_id' => 6,
-                'data_opzionamento' => '2022-06-04'
+                'data_opzionamento' => '2022-06-04',
+                'data_assegnamento' => null,
+                'documento' => null,
             ],
         ]);
     }

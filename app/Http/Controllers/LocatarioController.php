@@ -10,7 +10,7 @@ class LocatarioController extends Controller {
     protected $catalogModel;
 
     public function __construct() {
-        //$this->middleware('can:isLocatario');
+        $this->middleware('can:isLocatario');
         $this->catalogModel = new Catalog;
 
     }

@@ -20,6 +20,8 @@ class OptionsMigration extends Migration
             $table->bigInteger('offerta_id')->unsigned()->index();
             $table->foreign('offerta_id')->references('offerta_id')->on('offerte');
             $table->date('data_opzionamento');
+            $table->date('data_assegnamento')->nullable;
+            $table->string('documento', 100)->nullable;
         });
     }
 
