@@ -49,13 +49,17 @@ Route::get('/offerview/delete/{offerId}', 'LocatoreController@deleteOffer')
 Route::get('/optionedview', 'LocatarioController@showOptionedList')
         ->name('optionedview');
 
-Route::get('/optionedview/{offerId}', 'LocatarioController@deleteOption')
+Route::get('/optionedview/delete/{offerId}', 'LocatarioController@deleteOption')
         ->name('optionedview.delete');
 
 /* Rotte gestione faq Admin*/
 
 Route::get('/faqview', 'AdminController@showFaqList')
         ->name('faqview');
+
+Route::get('/faqview/delete/{offerId}', 'AdminController@deleteFaq')
+        ->name('faqview.delete');
+
 
 /*Rotte view statiche*/
 Route::view('/', 'home')

@@ -21,7 +21,7 @@
                         <p class="new_faq">Nuova F.A.Q.</p>
                     </div>                      
                     <div class ="col-md-3">
-                        <img src="{{asset('images\offers\button-add.png')}}" width="60" height="60" style="margin-top: 25px;margin-left: 30px;">
+                        <img src="{{asset('images\offers\button-add.png')}}" width="40" height="40" style="margin: 1px 0px;">
                     </div>
                 </div>
             </div>
@@ -48,10 +48,9 @@
                 <div class="faqlist-buttons">
                     <ul>
                         <li><a href="#" >&ensp;Modifica&ensp;</a></li>
-                        <li><a class="confirmation" href="#" >&ensp;Elimina&ensp;</a></li>
+                        <li><a class="confirmation"  href="{{ route('faqview.delete', [$faq->faq_id]) }}" >&ensp;Elimina&ensp;</a></li>
                     </ul>
                 </div>
-
             </div>
         </div>
     </div>

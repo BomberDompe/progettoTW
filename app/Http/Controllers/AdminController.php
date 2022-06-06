@@ -19,4 +19,9 @@ class AdminController extends Controller {
         return view('faqview')
         ->with('faqList', $this->faqModel->getAllFaqs()->get());
     }
+        public function deleteFaq($faq_id) {
+        Faq::find($faq_id)->delete();
+        return redirect()->action('AdminController@showFaqList');
+        
+    }
 }
