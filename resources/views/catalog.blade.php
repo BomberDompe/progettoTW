@@ -18,6 +18,8 @@
 </script>
 @endif
 
+
+@can('isLocatario')
 <div id="filter-adapter" class="filter-adapter-hide filter-hide"></div>
 <div class="filters-section" id="fix-on-scroll">
     <div id="filter-navbar">
@@ -237,12 +239,10 @@
           </div>
         </div>
         {{ Form::close() }}
-    
-    </div>
-  @can('isLocatario')
-  
-  @endcan
+    </div>  
 </div>
+@endcan
+
 <div class="container">
   @isset($catalog)
     @foreach ($catalog as $offer)

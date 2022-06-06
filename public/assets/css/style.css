@@ -1871,13 +1871,11 @@ footer {
     display: flex;
     justify-content: center;
 }
-
 .img-list{
     height: 100px;
     width: 120px;
     margin: 6px 0px;
 }
-
 .prop{
     padding-top: 10px;
     border-left:1px solid #00bcd4;
@@ -1887,7 +1885,6 @@ footer {
     background-color: #F0FFFF;
     margin-bottom: 10px;
 }
-
 .notover{
     min-width: 1000px;
 }
@@ -1901,12 +1898,12 @@ footer {
     flex:0 0 25%;
     max-width:25%
 }
-
 .center_lario{
     display: flex;
     align-content: center;
     align-items: center;
     justify-content: center;
+    margin-bottom: 10px;
 
 }
 .data_lario{
@@ -1923,6 +1920,82 @@ footer {
     margin-bottom: 10px;
     color: midnightblue;
 }
+.aggiudicata{
+    font-style: italic;
+    font-size: unset;
+    color: seagreen;
+    transform: rotate(-9deg);
+
+}
+.new_offer{
+    text-align: center;
+    font-size: xxx-large;
+    margin-top: 40px;
+    padding-right: 55px;
+    color: mediumblue;
+    font-weight: 400;
+    font-style: oblique;
+
+}
+
+/* Style list faq */
+.container-listfaq{
+    margin-top: 10px;
+
+}
+.domanda{
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid #00bcd4;
+    margin-bottom:10px;
+}
+.domanda:hover{
+    background-color: #F0FFFF;
+}
+.risposta{
+    padding-top: 10px;
+    border-left:1px solid #00bcd4;
+    border-bottom: 1px solid #00bcd4;
+    border-right: 1px solid #00bcd4;
+    margin-top: -10px;
+    background-color: #F0FFFF;
+    margin-bottom: 10px;
+}
+.faqlist-buttons {
+    margin-left: 11%;
+}
+.faqlist-buttons	ul {
+    margin-left: 20%;
+    margin-top: 3%;
+}
+.faqlist-buttons	ul li {
+    display: inline-block;
+    margin-bottom: 11px;
+}
+.faqlist-buttons	ul li a {
+    background-color: #00bcd4;
+    border: 2px solid #00bcd4;
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-size: 13px;
+    color: #fff;
+    padding: 6px 15px;
+    transition: all 0.5s;
+}
+.faqlist-buttons	ul li a:hover {
+    color: #00bcd4;
+    background-color: #fff;
+}
+.new_faq{
+    text-align: center;
+    font-size: xxx-large;
+    margin-top: 8px;
+    color: mediumblue;
+    font-weight: 400;
+    font-style: oblique;
+
+}
+
 
 /* CSS per le form relative alle offerte */
 .insertform{
@@ -2037,3 +2110,4 @@ footer {
 .insertform-file-input:hover{
     color: #00bcd4
 }
+

@@ -39,9 +39,21 @@ function proposteEmpty() {
 
 
 }
+;
+function toggleLink() {
+    $('[id = "proposta"]').each(function () {
+        if ($(this).find('#accettata').length) {
+            $(this).find('#accetta').replaceWith('<a style="color: red;background-color: snow;">\n\
+                                       Disabilitato\n\
+                                       </a>');
+        }
+    });
+}
+;
 $(document).ready(toggleOffers);
 $(document).ready(removeOffers);
 $(document).ready(proposteEmpty);
+$(document).ready(toggleLink);
 
 
 

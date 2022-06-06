@@ -21,11 +21,10 @@
                         <img src="{{asset('images\offers\default.jpg')}}" class="img-list">                
                     </div>
                     <div class ="col-md-6">
-                        <ul class="titolo-indirizzo">
-                            <li>....................................................</li>
-                            <li>....................................................</li>
-                        </ul>
+                        <p class="new_offer">Nuova Offerta</p>
                     </div>
+                        
+
                     <div class ="col-md-3">
                         <img src="{{asset('images\offers\button-add.png')}}" width="60" height="60" style="margin-top: 25px;margin-left: 30px;">
                     </div>
@@ -33,8 +32,8 @@
             </div>
         </a>
     </div>
-
     @endcan
+
     @isset($offerList)
     @foreach ($offerList as $offer)
     <div class="element-list">
@@ -53,7 +52,7 @@
                     <div class="offerlist-buttons">
                         <ul>
                             @can('isLocatario')
-                            <li >
+                            <li class="buttonid" >
                                 <a class="confirmation" href="{{ route('optionedview.delete', [$offer->offerta_id]) }}">&ensp;Rimuovi &ensp; </a></li>
                             @endcan
                             @can('isLocatore')
@@ -264,6 +263,7 @@
             </div>
         </div>
     </div>
+
     @can('isLocatore')
     <div class="prop container" style="display: none">
         <div class="row" id="proposta">
@@ -279,18 +279,25 @@
             <div class="col-md-8 center_lario">
                 <p class="data_lario">{{ $lario->surname }} {{ $lario->name }},  nato il: {{ $lario->data_nascita }} </p>
             </div>
-
-            <div class="col-md-4 center_lario">
+            
+            @if($option->data_assegnamento == null)
+            
+            <div class="col-md-4 center_lario" >              
                 <div class="offerlist-buttons">
                     <ul>
-
-                        <li><a class="confirmation">&ensp;Accetta&ensp;</a></li>
-
+                        <li><a  id="accetta" class="confirmation" href="{{ route('offerview.accept', [$option->opzionamento_id]) }}" >&ensp;Accetta&ensp;</a></li>
                     </ul>
-
-                </div>
-
+                </div>              
             </div>
+            
+            @else 
+            <div class="col-md-4 center_lario" id="accettata">
+                <p class="aggiudicata">
+                &emsp;&ensp;AGGIUDICATA
+                </p>
+            </div>
+            @endif
+            
             @endif
 
             @endforeach

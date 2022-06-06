@@ -17,6 +17,7 @@ class Faq extends Model {
             return $this->where('faq_id', '>=', 0);
         }
     }
+    
 }
 
 

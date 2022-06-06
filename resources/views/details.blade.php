@@ -141,6 +141,7 @@
                         <td></td> 
                     @endif
                 </tr>
+                @isset($offer->cucina)
                 <tr>
                     <td>Cucina</td>
                     @if($offer->cucina)
@@ -151,6 +152,8 @@
                         <td></td> 
                     @endif
                 </tr>
+                @endisset
+                @isset($offer->locale_ricreativo)
                 <tr>
                     <td>Locale ricreativo</td>
                     @if($offer->locale_ricreativo)
@@ -161,6 +164,7 @@
                         <td></td> 
                     @endif
                 </tr>
+                @endisset
                 <tr>
                     <th colspan="2">Servizi disponibili nelle vicinanze</th>
                 </tr>

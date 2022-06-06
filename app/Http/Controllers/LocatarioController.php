@@ -31,9 +31,12 @@ class LocatarioController extends Controller {
     }
 
     public function deleteOption($offerId) {
-        
+        $autenticati = Option::where('offerta_id', $offerId)->value('locatario_id');
+        if ( Auth::id() == $autenticati){
         Option::where('offerta_id',$offerId)->delete();
         return redirect()->action('LocatarioController@showOptionedList');
+        }
+        return redirect()->action('UserController@index');
     }
 
 }

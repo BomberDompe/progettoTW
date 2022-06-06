@@ -25,7 +25,7 @@ Route::post('/catalog', 'LocatarioController@showFilteredCatalog')
 Route::get('/catalog/details/{offerId}', 'PublicController@showDetails')
         ->name('details');
 
-/*Rotte faq*/
+/*Rotte faq*/    
 Route::get('/faqs', 'PublicController@showFaqs')
         ->name('faqs');
 
@@ -34,17 +34,31 @@ Route::get('/faqs', 'PublicController@showFaqs')
 Route::get('/account', 'UserController@index')
         ->name('utente');
 
+/* Rotte lista offerte Locatore*/
 Route::get('/offerview', 'LocatoreController@showOfferList')
         ->name('offerview');
 
-Route::get('/offerview/{offerId}', 'LocatoreController@deleteOffer')
+Route::get('/offerview/accept/{opzioneId}', 'LocatoreController@acceptOffer')
+        ->name('offerview.accept');
+
+Route::get('/offerview/delete/{offerId}', 'LocatoreController@deleteOffer')
         ->name('offerview.delete');
+
+/* Rotte lista offerte Locatario*/
 
 Route::get('/optionedview', 'LocatarioController@showOptionedList')
         ->name('optionedview');
 
-Route::get('/optionedview/{offerId}', 'LocatarioController@deleteOption')
+Route::get('/optionedview/delete/{offerId}', 'LocatarioController@deleteOption')
         ->name('optionedview.delete');
+
+/* Rotte gestione faq Admin*/
+
+Route::get('/faqview', 'AdminController@showFaqList')
+        ->name('faqview');
+
+Route::get('/faqview/delete/{offerId}', 'AdminController@deleteFaq')
+        ->name('faqview.delete');
 
 
 /*Rotte view statiche*/
@@ -80,19 +94,18 @@ Route::post('/chat/message', 'RegisteredUserController@saveMessage')
         ->name('chat.message');
 
 // Rotte per la form delle offerte
-Route::get('/offer/insert', 'LocatoreController@showInsertOfferForm')
+Route::get('/offerview/insert', 'LocatoreController@showInsertOfferForm')
         ->name('offer.insertview');
 
-Route::post('/offer/insert', 'LocatoreController@insertOffer')
+Route::post('/offerview/insert', 'LocatoreController@insertOffer')
         ->name('offer.insert');
 
 // Rotte per la modifica delle offerte
-Route::get('/offer/update', 'LocatoreController@showUpdateOfferForm')
+Route::get('/offerview/update', 'LocatoreController@showUpdateOfferForm')
         ->name('offer.updateview');
 
-Route::post('/offer/update', 'LocatoreController@updateOffer')
+Route::post('/offerview/update', 'LocatoreController@updateOffer')
         ->name('offer.update');
-
 
 
 
