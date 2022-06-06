@@ -26,7 +26,7 @@
                         
 
                     <div class ="col-md-3">
-                        <img src="{{asset('images\offers\button-add.png')}}" width="60" height="60" style="margin-top: 25px;margin-left: 30px;">
+                        <img src="{{asset('images\assets\images\button-add.png')}}" width="60" height="60" style="margin-top: 25px;margin-left: 30px;">
                     </div>
                 </div>
             </div>

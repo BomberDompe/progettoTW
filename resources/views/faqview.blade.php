@@ -21,7 +21,7 @@
                         <p class="new_faq">Nuova F.A.Q.</p>
                     </div>                      
                     <div class ="col-md-3">
-                        <img src="{{asset('images\offers\button-add.png')}}" width="40" height="40" style="margin: 1px 0px;">
+                        <img src="{{asset('images\assets\images\button-add.png')}}" width="40" height="40" style="margin: 1px 0px;">
                     </div>
                 </div>
             </div>
