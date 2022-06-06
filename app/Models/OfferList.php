@@ -51,5 +51,11 @@ class OfferList {
     public function getAllOption() {
         return Option::all();
     }
+    
+    public function setAcceptById($opt_id) {
+        $x = Option::find($opt_id);
+        $x->data_assegnamento = date('Y-m-d');
+        $x->save();
+    }
 
 }

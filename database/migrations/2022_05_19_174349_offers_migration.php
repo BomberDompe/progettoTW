@@ -46,7 +46,6 @@ class OffersMigration extends Migration
             $table->boolean('angolo_studio')->nullable();
             $table->boolean('opzionabilita');
             $table->date('data_inserimento');
-            $table->date('data_assegnazione')->nullable();
         });
     }
 

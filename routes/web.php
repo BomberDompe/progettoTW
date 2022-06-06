@@ -25,7 +25,7 @@ Route::post('/catalog', 'LocatarioController@showFilteredCatalog')
 Route::get('/catalog/details/{offerId}', 'PublicController@showDetails')
         ->name('details');
 
-/*Rotte faq*/
+/*Rotte faq*/    
 Route::get('/faqs', 'PublicController@showFaqs')
         ->name('faqs');
 
@@ -34,11 +34,17 @@ Route::get('/faqs', 'PublicController@showFaqs')
 Route::get('/account', 'UserController@index')
         ->name('utente');
 
+/* Rotte lista offerte Locatore*/
 Route::get('/offerview', 'LocatoreController@showOfferList')
         ->name('offerview');
 
-Route::get('/offerview/{offerId}', 'LocatoreController@deleteOffer')
+Route::get('/offerview/accept/{opzioneId}', 'LocatoreController@acceptOffer')
+        ->name('offerview.accept');
+
+Route::get('/offerview/delete/{offerId}', 'LocatoreController@deleteOffer')
         ->name('offerview.delete');
+
+/* Rotte lista offerte Locatario*/
 
 Route::get('/optionedview', 'LocatarioController@showOptionedList')
         ->name('optionedview');
@@ -46,6 +52,10 @@ Route::get('/optionedview', 'LocatarioController@showOptionedList')
 Route::get('/optionedview/{offerId}', 'LocatarioController@deleteOption')
         ->name('optionedview.delete');
 
+/* Rotte gestione faq Admin*/
+
+Route::get('/faqview', 'AdminController@showFaqList')
+        ->name('faqview');
 
 /*Rotte view statiche*/
 Route::view('/', 'home')

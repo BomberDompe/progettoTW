@@ -49,6 +49,18 @@ class DatabaseSeeder extends Seeder {
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
                 ],
+            ['username' => 'lollolollo',
+                'password' => Hash::make('Cz6LW7t4'),
+                'name' => 'Lorenzo',
+                'surname' => 'Di Alessandro',
+                'genere' => 'Uomo',
+                'data_nascita' => '1998-01-19',
+                'comune_residenza' => 'Jesi (AN)',
+                'telefono' => '3519021986',
+                'role' => 'locatario',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+                ],
         ]);
         
         DB::table('faqs')->insert([
@@ -122,7 +134,6 @@ class DatabaseSeeder extends Seeder {
                 'posti_camera'  => 2,
                 'opzionabilita'  => true,
                 'data_inserimento'  => Carbon::parse('2022-02-17'),
-                'data_assegnazione'  => null
             ],
             ['offerta_id'  => 2,
                 'user_id'  => 1,
@@ -157,7 +168,6 @@ class DatabaseSeeder extends Seeder {
                 'posti_camera'  => 1,
                 'opzionabilita'  => true,
                 'data_inserimento'  => Carbon::parse('2022-01-18'),
-                'data_assegnazione'  => null
             ],
             ['offerta_id'  => 3,
                 'user_id'  => 1,
@@ -192,7 +202,6 @@ class DatabaseSeeder extends Seeder {
                 'posti_camera'  => 1,
                 'opzionabilita'  => true,
                 'data_inserimento'  => Carbon::parse('2022-05-04'),
-                'data_assegnazione'  => null
             ],
             ['offerta_id'  => 4,
                 'user_id'  => 1,
@@ -232,7 +241,6 @@ class DatabaseSeeder extends Seeder {
                 'posti_camera'  => null,
                 'opzionabilita'  => true,
                 'data_inserimento'  => Carbon::parse('2022-06-30'),
-                'data_assegnazione'  => null
             ],
             ['offerta_id'  => 5,
                 'user_id'  => 1,
@@ -268,7 +276,6 @@ class DatabaseSeeder extends Seeder {
                 'posti_camera'  => null,
                 'opzionabilita'  => true,
                 'data_inserimento'  => Carbon::parse('2022-07-14'),
-                'data_assegnazione'  => null
             ],
             ['offerta_id'  => 6,
                 'user_id'  => 1,
@@ -306,7 +313,6 @@ class DatabaseSeeder extends Seeder {
                 'posti_camera'  => null,
                 'opzionabilita'  => true,
                 'data_inserimento'  => Carbon::parse('2022-05-02'),
-                'data_assegnazione'  => null
             ],
         ]);
         
@@ -361,6 +367,20 @@ class DatabaseSeeder extends Seeder {
             ['opzionamento_id' => 1,
                 'locatario_id' => 2,
                 'offerta_id' => 6,
+                'data_opzionamento' => '2022-06-04',
+                'data_assegnamento' => null,
+                'documento' => null,
+            ],
+            ['opzionamento_id' => 2,
+                'locatario_id' => 4,
+                'offerta_id' => 6,
+                'data_opzionamento' => '2022-06-09',
+                'data_assegnamento' => null,
+                'documento' => null,
+            ],
+            ['opzionamento_id' => 3,
+                'locatario_id' => 2,
+                'offerta_id' => 4,
                 'data_opzionamento' => '2022-06-04',
                 'data_assegnamento' => null,
                 'documento' => null,
