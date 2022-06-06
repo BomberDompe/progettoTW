@@ -21,7 +21,7 @@ class OffersMigration extends Migration
             $table->string('descrizione', 2000);
             $table->float('prezzo');
             $table->string('immagine', 100)->nullable();
-            $table->string('citta', 25);
+            $table->string('citta', 30);
             $table->string('via', 30);
             $table->unsignedInteger('civico');
             $table->unsignedInteger('eta_max')->nullable();
@@ -33,8 +33,8 @@ class OffersMigration extends Migration
             $table->unsignedInteger('tipologia');
             $table->unsignedInteger('sup_appartamento')->nullable();
             $table->unsignedInteger('num_camere')->nullable();
-            $table->boolean('cucina');
-            $table->boolean('locale_ricreativo');
+            $table->boolean('cucina')->nullable();
+            $table->boolean('locale_ricreativo')->nullable();
             $table->boolean('climatizzazione');
             $table->boolean('parcheggi');
             $table->boolean('farmacia');
@@ -46,7 +46,6 @@ class OffersMigration extends Migration
             $table->boolean('angolo_studio')->nullable();
             $table->boolean('opzionabilita');
             $table->date('data_inserimento');
-            $table->date('data_assegnazione')->nullable();
         });
     }
 

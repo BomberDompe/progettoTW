@@ -9,7 +9,6 @@
 <!-- Include file JavaScript per i filtri -->      
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script type="text/javascript" src="{{ asset("assets/js/filtersCatalog.js") }}"></script>
-<script type="text/javascript" src="{{ asset("assets/js/filtersValidation.js") }}"></script>
 @endpush
 
 @if(!$errors->isEmpty())
@@ -110,15 +109,15 @@
                     </legend>
                     <div class="filter-wrap-radio">
                         <div class="filter-wrap">
-                        {{ Form::radio('type', '-1', true, ['class' => 'filter-radio-input', 'id' => 'typeAll']) }}
+                        {{ Form::radio('tipologia', '-1', true, ['class' => 'filter-radio-input', 'id' => 'typeAll']) }}
                         {{ Form::label('typeAll', 'Tutte le tipologie', ['class' => 'filter-radio-label']) }}
                         </div>
                         <div class="filter-wrap">
-                        {{ Form::radio('type', '0', false, ['class' => 'filter-radio-input', 'id' => 'typeApartment']) }}
+                        {{ Form::radio('tipologia', '0', false, ['class' => 'filter-radio-input', 'id' => 'typeApartment']) }}
                         {{ Form::label('typeApartment', 'Appartamento', ['class' => 'filter-radio-label']) }}
                         </div>
                         <div class="filter-wrap">
-                        {{ Form::radio('type', '1', false, ['class' => 'filter-radio-input', 'id' => 'typeBedplace']) }}
+                        {{ Form::radio('tipologia', '1', false, ['class' => 'filter-radio-input', 'id' => 'typeBedplace']) }}
                         {{ Form::label('typeBedplace', 'Posto letto', ['class' => 'filter-radio-label']) }}
                         </div>
                     </div>
@@ -141,11 +140,11 @@
                         {{ Form::label('sup_appartamento', 'Sup. Appartamento (mq):', ['class' => 'filter-label']) }}
                         {{ Form::number('sup_appartamento', '', ['class' => 'filter-input', 'id' => 'sup_appartamento', 'disabled']) }}
                         </div>
-                        <div class="filter-wrap">
+                        <div class="filter-wrap"  id="appartamento">
                         {{ Form::checkbox('cucina', '', false, ['class' => 'filter-checkbox-input', 'id' => 'cucina']) }}
                         {{ Form::label('cucina', 'Cucina', ['class' => 'filter-checkbox-label']) }}
                         </div>
-                        <div class="filter-wrap">
+                        <div class="filter-wrap"  id="appartamento">
                         {{ Form::checkbox('locale_ricreativo', '', false, ['class' => 'filter-checkbox-input', 'id' => 'locale_ricreativo']) }}
                         {{ Form::label('locale_ricreativo', 'Locale Ricreativo', ['class' => 'filter-checkbox-label']) }}
                         </div>

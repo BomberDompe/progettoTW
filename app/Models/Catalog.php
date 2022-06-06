@@ -38,12 +38,6 @@ class Catalog {
         if (!is_null($filters["posti_tot"])) {
             $catalog = $catalog->where('posti_tot', $filters["posti_tot"]);
         }
-        if (array_key_exists("cucina", $filters)) {
-            $catalog = $catalog->where('cucina', true);
-        }
-        if (array_key_exists("locale_ricreativo", $filters)) {
-            $catalog = $catalog->where('locale_ricreativo', true);
-        }
         if (array_key_exists("climatizzazione", $filters)) {
             $catalog = $catalog->where('climatizzazione', true);
         }
@@ -66,7 +60,7 @@ class Catalog {
             $catalog = $catalog->where('opzionabilita', true);
         }
         
-        if ($filters["type"] === '0') {
+        if ($filters["tipologia"] === '0') {
             $catalog = $catalog->where('tipologia', 0);
             if (array_key_exists("sup_appartamento", $filters) && 
                     !is_null($filters["sup_appartamento"])) {
@@ -76,8 +70,14 @@ class Catalog {
                     !is_null($filters["num_camere"])) {
                 $catalog = $catalog->where('num_camere', $filters["num_camere"]);
             }
+            if (array_key_exists("cucina", $filters)) {
+                $catalog = $catalog->where('cucina', true);
+            }
+            if (array_key_exists("locale_ricreativo", $filters)) {
+                $catalog = $catalog->where('locale_ricreativo', true);
+            }
             
-        } elseif ($filters["type"] === '1') {
+        } elseif ($filters["tipologia"] === '1') {
             $catalog = $catalog->where('tipologia', 1);
             if (array_key_exists("sup_appartamento", $filters) && 
                     !is_null($filters["sup_camera"])) {

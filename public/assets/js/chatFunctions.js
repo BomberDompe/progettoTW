@@ -14,19 +14,17 @@ function sendMessage() {
     $('[id^="message"]').on('blur', function () {
         var formElementId = $(this).attr('id');
         var formId = 'form_' + userId;
-        var actionUrl = $(formId).attr('action');
-        doElemValidation(formElementId, actionUrl, formId);
+        doElemValidation(formElementId, formId);
     });
     $('[id^="form"]').on('submit', function (event) {
         event.preventDefault();
         var formId = 'form_' + userId;
-        var actionUrl = $(formId).attr('action');
-        doFormValidation(actionUrl, formId);
+        doFormValidation(formId);
     });
 }
 
 // AJAX per validare la textarea
-function doElemValidation(id, actionUrl, formId) {
+function doElemValidation(id, formId) {
 
     var formElems;
     
@@ -69,7 +67,7 @@ function doElemValidation(id, actionUrl, formId) {
 }
 
 // AJAX per inserire un nuovo messaggio
-function doFormValidation(actionUrl, formId) {
+function doFormValidation(formId) {
     
     var form = new FormData(document.getElementById(formId));
     form.append('destinatario_id', userId);

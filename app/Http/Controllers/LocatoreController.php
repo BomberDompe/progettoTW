@@ -6,7 +6,7 @@ use App\Models\OfferList;
 use App\Models\Resources\Offer;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Catalog;
-use App\Http\Requests\Request;
+use App\Http\Requests\OfferRequest;
 
 class LocatoreController extends Controller {
 
@@ -32,16 +32,20 @@ class LocatoreController extends Controller {
         Offer::where('offerta_id', $offerId)->delete();
         return redirect()->action('LocatoreController@showOfferList');
     }
-
-    public function insertOffer() {
+    
+    public function showInsertOfferForm() {
+        return view('offer/insert');
+    }
+    
+    public function showUpdateOfferForm() {
+        return view('offer/insert');
+    }
+    
+    public function insertOffer(OfferRequest $request) {
         
     }
-
-    public function updateOffer() {
-        
-    }
-
-    public function getOffer() {
+    
+    public function updateOffer(OfferRequest $request) {
         
     }
 

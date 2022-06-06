@@ -109,8 +109,8 @@ class DatabaseSeeder extends Seeder {
                 'tipologia'  => 1,
                 'sup_appartamento'  => null,
                 'num_camere'  => null,
-                'cucina'  => true,
-                'locale_ricreativo'  => true,
+                'cucina'  => null,
+                'locale_ricreativo'  => null,
                 'climatizzazione' => true,
                 'parcheggi'  => true,
                 'farmacia'  => false,
@@ -122,7 +122,6 @@ class DatabaseSeeder extends Seeder {
                 'posti_camera'  => 2,
                 'opzionabilita'  => true,
                 'data_inserimento'  => Carbon::parse('2022-02-17'),
-                'data_assegnazione'  => null
             ],
             ['offerta_id'  => 2,
                 'user_id'  => 1,
@@ -144,8 +143,8 @@ class DatabaseSeeder extends Seeder {
                 'tipologia'  => 1,
                 'sup_appartamento'  => null,
                 'num_camere'  => null,
-                'cucina'  => true,
-                'locale_ricreativo'  => false,
+                'cucina'  => null,
+                'locale_ricreativo'  => null,
                 'climatizzazione' => true,
                 'parcheggi'  => false,
                 'farmacia'  => false,
@@ -157,7 +156,6 @@ class DatabaseSeeder extends Seeder {
                 'posti_camera'  => 1,
                 'opzionabilita'  => true,
                 'data_inserimento'  => Carbon::parse('2022-01-18'),
-                'data_assegnazione'  => null
             ],
             ['offerta_id'  => 3,
                 'user_id'  => 1,
@@ -179,8 +177,8 @@ class DatabaseSeeder extends Seeder {
                 'tipologia'  => 1,
                 'sup_appartamento'  => null,
                 'num_camere'  => null,
-                'cucina'  => true,
-                'locale_ricreativo'  => true,
+                'cucina'  => null,
+                'locale_ricreativo'  => null,
                 'climatizzazione' => true,
                 'parcheggi'  => false,
                 'farmacia'  => false,
@@ -192,12 +190,11 @@ class DatabaseSeeder extends Seeder {
                 'posti_camera'  => 1,
                 'opzionabilita'  => true,
                 'data_inserimento'  => Carbon::parse('2022-05-04'),
-                'data_assegnazione'  => null
             ],
             ['offerta_id'  => 4,
                 'user_id'  => 1,
                 'titolo' => 'Appartamento grande in centro a Macerata',
-                'descrizione'  => '5 camere singole libere dal 1° settembre in appartamento poco fuori le mura (via Don Mario Lerda n.17). Le'
+                'descrizione'  => '5 camere singole libere dal 1° settembre in appartamento poco fuori le mura (viale Piave n.38). Le'
                 . ' camere sono molto ampie (come visibile in foto), luminose e ben arredate. Sono provviste di letti ad una piazza e mezza ed'
                 . ' alcune anche di balconi. L\'appartamento è molto grande (130mq), è dotato di ampio ingresso, 2 bagni (uno con doccia)'
                 . ' e una cucina abitabile con balcone. Il canone mensile è di 620 euro, costi di condominio esclusi. Provvisto di'
@@ -232,7 +229,6 @@ class DatabaseSeeder extends Seeder {
                 'posti_camera'  => null,
                 'opzionabilita'  => true,
                 'data_inserimento'  => Carbon::parse('2022-06-30'),
-                'data_assegnazione'  => null
             ],
             ['offerta_id'  => 5,
                 'user_id'  => 1,
@@ -268,7 +264,6 @@ class DatabaseSeeder extends Seeder {
                 'posti_camera'  => null,
                 'opzionabilita'  => true,
                 'data_inserimento'  => Carbon::parse('2022-07-14'),
-                'data_assegnazione'  => null
             ],
             ['offerta_id'  => 6,
                 'user_id'  => 1,
@@ -306,7 +301,6 @@ class DatabaseSeeder extends Seeder {
                 'posti_camera'  => null,
                 'opzionabilita'  => true,
                 'data_inserimento'  => Carbon::parse('2022-05-02'),
-                'data_assegnazione'  => null
             ],
         ]);
         

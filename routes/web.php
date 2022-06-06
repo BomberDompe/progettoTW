@@ -79,18 +79,18 @@ Route::post('/chat/unread', 'RegisteredUserController@updateUnreadMessages')
 Route::post('/chat/message', 'RegisteredUserController@saveMessage')
         ->name('chat.message');
 
-// Rotte per l'inserimento delle offerte
-Route::view('/offerview/insert', 'offer\insert')
-        ->name('offer.insertview')->middleware('can:isLocatore');
+// Rotte per la form delle offerte
+Route::get('/offer/insert', 'LocatoreController@showInsertOfferForm')
+        ->name('offer.insertview');
 
-Route::post('/offerview/insert', 'LocatoreController@insertOffer')
+Route::post('/offer/insert', 'LocatoreController@insertOffer')
         ->name('offer.insert');
 
 // Rotte per la modifica delle offerte
-Route::get('/offerview/update', 'LocatoreController@getOffer')
+Route::get('/offer/update', 'LocatoreController@showUpdateOfferForm')
         ->name('offer.updateview');
 
-Route::post('/offerview/update', 'LocatoreController@updateOffer')
+Route::post('/offer/update', 'LocatoreController@updateOffer')
         ->name('offer.update');
 
 

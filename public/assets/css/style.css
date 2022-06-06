@@ -89,6 +89,12 @@ button,select{
     margin-left:auto;
     min-width:auto;
 }
+
+.inner-container{
+    min-height: 500px;
+    padding-top: 20px; 
+}
+
 @media (min-width:576px){
     .container{
         max-width:540px
@@ -1186,7 +1192,7 @@ footer {
 /*Style SideBar*/
 .sidebar{
     position: fixed;
-
+    padding-top: 20px;
 }
 .sidebar a{
     display: block;
@@ -1338,6 +1344,28 @@ footer {
     align-content: center;
     justify-content: center;
     margin-top: 10%
+}
+.flex-center {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.functional-buttons-normal {
+    margin: 10px;
+    cursor: pointer;
+    background-color: #00bcd4;
+    border: 2px solid #00bcd4;
+    text-transform: uppercase;
+    font-size: 13px;
+    color: #fff;
+    padding: 6px 20px;
+    letter-spacing: 0.5px;
+    transition: all 0.5s;
+}
+.functional-buttons-normal:hover {
+    color: #00bcd4;
+    background-color: #fff;
 }
 
 .functional-buttons-dark {
@@ -1894,4 +1922,118 @@ footer {
     font-weight: bold;
     margin-bottom: 10px;
     color: midnightblue;
+}
+
+/* CSS per le form relative alle offerte */
+.insertform{
+    margin: 10px 0px;
+    padding: 10px;
+}
+
+.insertform-hide {
+    display: none;
+}
+
+.insertform-fieldset {
+    padding: 10px 15px 15px 15px;
+    margin: 15px 0px;
+    background-color: #f0ffff;
+    border-color: #00bcd4;
+    border-style: solid;
+    border-left-style: none;
+    border-right-style: none;
+    border-bottom-style: none;
+}
+
+.insertform-fieldset-hidden {
+    padding: 15px;
+    background-color: #f0ffff;
+    border-style: none;
+}
+
+.insertform-wrap-8 {
+    display: flex;
+    justify-content: center;
+    float: left;
+    width: 66.67%;
+}
+
+.insertform-wrap-6 {
+    display: flex;
+    justify-content: center;
+    float: left;
+    width: 50%;
+}
+
+.insertform-wrap-4 {
+    display: flex;
+    justify-content: center;
+    float: left;
+    width: 33.33%;
+}
+
+.insertform-label {
+    text-align: left;
+    line-height: 30px;
+    margin-right: 5px;
+}
+
+.insertform-text-input {
+    text-align: left;
+    width: 200px;
+}
+
+.insertform-text-input:hover {
+    border-style: solid;
+    border-color: #00bcd4;
+    border-width: 1px;
+}
+
+.insertform-textarea-input {
+    text-align: left;
+    width: 100%;
+}
+
+.insertform-textarea-input:hover {
+    border-color: #00bcd4;
+}
+
+.insertform-numeric-input {
+    text-align: right;
+    width: 120px;
+}
+
+.insertform-numeric-input:hover {
+    border-style: solid;
+    border-color: #00bcd4;
+    border-width: 1px;
+}
+
+
+.insertform-date-input {
+    text-align: center;
+    width: 160px;
+}
+
+.insertform-date-input:hover {
+    border-style: solid;
+    border-color: #00bcd4;
+    border-width: 1px;
+}
+
+.insertform-select-input {
+    text-align: left;
+    width: 150px;
+}
+
+.insertform-select-input:hover {
+    border-color: #00bcd4;
+}
+
+.insertform-file-input{
+    padding-top: 3px;
+}
+
+.insertform-file-input:hover{
+    color: #00bcd4
 }

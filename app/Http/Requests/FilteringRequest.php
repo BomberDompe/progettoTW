@@ -25,9 +25,9 @@ class FilteringRequest extends FormRequest {
      */
     public function rules() {
         return [
-            'min_price' => ['nullable', 'numeric', 'min:0'],
-            'max_price' => ['nullable', 'numeric', 'max:9999', 'gte:min_price'],
-            'start_date' => ['nullable', 'date_format:Y-m-d', 'after:yesterday'],
+            'min_price' => ['nullable', 'numeric', 'min:0', 'max:9999'],
+            'max_price' => ['nullable', 'numeric', 'min:0', 'max:9999', 'gte:min_price'],
+            'start_date' => ['nullable', 'date_format:Y-m-d', 'after:yesterday', 'before:2100-01-01'],
             'end_date' => ['nullable', 'date_format:Y-m-d', 'after:start_date', 'before:2100-01-01'],
             'sup_appartamento' => ['nullable', 'numeric', 'min:0', 'max:999'],
             'sup_camera' => ['nullable', 'numeric', 'min:0', 'max:999'],

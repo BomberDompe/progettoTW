@@ -24,13 +24,14 @@ function toggleFilters() {
         $('#target').slideToggle(500);   
         $('.icon').toggleClass('open');
     });
+    $('input[type=radio][name=tipologia]').trigger('change');
 };
         
         
 // jQuery per (dis)abilitare i filtri
 function disableFilters() {
-    $('input[type=radio][name=type]').on('change', function() {
-        var choice = $('input[type=radio][name=type]:checked').val();
+    $('input[type=radio][name=tipologia]').on('change', function() {
+        var choice = $('input[type=radio][name=tipologia]:checked').val();
         var apartment_filter = $('[id=appartamento]').find('input');
         var bedplace_filter = $('[id=postoletto]').find('input');
         
@@ -55,10 +56,9 @@ function disableFilters() {
 function resetFilters(){
     $('#resetButton').on('click', function(){
         $('.filter-form').trigger('reset');
-        $('input[type=radio][name=type]').trigger('change');
+        $('input[type=radio][name=tipologia]').trigger('change');
     });
 };
-
 
 $(document).ready(scrollFilters);
 $(document).ready(disableFilters);
