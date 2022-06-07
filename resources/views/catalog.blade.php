@@ -80,11 +80,13 @@
                     </legend>
                         <div class="filter-wrap">
                             {{ Form::label('start_date', 'Inizio:', ['class' => 'filter-label']) }}
-                            {{ Form::date('start_date', '', ['class' => 'filter-input', 'id' => 'start_date']) }}
+                            {{ Form::date('start_date', '', ['class' => 'filter-input',
+                                    'id' => 'start_date', 'max' => '2100-01-01']) }}
                         </div>
                         <div class="filter-wrap"> 
                             {{ Form::label('end_date', 'Fine:', ['class' => 'filter-label']) }}
-                            {{ Form::date('end_date', '', ['class' => 'filter-input', 'id' => 'end_date']) }}
+                            {{ Form::date('end_date', '', ['class' => 'filter-input',
+                                    'id' => 'end_date', 'max' => '2100-01-01']) }}
                         </div>
                 </fieldset>
                 @if ($errors->first('start_date'))
