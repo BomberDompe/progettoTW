@@ -14,7 +14,7 @@ class LocatarioController extends Controller {
     protected $offerListModel;
 
     public function __construct() {
-        //$this->middleware('can:isLocatario');
+        $this->middleware('can:isLocatario');
         $this->catalogModel = new Catalog;
         $this->offerListModel = new OfferList;
     }

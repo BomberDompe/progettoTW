@@ -1870,6 +1870,7 @@ footer {
     box-shadow           : 0px 0px 5px 0px rgba(164, 164, 164, 1);
 }
 
+
 /* Style list offer */
 .container-listoffer{
     margin-top: 10px;
@@ -1983,13 +1984,6 @@ footer {
     margin-bottom: 10px;
     color: midnightblue;
 }
-.aggiudicata{
-    font-style: italic;
-    font-size: unset;
-    color: seagreen;
-    transform: rotate(-9deg);
-
-}
 .new_offer{
     text-align: center;
     font-size: xxx-large;
@@ -1999,6 +1993,14 @@ footer {
     font-weight: 400;
     font-style: oblique;
 
+}
+.statapresa{
+    font-style: oblique;
+    font-size: larger;
+    color: crimson;
+    text-transform: uppercase;
+    font-weight: bold;
+    
 }
 
 /* Style list faq */

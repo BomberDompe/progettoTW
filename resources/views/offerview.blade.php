@@ -52,25 +52,41 @@
                     <div class="offerlist-buttons">
                         <ul>
                             @can('isLocatario')
+
                             @isset($optionList)
                             @foreach($optionList as $option)
-                            @if($offer->offerta_id == $option->offerta_id && $option->data_assegnamento != null)
-                            <li class="buttonid" >
-                                <a>&ensp;AGGIUDICATO &ensp; </a>
-                            </li>
+
+                            @if($option->data_assegnamento != null && $option->locatario_id == Auth::id() && $offer->offerta_id == $option->offerta_id)
+                            <li class="buttonid">
+                                <a style="background-color: #29a329" href="#">Contratto</a>
+                            </li>  
                             @break
-                         
-                            @elseif($offer->offerta_id == $option->offerta_id && $option->data_assegnamento == null)
+                            @endif
+
+                            @if($option->data_assegnamento != null && $option->locatario_id != Auth::id() && $offer->offerta_id == $option->offerta_id)
+                            <li>
+                                <p class="statapresa" >
+                                    &Egrave; stata aggiudicata
+                                </p>
+                            </li>
                             <li class="buttonid" >
                                 <a class="confirmation" href="{{ route('optionedview.delete', [$offer->offerta_id]) }}">&ensp;Rimuovi &ensp; </a>
                             </li>
-                             @break
-                          
-
+                            @break
                             @endif
+
+                            @if($option->data_assegnamento == null && $option->locatario_id == Auth::id())
+                            <li class="buttonid" >
+                                <a class="confirmation" href="{{ route('optionedview.delete', [$offer->offerta_id]) }}">&ensp;Rimuovi &ensp; </a>
+                            </li>                                 
+                            @break
+                            @endif
+
                             @endforeach
                             @endisset
+
                             @endcan
+
                             @can('isLocatore')
                             <li><a  class ="proposte">Proposte</a></li>
                             <li  class="buttonid" ><a>Modifica&ensp;</a></li>
@@ -307,9 +323,13 @@
 
             @else 
             <div class="col-md-4 center_lario" id="accettata">
-                <p class="aggiudicata">
-                    &emsp;&ensp;AGGIUDICATA
-                </p>
+                <div class="offerlist-buttons"> 
+                    <ul>
+                        <li class="aggiudicata">
+                            <a style="background-color: #29a329" href="#">Contratto</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
             @endif
 
