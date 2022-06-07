@@ -22,7 +22,7 @@ class UsersMigration extends Migration
             $table->string('genere', 10)->nullable();
             $table->string('data_nascita', 20)->nullable();
             $table->string('comune_residenza', 25)->nullable();
-            $table->string('telefono', 10)->nullable();
+            $table->string('telefono', 15)->nullable();
             $table->string('role', 10);
             $table->string('email')->nullable();
             $table->timestamp('email_verified_at')->nullable();

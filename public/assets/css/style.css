@@ -999,12 +999,22 @@ footer {
     padding-top: 100px;
     padding-bottom: 300px;
     background-position: center center;
-    margin-bottom: -20px;
 }
-.screen {
+.screen__login {
     background: linear-gradient(90deg, #00BCD2, #3b5998);
     position: relative;
     height: 700px;
+    min-width: 800px;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    border-radius: 120px;
+}
+.screen__register {
+    background: linear-gradient(90deg, #00BCD2, #3b5998);
+    position: relative;
+    height: 1000px;
     min-width: 800px;
     width: 30%;
     margin-left: auto;
@@ -1031,7 +1041,7 @@ footer {
     transform: rotate(45deg);
     position: absolute;
 }
-.screen__background__shape {
+.screen__background__shape1 {
     height: 620px;
     width: 620px;
     background: #FFF;
@@ -1040,17 +1050,41 @@ footer {
     border-radius: 72px;
 }
 
+.screen__background__shape2 {
+    position: absolute;
+    height: 250px;
+    width: 800px;
+    background: #FFF;
+    top: 370px;
+}
+
+.screen__background__shape3 {
+    height: 620px;
+    width: 620px;
+    background: #FFF;
+    bottom: 39px;
+    right: 92px;
+    border-radius: 72px;
+}
+
 /*Log-In Style*/
 .login {
     width: 340px;
     padding: 10px 60px;
-    padding-top: 137px;
+    padding-top: 20%;
+    padding-bottom: 20%;
     margin: 0 auto;
 }
 .login__field {
+    display:block;
     padding: 20px 0px;
     position: relative;
 }
+
+.login__title {
+    margin-bottom: 20px;
+}
+
 .login__input {
     border: none;
     border-bottom: 2px solid #D1D1D4;
@@ -1058,7 +1092,7 @@ footer {
     padding: 10px;
     padding-left: 24px;
     font-weight: 700;
-    width: 75%;
+    width: 100%;
     transition: .2s;
 }
 .login__input:active,
@@ -1074,6 +1108,7 @@ footer {
     padding: 16px 20px;
     border-radius: 26px;
     border: 1px solid #00BCD5;
+    justify-content: center;
     text-transform: uppercase;
     font-weight: 700;
     display: flex;
@@ -1092,10 +1127,19 @@ footer {
 }
 
 /* Register Style */
+.register-wrapper {
+    display: flex;
+    width: 100%;
+}
+.register__center {
+    margin: auto;
+}
+.height-100 {
+    height:100%;
+}
 .register {
     width: 100%;
-    padding-left: 95px;
-    padding-top: 63px;
+    padding: 10%;
     display: flex;
     flex-wrap: wrap;
     align-items: baseline;
@@ -1116,7 +1160,7 @@ footer {
     padding: 10px;
     padding-left: 24px;
     font-weight: 700;
-    width: 85%;
+    width: 100%;
     transition: .2s;
 }
 .register__input:active,
@@ -1132,11 +1176,12 @@ footer {
     padding: 16px 90px;
     border-radius: 26px;
     border: 1px solid #00BCD5;
+    justify-content: center;
     text-transform: uppercase;
     font-weight: 700;
     display: flex;
     align-items: center;
-    width: 50%;
+    width: 30%;
     color: #4C489D;
     box-shadow: 0px 2px 2px #5c5696;
     cursor: pointer;
@@ -1158,8 +1203,25 @@ footer {
 .calendario{
     margin:31px 0;
 }
-.tipologia{
-    margin-top: 100px;
+.register__fieldset{
+    margin: 10px 0px;
+}
+.register-fieldset {
+    padding: 10px 15px 15px 15px;
+    margin: 15px 0px;
+    border-style: solid;
+    border-color: #D1D1D4;
+    border-left-style: none;
+    border-right-style: none;
+}
+.register-fieldset:hover {
+    padding: 10px 15px 15px 15px;
+    margin: 15px 0px;
+    border-color: #6A679E;
+    border-style: solid;
+    border-left-style: none;
+    border-right-style: none;
+    transition: .2s;
 }
 #leftreg{
 
