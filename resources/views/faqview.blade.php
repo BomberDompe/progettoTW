@@ -14,14 +14,14 @@
 <div class="container-listfaq">
 
     <div class="domanda">
-        <a href="{{ route('utente') }}">
+        <a href="{{ route('faqview.insertview') }}">
             <div class="container">
                 <div class="row">
                     <div class ="col-md-9">
                         <p class="new_faq">Nuova F.A.Q.</p>
                     </div>                      
                     <div class ="col-md-3">
-                        <img src="{{asset('images\offers\button-add.png')}}" width="40" height="40" style="margin: 1px 0px;">
+                        <img src="{{asset('assets\images\button-add.png')}}" width="40" height="40" style="margin: 1px 0px;">
                     </div>
                 </div>
             </div>
@@ -47,7 +47,7 @@
             <div class ="col-md-12">
                 <div class="faqlist-buttons">
                     <ul>
-                        <li><a href="#" >&ensp;Modifica&ensp;</a></li>
+                        <li><a href="{{ route('faqview.updateview') }}" >&ensp;Modifica&ensp;</a></li>
                         <li><a class="confirmation"  href="{{ route('faqview.delete', [$faq->faq_id]) }}" >&ensp;Elimina&ensp;</a></li>
                     </ul>
                 </div>

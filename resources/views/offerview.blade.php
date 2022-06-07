@@ -23,10 +23,10 @@
                     <div class ="col-md-6">
                         <p class="new_offer">Nuova Offerta</p>
                     </div>
-                        
+
 
                     <div class ="col-md-3">
-                        <img src="{{asset('images\offers\button-add.png')}}" width="60" height="60" style="margin-top: 25px;margin-left: 30px;">
+                        <img src="{{asset('assets\images\button-add.png')}}" width="60" height="60" style="margin-top: 25px;margin-left: 30px;">
                     </div>
                 </div>
             </div>
@@ -52,8 +52,24 @@
                     <div class="offerlist-buttons">
                         <ul>
                             @can('isLocatario')
+                            @isset($optionList)
+                            @foreach($optionList as $option)
+                            @if($offer->offerta_id == $option->offerta_id && $option->data_assegnamento != null)
                             <li class="buttonid" >
-                                <a class="confirmation" href="{{ route('optionedview.delete', [$offer->offerta_id]) }}">&ensp;Rimuovi &ensp; </a></li>
+                                <a>&ensp;AGGIUDICATO &ensp; </a>
+                            </li>
+                            @break
+                         
+                            @elseif($offer->offerta_id == $option->offerta_id && $option->data_assegnamento == null)
+                            <li class="buttonid" >
+                                <a class="confirmation" href="{{ route('optionedview.delete', [$offer->offerta_id]) }}">&ensp;Rimuovi &ensp; </a>
+                            </li>
+                             @break
+                          
+
+                            @endif
+                            @endforeach
+                            @endisset
                             @endcan
                             @can('isLocatore')
                             <li><a  class ="proposte">Proposte</a></li>
@@ -268,20 +284,19 @@
     <div class="prop container" style="display: none">
         <div class="row" id="proposta">
 
+            @isset($optionList)
             @foreach($optionList as $option)
 
             @if($offer->offerta_id == $option->offerta_id)
-
             @foreach($idLarioList as $lario)
-
             @if($option->locatario_id == $lario->id)
 
             <div class="col-md-8 center_lario">
                 <p class="data_lario">{{ $lario->surname }} {{ $lario->name }},  nato il: {{ $lario->data_nascita }} </p>
             </div>
-            
+
             @if($option->data_assegnamento == null)
-            
+
             <div class="col-md-4 center_lario" >              
                 <div class="offerlist-buttons">
                     <ul>
@@ -289,22 +304,21 @@
                     </ul>
                 </div>              
             </div>
-            
+
             @else 
             <div class="col-md-4 center_lario" id="accettata">
                 <p class="aggiudicata">
-                &emsp;&ensp;AGGIUDICATA
+                    &emsp;&ensp;AGGIUDICATA
                 </p>
             </div>
             @endif
-            
+
+            @endif
+            @endforeach
             @endif
 
             @endforeach
-
-            @endif
-
-            @endforeach
+            @endisset
 
 
         </div>
