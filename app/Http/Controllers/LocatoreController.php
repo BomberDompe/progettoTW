@@ -3,10 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\OfferList;
-use App\Models\Resources\Offer;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Catalog;
-use App\Http\Requests\Request;
+use App\Http\Requests\OfferRequest;
 
 class LocatoreController extends Controller {
 
@@ -35,13 +34,7 @@ class LocatoreController extends Controller {
 
     public function deleteOffer($offerId) {
         
-        $autenticati = Offer::where('offerta_id', $offerId)->value('user_id');
-        
-        if ( Auth::id() == $autenticati){
-         Offer::where('offerta_id', $offerId)->delete();
-         return redirect()->action('LocatoreController@showOfferList');
-        }
-        return redirect()->action('UserController@index');
+        return $this->offerListModel->deleteOffer($offerId, Auth::id());
     }
 
     public function showInsertOfferForm() {
@@ -53,11 +46,11 @@ class LocatoreController extends Controller {
     }
     
     public function insertOffer(OfferRequest $request) {
-        
+        return $this->offerListModel->insertOffer($request, Auth::id());
     }
     
     public function updateOffer(OfferRequest $request) {
-        
+         return $this->offerListModel->updateOffer($request, Auth::id());
     }
 
 }

@@ -1,4 +1,4 @@
-@extends('layouts.public')
+@extends('layouts.private')
 
 @section('title', 'Chat')
 

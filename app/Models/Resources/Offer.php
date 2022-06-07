@@ -8,6 +8,7 @@ class Offer extends Model {
 
     protected $table = 'offerte';
     protected $primaryKey = 'offerta_id';
+    protected $guarded = ['offerta_id'];
     public $timestamps = false;
     
     public function getAllOffers($elemEachPage = 0) {

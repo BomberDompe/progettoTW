@@ -1,21 +1,8 @@
 
-$(function () {
-    var actionUrl = "{{ route('newproduct.store') }}";
-    var formId = 'addproduct';
-    $(":input").on('blur', function (event) {
-        var formElementId = $(this).attr('id');
-        doElemValidation(formElementId, actionUrl, formId);
-    });
-    $("#addproduct").on('submit', function (event) {
-        event.preventDefault();
-        doFormValidation(actionUrl, formId);
-    });
-});
-
-function getErrorHtml(elemErrors) {
+function getErrorHtml(elemErrors, id) {
     if ((typeof (elemErrors) === 'undefined') || (elemErrors.length < 1))
         return;
-    var out = '<ul class="errors">';
+    var out = '<ul class="errors" id="_' + id + '">';
     for (var i = 0; i < elemErrors.length; i++) {
         out += '<li>' + elemErrors[i] + '</li>';
     }
@@ -41,8 +28,8 @@ function doElemValidation(id, actionUrl, formId) {
             error: function (data) {
                 if (data.status === 422) {
                     var errMsgs = JSON.parse(data.responseText);
-                    $("#" + id).parent().find('.errors').html(' ');
-                    $("#" + id).after(getErrorHtml(errMsgs[id]));
+                    $("#" + id).parents('#fieldset-block').find("#_" + id).html(' ');
+                    $("#" + id).parents('fieldset').after(getErrorHtml(errMsgs[id], id));
                 }
             },
             contentType: false,
@@ -81,9 +68,13 @@ function doFormValidation(actionUrl, formId) {
             if (data.status === 422) {
                 var errMsgs = JSON.parse(data.responseText);
                 $.each(errMsgs, function (id) {
-                    $("#" + id).parent().find('.errors').html(' ');
-                    $("#" + id).after(getErrorHtml(errMsgs[id]));
+                    $("#" + id).parents('#fieldset-block').find("#_" + id).html(' ');
+                    $("#" + id).parents('fieldset').after(getErrorHtml(errMsgs[id], id));
                 });
+            }
+            if (data.status === 500) {
+                console.log('prova');
+                console.log(data.responseText);
             }
         },
         success: function (data) {
@@ -93,3 +84,43 @@ function doFormValidation(actionUrl, formId) {
         processData: false
     });
 }
+        
+        
+// jQuery per (dis)abilitare i campi non relativi all'opzione
+function disableFields() {
+    $('input[type=radio][name=tipologia]').on('change', function() {
+        var choice = $('input[type=radio][name=tipologia]:checked').val();
+        var apartment_filter = $('[id=appartamento]').find('input');
+        var bedplace_filter = $('[id=postoletto]').find('input');
+        
+        switch (choice) { 
+	case '0': 
+		apartment_filter.prop('disabled', false);
+                bedplace_filter.prop('disabled', true);
+                bedplace_filter.val(null);
+                $('#_sup_camera').html(' ');
+                $('#_posti_camera').html(' ');
+		break;  
+        case '1': 
+		apartment_filter.prop('disabled', true);
+                bedplace_filter.prop('disabled', false);
+                apartment_filter.val(null);
+                $('#_sup_appartamento').html(' ');
+                $('#_num_camere').html(' ');
+		break; 
+        }
+        
+    });
+};
+
+// Reset dei campi della form
+function resetFields(){
+    $('#resetButton').on('click', function(){
+        $('#insertoffer').trigger('reset');
+        $('input[type=radio][name=tipologia]').trigger('change');
+        $('.errors').html(' ');
+    });
+};
+
+$(document).ready(disableFields);
+$(document).ready(resetFields);

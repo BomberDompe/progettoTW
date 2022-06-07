@@ -95,14 +95,14 @@ Route::post('/chat/message', 'RegisteredUserController@saveMessage')
 
 // Rotte per la form delle offerte
 Route::get('/offerview/insert', 'LocatoreController@showInsertOfferForm')
-        ->name('offer.insertview');
+        ->name('offer.insert');
 
 Route::post('/offerview/insert', 'LocatoreController@insertOffer')
         ->name('offer.insert');
 
 // Rotte per la modifica delle offerte
 Route::get('/offerview/update', 'LocatoreController@showUpdateOfferForm')
-        ->name('offer.updateview');
+        ->name('offer.update');
 
 Route::post('/offerview/update', 'LocatoreController@updateOffer')
         ->name('offer.update');
