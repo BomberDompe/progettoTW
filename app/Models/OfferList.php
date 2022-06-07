@@ -26,8 +26,8 @@ class OfferList {
 
         $options = $this->optionModel->getOfferId($user_id);
         $optOfferList = array();
-        foreach ($options as $x) {
-            $optOffer = $this->offerModel->getOfferById($x);
+        foreach ($options as $option) {
+            $optOffer = $this->offerModel->getOfferById($option);
             array_push($optOfferList, $optOffer);
         }
         return $optOfferList;
@@ -48,25 +48,49 @@ class OfferList {
         return $optLarioList;
     }
 
-    public function getAllOption() {
-        return Option::all();
+    public function getAllOptions() {
+        return $this->optionModel->all();
     }
     
-    public function setAcceptById($opt_id) {
-        $x = Option::find($opt_id);
-        $x->data_assegnamento = date('Y-m-d');
-        $x->save();
+    public function setAcceptedById($optId, $authId) {
+        $option = $this->optionModel->find($optId);
+        
+        if (empty($option)){
+            abort(404);
+        }
+        
+        $offer = $this->offerModel->find($option->offerta_id);
+        if ($authId !== $offer->user_id){
+            abort(403);
+        }
+        
+        $option->data_assegnamento = date('Y-m-d');
+        $option->save();
     }
     
     public function deleteOffer($offerId, $authId) {
+        $offer = $this->offerModel->find($offerId);
         
-        $autenticati = Offer::where('offerta_id', $offerId)->value('user_id');
-        
-        if ($authId == $autenticati){
-            Offer::where('offerta_id', $offerId)->delete();
-            return redirect()->action('LocatoreController@showOfferList');
+        if (empty($offer)) {
+            abort(404);
+        } elseif ($authId !== $offer->user_id){
+            abort(403);
         }
-        return redirect()->action('UserController@index');
+        
+        $this->offerModel->where('offerta_id', $offerId)->delete();
+        return redirect()->action('LocatoreController@showOfferList');
+    }
+    
+    public function getOfferForUpdate($offerId, $authId) {
+        $offer = $this->offerModel->find($offerId);
+        
+        if (empty($offer)) {
+            abort(404);
+        } elseif ($authId !== $offer->user_id){
+            abort(403);
+        }
+        return $this->offerModel->find($offerId);
+        
     }
     
     public function insertOffer($data, $userId) {

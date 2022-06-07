@@ -101,7 +101,7 @@ Route::post('/offerview/insert', 'LocatoreController@insertOffer')
         ->name('offer.insert');
 
 // Rotte per la modifica delle offerte
-Route::get('/offerview/update', 'LocatoreController@showUpdateOfferForm')
+Route::get('/offerview/update/{offerId}', 'LocatoreController@showUpdateOfferForm')
         ->name('offer.update');
 
 Route::post('/offerview/update', 'LocatoreController@updateOffer')

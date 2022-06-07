@@ -23,12 +23,12 @@ class LocatoreController extends Controller {
         return view('offerview')
                         ->with('offerList', $this->offerListModel->getOffersByUserId(Auth::id()))
                         ->with('idLarioList', $this->offerListModel->getUserByOffer(Auth::id()))
-                        ->with('optionList', $this->offerListModel->getAllOption());
+                        ->with('optionList', $this->offerListModel->getAllOptions());
     }
     
-    public function acceptOffer($opt_id) {
+    public function acceptOffer($optId) {
         
-        $this->offerListModel->setAcceptById($opt_id);
+        $this->offerListModel->setAcceptedById($optId, Auth::id());
         return redirect()->action('LocatoreController@showOfferList');
     }
 
@@ -41,8 +41,9 @@ class LocatoreController extends Controller {
         return view('form/offerform');
     }
     
-    public function showUpdateOfferForm() {
-        return view('form/offerform');
+    public function showUpdateOfferForm($offerId) {
+        return view('form/offerform')
+            ->with('offer', $this->offerListModel->getOfferForUpdate($offerId, Auth::id()));
     }
     
     public function insertOffer(OfferRequest $request) {
