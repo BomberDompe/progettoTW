@@ -11,12 +11,12 @@ use Illuminate\Support\Facades\Auth;
 class LocatarioController extends Controller {
 
     protected $catalogModel;
-    protected $optionModel;
+    protected $offerListModel;
 
     public function __construct() {
         //$this->middleware('can:isLocatario');
         $this->catalogModel = new Catalog;
-        $this->optionModel = new OfferList;
+        $this->offerListModel = new OfferList;
     }
 
     public function showFilteredCatalog(FilteringRequest $request) {
@@ -27,14 +27,15 @@ class LocatarioController extends Controller {
 
     public function showOptionedList() {
         return view('offerview')
-                        ->with('offerList', $this->optionModel->getOffersByOption(Auth::id()));
+                        ->with('offerList', $this->offerListModel->getOffersByOption(Auth::id()))
+                        ->with('optionList', $this->offerListModel->getAllOption());
     }
 
     public function deleteOption($offerId) {
         $autenticati = Option::where('offerta_id', $offerId)->value('locatario_id');
-        if ( Auth::id() == $autenticati){
-        Option::where('offerta_id',$offerId)->delete();
-        return redirect()->action('LocatarioController@showOptionedList');
+        if (Auth::id() == $autenticati) {
+            Option::where('offerta_id', $offerId)->delete();
+            return redirect()->action('LocatarioController@showOptionedList');
         }
         return redirect()->action('UserController@index');
     }

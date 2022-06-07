@@ -60,6 +60,19 @@ Route::get('/faqview', 'AdminController@showFaqList')
 Route::get('/faqview/delete/{offerId}', 'AdminController@deleteFaq')
         ->name('faqview.delete');
 
+// Rotte per la form delle faq
+Route::get('/faqview/insert', 'AdminController@showInsertFaqForm')
+        ->name('faqview.insertview');
+
+Route::post('/faqview/insert', 'AdminController@insertFaq')
+        ->name('faq.insert');
+
+// Rotte per la modifica delle faq
+Route::get('/faqview/update', 'AdminController@showUpdateFaqForm')
+        ->name('faqview.updateview');
+
+Route::post('/faqview/update', 'AdminController@updateFaq')
+        ->name('faq.update');
 
 /*Rotte view statiche*/
 Route::view('/', 'home')
