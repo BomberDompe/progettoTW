@@ -9,6 +9,7 @@ use App\User;
 class OfferList {
 
     protected $offerModel;
+    protected $optionModel;
 
     public function __construct() {
 
@@ -96,7 +97,7 @@ class OfferList {
     public function insertOffer($data, $userId) {
         if ($data->hasFile('immagine')) {
             $image = $data->file('immagine');
-            $imageName = $image->getClientOriginalName();
+            $imageName = $image->hashName();
             $destinationPath = public_path() . '/images/offers';
             $image->move($destinationPath, $imageName);
         } else {
@@ -138,7 +139,70 @@ class OfferList {
         return response()->json(['redirect' => route('offerview')]);
     }
     
-    public function updateOffer($data, $userId) {
+    public function updateOffer($data) {
+        $offer = $this->offerModel->find($data["offerta_id"]);
         
+        if ($data->hasFile('immagine')) {
+            $image = $data->file('immagine');
+            $imageName = $image->hashName();
+            echo("\n\Nome immagine nuova: ".$imageName);
+            $destinationPath = public_path() . '/images/offers';
+            if ($offer->immagine != null) {
+                $currentImageName = $offer->immagine;
+                echo("\n\Nome immagine vecchia: ".$currentImageName);
+                unlink($destinationPath . '/' . $currentImageName);
+                echo("\n\Nome path: ".$destinationPath);
+            }
+            echo("\n\Nome immagine nuova (2): ".$imageName);
+            $image->move($destinationPath, $imageName);
+            echo("\n\Nome immagine nuova (3): ".$imageName);
+            echo("\n\Nome immagine nuova (4): ".$imageName);
+            echo("\n\ ".$offer->immagine);
+        } else {
+            $imageName = $offer->immagine;
+        }
+        echo("\n\ ".$offer->immagine);
+        
+            //unlink($destinationPath . '/' . $currentImageName);
+        $offer->fill($data->validated());
+        $offer->immagine = $imageName;
+        
+        $offer->climatizzazione = isset($data["climatizzazione"]);
+        $offer->parcheggi = isset($data["parcheggi"]);
+        $offer->farmacia = isset($data["farmacia"]);
+        $offer->supermercato = isset($data["supermercato"]);
+        $offer->ristorazione = isset($data["ristorazione"]);
+        $offer->trasporti = isset($data["trasporti"]);
+        $offer->opzionabilita = isset($data["opzionabilita"]);
+        
+        if ($data["tipologia"] === '0') {
+            $offer->tipologia = 0;
+            $offer->cucina = isset($data["cucina"]);
+            $offer->locale_ricreativo = isset($data["locale_ricreativo"]);
+            $offer->angolo_studio = null;
+            $offer->sup_camera = null;
+            $offer->posti_camera = null;
+            
+        } elseif ($data["tipologia"] === '1') {
+            $offer->tipologia = 1;
+            $offer->angolo_studio = isset($data["angolo_studio"]);
+            $offer->cucina = null;
+            $offer->locale_ricreativo = null;
+            $offer->sup_appartamento = null;
+            $offer->num_camere = null;
+        }
+        
+        if ($data["genere_locatario"] === '-1') {
+            $offer->genere_locatario = null;
+        }
+        if ($data["genere_locatario"] === '0') {
+            $offer->genere_locatario = 0;
+            
+        } elseif ($data["genere_locatario"] === '1') {
+            $offer->genere_locatario = 1;
+        }
+        
+        $offer->save();
+        //return response()->json(['redirect' => route('offerview')]);
     }
 }
