@@ -38,7 +38,7 @@
                             @endif
                         </div>
                         <div class="flex-center">
-                            {{ Form::submit('Login', ['class' => 'login__submit']) }}
+                            {{ Form::submit('Log in', ['class' => 'login__submit']) }}
                         </div>
 
                         {{ Form::close() }}

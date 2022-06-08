@@ -89,6 +89,7 @@ function doFormValidation(formId) {
             }
         },
         success: function (jsonData) {
+            playMessageSentAudio();
             messageBox.val('');
             var timestamp = jsonData.timestamp;
             timestamp = timestamp.substring(0,10) + ', alle ' + timestamp.substring(11);
@@ -149,6 +150,13 @@ function togglePopUp() {
 function scrollChatToBottom() {
     var currentChatContent = currentChat.find('#chat');
     currentChatContent.scrollTop(currentChatContent.prop("scrollHeight"));
+}
+
+// Esegue il file audio del messaggio inviato
+function playMessageSentAudio() {
+    var audioPath = $(location).attr("href") + '/../../public/assets/audio/message-sent.mp3'; 
+    var audio = new Audio(audioPath);
+    audio.play();
 }
 
 // Mostra la conversazione selezionata

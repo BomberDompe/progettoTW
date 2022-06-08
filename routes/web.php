@@ -31,8 +31,8 @@ Route::get('/faqs', 'PublicController@showFaqs')
 
 /*Rotte account*/
 
-Route::get('/account', 'UserController@index')
-        ->name('utente');
+Route::view('/account', 'account')
+        ->name('utente')->middleware('auth');
 
 /* Rotte lista offerte Locatore*/
 Route::get('/offerview', 'LocatoreController@showOfferList')
@@ -74,6 +74,7 @@ Route::get('/faqview/update', 'AdminController@showUpdateFaqForm')
 Route::post('/faqview/update', 'AdminController@updateFaq')
         ->name('faq.update');
 
+
 /*Rotte view statiche*/
 Route::view('/', 'home')
         ->name('home');
@@ -108,18 +109,18 @@ Route::post('/chat/message', 'RegisteredUserController@saveMessage')
 
 // Rotte per la form delle offerte
 Route::get('/offerview/insert', 'LocatoreController@showInsertOfferForm')
-        ->name('offer.insertview');
+        ->name('offer.insert');
 
 Route::post('/offerview/insert', 'LocatoreController@insertOffer')
         ->name('offer.insert');
 
 // Rotte per la modifica delle offerte
-Route::get('/offerview/update', 'LocatoreController@showUpdateOfferForm')
-        ->name('offer.updateview');
+Route::get('/offerview/update/{offerId}', 'LocatoreController@showUpdateOfferForm')
+        ->name('offer.update');
 
 Route::post('/offerview/update', 'LocatoreController@updateOffer')
         ->name('offer.update');
 
-
-
-
+/*Rotta contratto*/
+Route::get('/contract/{optionId}','RegisteredUserController@showContract')
+        ->name('contract');

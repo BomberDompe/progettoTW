@@ -28,7 +28,7 @@ class LocatarioController extends Controller {
     public function showOptionedList() {
         return view('offerview')
                         ->with('offerList', $this->offerListModel->getOffersByOption(Auth::id()))
-                        ->with('optionList', $this->offerListModel->getAllOption());
+                        ->with('optionList', $this->offerListModel->getAllOptions());
     }
 
     public function deleteOption($offerId) {

@@ -3,10 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\OfferList;
-use App\Models\Resources\Offer;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Catalog;
-use App\Http\Requests\Request;
+use App\Http\Requests\OfferRequest;
 
 class LocatoreController extends Controller {
 
@@ -24,40 +23,35 @@ class LocatoreController extends Controller {
         return view('offerview')
                         ->with('offerList', $this->offerListModel->getOffersByUserId(Auth::id()))
                         ->with('idLarioList', $this->offerListModel->getUserByOffer(Auth::id()))
-                        ->with('optionList', $this->offerListModel->getAllOption());
+                        ->with('optionList', $this->offerListModel->getAllOptions());
     }
     
-    public function acceptOffer($opt_id) {
+    public function acceptOffer($optId) {
         
-        $this->offerListModel->setAcceptById($opt_id);
+        $this->offerListModel->setAcceptedById($optId, Auth::id());
         return redirect()->action('LocatoreController@showOfferList');
     }
 
     public function deleteOffer($offerId) {
         
-        $autenticati = Offer::where('offerta_id', $offerId)->value('user_id');
-        
-        if ( Auth::id() == $autenticati){
-         Offer::where('offerta_id', $offerId)->delete();
-         return redirect()->action('LocatoreController@showOfferList');
-        }
-        return redirect()->action('UserController@index');
+        return $this->offerListModel->deleteOffer($offerId, Auth::id());
     }
 
     public function showInsertOfferForm() {
         return view('form/offerform');
     }
     
-    public function showUpdateOfferForm() {
-        return view('form/offerform');
+    public function showUpdateOfferForm($offerId) {
+        return view('form/offerform')
+            ->with('offer', $this->offerListModel->getOfferForUpdate($offerId, Auth::id()));
     }
     
     public function insertOffer(OfferRequest $request) {
-        
+        return $this->offerListModel->insertOffer($request, Auth::id());
     }
     
     public function updateOffer(OfferRequest $request) {
-        
+         return $this->offerListModel->updateOffer($request, Auth::id());
     }
 
 }

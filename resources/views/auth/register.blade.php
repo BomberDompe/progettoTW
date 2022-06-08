@@ -144,7 +144,7 @@
                     </div>
                     <div class="col-md-12">
                         <div class="container-form-btn flex-center">                
-                            {{ Form::submit('Registra', ['class' => 'register__submit']) }}
+                            {{ Form::submit('Registrati', ['class' => 'register__submit']) }}
                         </div>
                     </div>
                     {{ Form::close() }}

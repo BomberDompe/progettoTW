@@ -10,7 +10,7 @@
         <meta name="author" content="Gruppo 24">
         <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
 
-        <title>ApartaRent - @yield('title', 'Home')</title>
+        <title>ApartRent - @yield('title', 'Home')</title>
         
         <!-- Icona -->
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
@@ -43,8 +43,8 @@
         <!-- Footer Starts Here -->
         <footer>
             <div class="container" style="height: 40px;">
-                <h2 style="color: white;">ApartaRent </h2>
-                <h4 style="color: whitesmoke;position: relative;left: 350px;font-size: small;font-style: oblique;font-family: cursive;">l'appartamento giusto per voi</h4>
+                <h2 style="color: white;">ApartRent </h2>
+                <h4 style="color: whitesmoke;position: relative;left: 350px;font-size: small;font-style: oblique;font-family: cursive;">l'appartamento giusto per te</h4>
             </div>
             <div class="container" style="border-top: outset;">
                 <a href="#" class="fa fa-facebook"></a>

@@ -8,6 +8,7 @@ class Offer extends Model {
 
     protected $table = 'offerte';
     protected $primaryKey = 'offerta_id';
+    protected $guarded = ['offerta_id'];
     public $timestamps = false;
     
     public function getAllOffers($elemEachPage = 0) {
@@ -24,7 +25,10 @@ class Offer extends Model {
     
     public function getOffersIdByLoreId($user_id){
                 return $this->where('user_id', $user_id)->pluck('offerta_id')->toArray();
-
+    }
+    
+    public function getLoreIdByOfferId($offer_id){
+        return $this->where('offerta_id',$offer_id)->get();
     }
 }
 

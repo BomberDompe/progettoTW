@@ -14,7 +14,7 @@
 <div class="container-listoffer">
     @can('isLocatore')
     <div class="element-list">
-        <a href="{{ route('utente') }}">
+        <a href="{{ route('offer.insert') }}">
             <div class="container">
                 <div class="row">
                     <div class ="col-md-3">
@@ -58,7 +58,7 @@
 
                             @if($option->data_assegnamento != null && $option->locatario_id == Auth::id() && $offer->offerta_id == $option->offerta_id)
                             <li class="buttonid">
-                                <a style="background-color: #29a329" href="#">Contratto</a>
+                                <a style="background-color: #29a329;" target="_blank" href="{{ route('contract', [$option->opzionamento_id]) }}">Contratto</a>
                             </li>  
                             @break
                             @endif
@@ -89,7 +89,7 @@
 
                             @can('isLocatore')
                             <li><a  class ="proposte">Proposte</a></li>
-                            <li  class="buttonid" ><a>Modifica&ensp;</a></li>
+                            <li  class="buttonid" ><a href="{{ route('offer.update') }}">Modifica&ensp;</a></li>
                             <li class="buttonid confirmation" ><a href="{{ route('offerview.delete', [$offer->offerta_id]) }}">&ensp;Elimina &ensp; </a></li>
                             @endcan
                         </ul>
@@ -308,7 +308,7 @@
             @if($option->locatario_id == $lario->id)
 
             <div class="col-md-8 center_lario">
-                <p class="data_lario">{{ $lario->surname }} {{ $lario->name }},  nato il: {{ $lario->data_nascita }} </p>
+                <p class="data_lario">{{ $lario->surname }} {{ $lario->name }}, {{ $lario->genere }}, @if($lario->genere == 'Uomo') nato @else nata @endif  il: {{ date('d-m-Y',strtotime($lario->data_nascita)) }}  </p>
             </div>
 
             @if($option->data_assegnamento == null)
@@ -326,7 +326,7 @@
                 <div class="offerlist-buttons"> 
                     <ul>
                         <li class="aggiudicata">
-                            <a style="background-color: #29a329" href="#">Contratto</a>
+                            <a style="background-color: #29a329" target="_blank" href="{{ route('contract', [$option->opzionamento_id])}}">Contratto</a>
                         </li>
                     </ul>
                 </div>

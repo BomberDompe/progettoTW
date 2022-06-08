@@ -51,14 +51,14 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:20', 'regex:/^([A-Z])+([A-Za-z ])+$/'],
-            'surname' => ['required', 'string', 'max:20', 'regex:/^([A-Z])+([A-Za-z ])+$/'],
+            'name' => ['required', 'string', 'max:20', 'regex:/^([A-Z])+([A-Za-z àèéìòù])+$/'],
+            'surname' => ['required', 'string', 'max:20', 'regex:/^([A-Z])+([A-Za-z àèéìòù])+$/'],
             'username' => ['required', 'string', 'min:8', 'max:20', 'unique:users', 'regex:/^([A-Za-z0-9_\-\.\@])+$/'],
             'password' => ['required', 'string', 'min:8', 'max:30', 'confirmed'],
             'role' => ['required', 'string'],
             'genere' => ['required', 'string'],
             'telefono' => ['nullable', 'string', 'min:10', 'max:15', 'regex:/^((00|\+)39[\. ]??)??3\d{2}[\. ]??\d{6,7}$/'],
-            'comune_residenza' => ['nullable', 'string', 'max:25', 'regex:/^([A-Z])+([A-Za-z \(\)])+$/'],
+            'comune_residenza' => ['nullable', 'string', 'max:25', 'regex:/^([A-Z])+([A-Za-z àèéìòù\(\)])+$/'],
             'data_nascita' => ['required', 'date_format:Y-m-d', 'after:1950-01-01', 'before:2010-01-01'],
         ]);
     }

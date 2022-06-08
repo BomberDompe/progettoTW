@@ -99,6 +99,7 @@ class DatabaseSeeder extends Seeder {
 
         /**
          * tipologia: 0 -> Appartamento, 1 -> Posto Letto
+         * genere_locatario: 0 -> Uomo, 1 -> Donna
          */
         DB::table('offerte')->insert([
             ['offerta_id'  => 1,

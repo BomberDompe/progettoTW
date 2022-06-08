@@ -571,16 +571,8 @@ header {
     padding: 140px 0px;
     background-color: #f7f7f7;
 }
-.info .left-content {
-    margin-right: 30px;
-
-}
-.info .right-content {
-    margin-left: 30px;
-}
-.info .left-content {
-    max-width: 100%;
-    overflow: hidden;
+.info .map-content{
+    text-align: center;
 }
 .info .section-heading {
     margin-bottom: 40px;
@@ -1870,7 +1862,6 @@ footer {
     box-shadow           : 0px 0px 5px 0px rgba(164, 164, 164, 1);
 }
 
-
 /* Style list offer */
 .container-listoffer{
     margin-top: 10px;
@@ -2074,7 +2065,7 @@ footer {
 
 .insertform-fieldset {
     padding: 10px 15px 15px 15px;
-    margin: 15px 0px;
+    margin: 25px 0px 10px;
     background-color: #f0ffff;
     border-color: #00bcd4;
     border-style: solid;
@@ -2085,6 +2076,7 @@ footer {
 
 .insertform-fieldset-hidden {
     padding: 15px;
+    margin: 20px 0px 10px;
     background-color: #f0ffff;
     border-style: none;
 }
