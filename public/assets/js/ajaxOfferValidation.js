@@ -73,7 +73,6 @@ function doFormValidation(actionUrl, formId) {
                 });
             }
             if (data.status === 500) {
-                console.log('prova');
                 console.log(data.responseText);
             }
         },

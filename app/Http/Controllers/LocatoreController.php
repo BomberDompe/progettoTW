@@ -51,7 +51,7 @@ class LocatoreController extends Controller {
     }
     
     public function updateOffer(OfferRequest $request) {
-         return $this->offerListModel->updateOffer($request, Auth::id());
+         return $this->offerListModel->updateOffer($request);
     }
 
 }

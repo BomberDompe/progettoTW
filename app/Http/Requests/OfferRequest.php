@@ -37,7 +37,7 @@ class OfferRequest extends FormRequest {
             'citta' => ['required', 'string', 'max:30', 'regex:/^([A-Z])+([A-Za-z àèéìòù\(\)])+$/'],
             'via' => ['required', 'string', 'max:30', 'regex:/^([A-Za-z0-9 àèéìòù])+$/'], 
             'civico' => ['required', 'integer', 'min:1', 'max:999', 'regex:/^([0-9])+$/'],
-            'disponibilita_inizio' => ['required', 'date_format:Y-m-d', 'after:yesterday'],
+            'disponibilita_inizio' => ['required', 'date_format:Y-m-d', 'after:2022-01-01'],
             'disponibilita_fine' => ['required', 'date_format:Y-m-d', 'after:disponibilita_inizio', 'before:2100-01-01'],
             'eta_min' => ['nullable', 'numeric', 'min:18', 'max:125'],
             'eta_max' => ['nullable', 'numeric', 'min:18', 'max:125', 'gte:eta_min'],

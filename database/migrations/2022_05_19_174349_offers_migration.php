@@ -20,7 +20,7 @@ class OffersMigration extends Migration
             $table->string('titolo', 100);
             $table->string('descrizione', 2000);
             $table->float('prezzo');
-            $table->string('immagine', 100)->nullable();
+            $table->string('immagine')->nullable();
             $table->string('citta', 30);
             $table->string('via', 30);
             $table->unsignedInteger('civico');
