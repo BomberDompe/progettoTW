@@ -26,7 +26,8 @@ class RegisteredUserController extends Controller {
     public function showChat($user_id = 0) {
         return view('chat')
             ->with('conversationList',
-                $this->conversationModel->getAllConversations(Auth::id(), $user_id));
+                $this->conversationModel->getAllConversations(Auth::id(), $user_id))
+            ->with('newUserId', $user_id);
     }
     
     public function saveMessage(NewMessageRequest $request) {

@@ -79,7 +79,6 @@ function doFormValidation(formId) {
     
     $.ajax({
         type: 'POST',
-        //url: $(location).attr("href") + '/message',
         url: messageRoute,
         data: form,
         dataType: "json",

@@ -67,7 +67,7 @@ class DatabaseSeeder extends Seeder {
             ['faq_id' => 1, 'domanda' => 'Come faccio ad aggiungere le mie offerte al catalogo ApartRent?', 
                 'risposta' => 'Per poter aggiungere le proprie offerte bisogna aver effettuato l\'accesso in un account'
                 . ' di tipo "Locatore". Successivamente al login o alla registrazione, apparirà nel menù in alto (barra di'
-                . ' navigazione) la voce "Account". Dall\'Account è possibile accedere alla lista di offerte già insserite ("Le tue offerte"):'
+                . ' navigazione) la voce "Account". Dall\'Account è possibile accedere alla lista di offerte già inserite ("Le tue offerte"):'
                 . ' qui vi è la possibilità di visualizzare, modificare o eliminare le offerte già presenti, e di inserirne di nuove.'
                 . ' L\'inserimento avviene cliccando sulla sezione in alto. Ogni nuova offerta sarà visibile a tutti gli utenti del sito.'],
             ['faq_id' => 2, 'domanda' => 'Come faccio a contattare il proprietario di un\'alloggio?', 

@@ -238,7 +238,7 @@
                 <div class="option-buttons">
                     <ul>
 
-                        <li class="laipresa" >L'hai già opzionata</li>
+                        <li class="laipresa" >Già opzionata</li>
                         <li><a href="{{ route('details.chat', [$offer->user_id]) }}">&emsp;Chat&emsp;</a></li>
 
                     </ul>

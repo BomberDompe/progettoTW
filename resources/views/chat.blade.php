@@ -18,6 +18,13 @@
     });
     
 </script>
+    @if($newUserId)
+    <script>
+        $(function () {
+            $("#convListElem_" + "{{ $newUserId }}").trigger('click');
+        });
+    </script>
+    @endif
 @endpush
 
 <!-- Inizio ycontenuto --> 
@@ -182,16 +189,17 @@
                                         Benvenuto nella sezione chat! Qui potrai comunicare con
                                         altri utenti registrati. 
                                         @can('isLocatario')
-                                        Gli utenti Locatori di cui hai opzionato almeno un'offerta potranno iniziare
-                                        una chat con te, ma puoi comunque contattarne uno senza averne opzionato 
-                                        un'offerta. Ricorda però che l'opzionamento è necessario affinché la tua
-                                        proposta possa essere accettata.
+                                        Gli utenti Locatori di cui hai opzionato almeno un'offerta potranno risponderti
+                                        poiché l'opzionamento comporta l'invio di un messaggio automatico, ma puoi comunque
+                                        contattarne uno senza averne opzionato un'offerta (pulsante "Chat" in fondo alla
+                                        scheda dettagli dell'offerta). Ricorda però che l'opzionamento è necessario affinché
+                                        la tua proposta possa essere accettata.
                                         @endcan
                                         @can('isLocatore')
                                         Gli utenti Locatari interessati alle tue offerte potranno scriverti, ma 
-                                        puoi comunque iniziare una nuova chat con quelli che hanno opzionato 
-                                        una tua offerta senza contattarti. Un Locatario dovrà necessariamente 
-                                        opzionare l'offerta che gli interessa affinché tu possa assegnargliela.
+                                        puoi comunque rispondere a quelli che hanno opzionato una tua offerta.
+                                        Un Locatario dovrà necessariamente opzionare l'offerta che gli interessa
+                                        affinché tu possa assegnargliela.
                                         @endcan
                                     </div>
                             </li>

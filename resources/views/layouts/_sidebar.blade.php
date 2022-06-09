@@ -1,7 +1,7 @@
 <div class="sidebar">
     <a href="{{ route('profile') }}">Profilo</a>
     @can('isLocatario')
-    <a href="{{ route('optionedview') }}">Offerte selezionate</a>
+    <a href="{{ route('optionedview') }}">Le tue opzioni</a>
     <a href="{{ route('chat', 0) }}">Messaggi</a>
     @endcan
     @can('isLocatore')

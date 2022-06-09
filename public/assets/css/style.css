@@ -1892,12 +1892,14 @@ footer {
 }
 .offerlist-buttons	ul {
     margin: 0;
-    margin-top: 7%;
+    margin-top: 5%;
     padding: 0;
 }
 .offerlist-buttons	ul li {
-    display: inline-block;
-    margin-bottom: 11px;
+    display: flex;
+    text-align: center;
+    margin-bottom: 5px;
+    width: 110px;
 }
 .offerlist-buttons	ul li a {
     background-color: #00bcd4;
@@ -1906,8 +1908,9 @@ footer {
     text-transform: uppercase;
     font-size: 13px;
     color: #fff;
-    padding: 6px 15px;
+    padding: 3px 15px;
     transition: all 0.5s;
+    width: 110px;
 }
 .offerlist-buttons	ul li a:hover {
     color: #00bcd4;
@@ -1930,7 +1933,7 @@ footer {
 .img-list{
     height: 100px;
     width: 120px;
-    margin: 6px 0px;
+    margin: 8px 0px;
 }
 .prop{
     padding-top: 10px;
@@ -1977,14 +1980,14 @@ footer {
     color: midnightblue;
 }
 .new_offer{
-    text-align: center;
     font-size: xxx-large;
-    margin-top: 40px;
-    padding-right: 55px;
-    color: mediumblue;
+    margin: auto;
+    color: #333;
     font-weight: 400;
-    font-style: oblique;
+}
 
+.new_image {
+    margin:auto;
 }
 .statapresa{
     font-style: oblique;
@@ -2028,15 +2031,14 @@ footer {
     margin-bottom: 10px;
 }
 .faqlist-buttons {
-    margin-left: 11%;
+    margin-left: 0;
 }
 .faqlist-buttons	ul {
-    margin-left: 20%;
-    margin-top: 3%;
+    margin: 15px 0px;
 }
 .faqlist-buttons	ul li {
     display: inline-block;
-    margin-bottom: 11px;
+    width: 120px;
 }
 .faqlist-buttons	ul li a {
     background-color: #00bcd4;
@@ -2047,6 +2049,7 @@ footer {
     color: #fff;
     padding: 6px 15px;
     transition: all 0.5s;
+    width: 120px;
 }
 .faqlist-buttons	ul li a:hover {
     color: #00bcd4;
@@ -2267,4 +2270,51 @@ footer {
     display: flex;
     flex-direction: column;
     padding: 15px;
+}
+
+/* CSS per nuova offerta\faq */
+.flip-card {
+  background-color: transparent;
+  perspective: 1000px;
+  margin-bottom: 10px;
+  width: 825px;
+}
+
+.container-listoffer .flip-card {
+  height: 120px;
+}
+.container-listfaq .flip-card {
+  height: 80px;
+}
+
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  border: 1px solid #00bcd4;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateX(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  color: black;
+}
+
+.flip-card-back {
+  transform: rotateX(180deg);
 }

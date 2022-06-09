@@ -18,24 +18,23 @@
 
 <div class="container-listoffer">
     @can('isLocatore')
-    <div class="element-list">
-        <a href="{{ route('offer.insertview') }}">
-            <div class="container">
-                <div class="row">
-                    <div class ="col-md-3">
-                        <img src="{{asset('images\offers\default.jpg')}}" class="img-list">                
-                    </div>
-                    <div class ="col-md-6">
-                        <p class="new_offer">Nuova Offerta</p>
-                    </div>
-
-
-                    <div class ="col-md-3">
-                        <img src="{{asset('assets\images\button-add.png')}}" width="60" height="60" style="margin-top: 25px;margin-left: 30px;">
-                    </div>
-                </div>
-            </div>
-        </a>
+    <div class="container">
+        <div class="row">
+            <div class="flip-card">
+                <a href="{{ route('offer.insertview') }}">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front flex-center">
+                            <p class="new_offer">Nuova Offerta</p>
+                        </div>
+                        <div class="flip-card-back flex-center">
+                            <div class="new_image">
+                                <img src="{{asset('assets\images\button-add.png')}}" width="75px" height="75px">
+                            </div>
+                        </div>
+                    </div>      
+                </a>
+            </div>  
+        </div>
     </div>
     @endcan
 
@@ -96,8 +95,8 @@
 
                             @can('isLocatore')
                             <li><a  class ="proposte">Proposte</a></li>
-                            <li  class="buttonid" ><a href="{{ route('offer.updateview', [$offer->offerta_id]) }}">Modifica&ensp;</a></li>
-                            <li class="buttonid confirmation" ><a href="{{ route('offerview.delete', [$offer->offerta_id]) }}">&ensp;Elimina &ensp; </a></li>
+                            <li  class="buttonid" ><a href="{{ route('offer.updateview', [$offer->offerta_id]) }}">Modifica</a></li>
+                            <li class="buttonid confirmation" ><a href="{{ route('offerview.delete', [$offer->offerta_id]) }}">Elimina</a></li>
                             @endcan
                         </ul>
 
