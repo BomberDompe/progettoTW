@@ -49,6 +49,14 @@ class User extends Authenticatable {
     public function updateUserData($data, $userId) {
         $user = $this->find($userId);
         $user->fill($data->validated());
+        switch ($data["genere"]) {
+            case '0':
+                $user->genere = 'Uomo';
+                break;
+            case '1':
+                $user->genere = 'Donna';
+                break;
+        }
         if (!isset($data["telefono"])) {
             $user->telefono = null;
         } 

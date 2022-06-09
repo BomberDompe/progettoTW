@@ -55,6 +55,9 @@ Route::get('/offerview/delete/{offerId}', 'LocatoreController@deleteOffer')
 
 /* Rotte lista offerte Locatario*/
 
+Route::get('/catalog/details/optioned/{offerId}', 'LocatarioController@optionedOffer')
+        ->name('details.option');
+
 Route::get('/optionedview', 'LocatarioController@showOptionedList')
         ->name('optionedview');
 

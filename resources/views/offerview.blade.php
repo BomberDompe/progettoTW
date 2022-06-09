@@ -1,6 +1,11 @@
 @extends('layouts.private')
 
+@can('isLocatore')
 @section('title', 'Le tue offerte')
+@endcan
+@can('isLocatario')
+@section('title', 'Le tue opzioni')
+@endcan
 
 @section('content')
 
@@ -58,7 +63,9 @@
 
                             @if($option->data_assegnamento != null && $option->locatario_id == Auth::id() && $offer->offerta_id == $option->offerta_id)
                             <li class="buttonid">
-                                <a style="background-color: #29a329;" target="_blank" href="{{ route('contract', [$option->opzionamento_id]) }}">Contratto</a>
+                                <p class="laipresa" >
+                                    Ti è stata aggiudicata 
+                                </p>                            
                             </li>  
                             @break
                             @endif
@@ -224,13 +231,14 @@
                     <tr>
                         <td>Connessione a Internet</td>
                         @if($offer->connessione_internet)
-                            <td>
-                                si
-                            </td>  
+                        <td>
+                            si
+                        </td>  
                         @else
-                            <td>no</td> 
+                        <td>no</td> 
                         @endif
                     </tr>
+                    @isset($offer->cucina)
                     <tr>
                         <td>Cucina</td>
                         @if($offer->cucina)
@@ -242,6 +250,8 @@
                         @endif
                     </tr>
                     <tr>
+                        @endisset
+                        @isset($offer->locale_ricreativo)
                         <td>Locale ricreativo</td>
                         @if($offer->locale_ricreativo)
                         <td>
@@ -251,6 +261,7 @@
                         <td>no</td> 
                         @endif
                     </tr>
+                    @endisset
                     <tr>
                         <td>Parcheggi</td>
                         @if($offer->parcheggi)

@@ -145,16 +145,21 @@ class OfferList {
         if ($data->hasFile('immagine')) {
             $image = $data->file('immagine');
             $imageName = $image->hashName();
-            echo("\n\Nome immagine nuova: ".$imageName);
+           
             $destinationPath = public_path() . '/images/offers';
             if ($offer->immagine != null) {
                 $currentImageName = $offer->immagine;
+               
                 unlink($destinationPath . '/' . $currentImageName);
+                
             }
+            
             $image->move($destinationPath, $imageName);
+           
         } else {
             $imageName = $offer->immagine;
         }
+        
         $offer->fill($data->validated());
         $offer->immagine = $imageName;
         
@@ -225,5 +230,24 @@ class OfferList {
     public function getOfferByOptionId($option_id) {
         $offer_option = $this->optionModel->getOptionById($option_id);
         return $this->offerModel->getOfferById($offer_option->offerta_id);
+    }
+    
+    public function insertOption($offer_id,$lario_id) {
+        $this->optionModel->offerta_id = $offer_id;
+        $this->optionModel->locatario_id = $lario_id;
+        $this->optionModel->data_opzionamento = date('Y-m-d');
+        $this->optionModel->save();
+    }
+    
+    public function getOptionByOfferLarioId($offer_id, $lario_id) {
+        return $this->optionModel->where('offerta_id',$offer_id)->where('locatario_id', $lario_id)->first();
+    }
+    public function verifyAssigned($offer_id) {
+        return $this->optionModel->where('offerta_id',$offer_id)->whereNotNull('data_assegnamento')->get()->count();
+    }
+    
+    public function getOfferByIdOffer($offer_id) {
+        return $this->offerModel->getOfferById($offer_id);
+        
     }
 }
