@@ -1,5 +1,5 @@
 @php
-        if (empty($offer->immagine)) {
+        if (empty($imgFile)) {
             $imgFile = 'default.jpg';
         }
         

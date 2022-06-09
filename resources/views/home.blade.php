@@ -60,7 +60,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="accessoptions-heading">
-                    <h2><center>Credenziali di accesso</center></h2>
+                    <h2><center>Modalità di accesso</center></h2>
                 </div>
             </div>
             <div class="col-md-12 ">
