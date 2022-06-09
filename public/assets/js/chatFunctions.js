@@ -4,6 +4,10 @@ var currentChat = null;
 var currentSelectedConv = null;
 var userId = null;
 
+var messageRoute = null;
+var unreadRoute = null;
+var audioRoute = null;
+
 // Al termine del caricamento
 $(document).ready(showCurrentChat);
 $(document).ready(togglePopUp);
@@ -40,7 +44,7 @@ function doElemValidation(id, formId) {
     function sendAjaxReq() {
         $.ajax({
             type: 'POST',
-            url: $(location).attr("href") + '/message',
+            url: messageRoute,
             data: formElems,
             dataType: "json",
             error: function (data) {
@@ -75,7 +79,8 @@ function doFormValidation(formId) {
     
     $.ajax({
         type: 'POST',
-        url: $(location).attr("href") + '/message',
+        //url: $(location).attr("href") + '/message',
+        url: messageRoute,
         data: form,
         dataType: "json",
         error: function (data) {
@@ -154,7 +159,7 @@ function scrollChatToBottom() {
 
 // Esegue il file audio del messaggio inviato
 function playMessageSentAudio() {
-    var audioPath = $(location).attr("href") + '/../../public/assets/audio/message-sent.mp3'; 
+    var audioPath = audioRoute;
     var audio = new Audio(audioPath);
     audio.play();
 }
@@ -201,7 +206,7 @@ function updateUnreadMessages() {
         var currentSelectedConv_deepCopy = $.extend(true, {}, currentSelectedConv);
         $.ajax({
             type: 'POST',
-            url: $(location).attr("href") + '/unread',
+            url: unreadRoute,
             data: form,
             dataType: "json",
             error: function (data) {

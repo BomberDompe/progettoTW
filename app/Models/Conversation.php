@@ -16,10 +16,18 @@ class Conversation {
         $this->userModel = new User;
     }
 
-    public function getAllConversations($authId) {
-        $relatedUsers = array_unique(array_merge(
+    public function getAllConversations($authId, $newUserId) {
+        $relatedUsers;
+        if($newUserId) {
+            $relatedUsers = array_unique(array_merge(
+                        $this->messageModel->getSenders($authId),
+                        $this->messageModel->getReceivers($authId),
+                        array($newUserId)));
+        } else {
+            $relatedUsers = array_unique(array_merge(
                         $this->messageModel->getSenders($authId),
                         $this->messageModel->getReceivers($authId)));
+        }
         /*
           foreach ($relatedUsers as $user) {
           print(' Users: ' . $user);
