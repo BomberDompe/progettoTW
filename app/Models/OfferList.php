@@ -149,21 +149,12 @@ class OfferList {
             $destinationPath = public_path() . '/images/offers';
             if ($offer->immagine != null) {
                 $currentImageName = $offer->immagine;
-                echo("\n\Nome immagine vecchia: ".$currentImageName);
                 unlink($destinationPath . '/' . $currentImageName);
-                echo("\n\Nome path: ".$destinationPath);
             }
-            echo("\n\Nome immagine nuova (2): ".$imageName);
             $image->move($destinationPath, $imageName);
-            echo("\n\Nome immagine nuova (3): ".$imageName);
-            echo("\n\Nome immagine nuova (4): ".$imageName);
-            echo("\n\ ".$offer->immagine);
         } else {
             $imageName = $offer->immagine;
         }
-        echo("\n\ ".$offer->immagine);
-        
-            //unlink($destinationPath . '/' . $currentImageName);
         $offer->fill($data->validated());
         $offer->immagine = $imageName;
         
@@ -203,7 +194,7 @@ class OfferList {
         }
         
         $offer->save();
-        //return response()->json(['redirect' => route('offerview')]);
+        return response()->json(['redirect' => route('offerview')]);
     }
     public function getLarioByOptionId($option_id, $authUser) {
 

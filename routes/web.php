@@ -57,7 +57,7 @@ Route::get('/optionedview/delete/{offerId}', 'LocatarioController@deleteOption')
 Route::get('/faqview', 'AdminController@showFaqList')
         ->name('faqview');
 
-Route::get('/faqview/delete/{offerId}', 'AdminController@deleteFaq')
+Route::get('/faqview/delete/{faqId}', 'AdminController@deleteFaq')
         ->name('faqview.delete');
 
 // Rotte per la form delle faq
@@ -68,12 +68,18 @@ Route::post('/faqview/insert', 'AdminController@insertFaq')
         ->name('faq.insert');
 
 // Rotte per la modifica delle faq
-Route::get('/faqview/update', 'AdminController@showUpdateFaqForm')
+Route::get('/faqview/update/{faqId}', 'AdminController@showUpdateFaqForm')
         ->name('faqview.updateview');
 
 Route::post('/faqview/update', 'AdminController@updateFaq')
         ->name('faq.update');
 
+// Rotte per le statistiche
+Route::get('/stats', 'AdminController@showStatsPage')
+        ->name('stats');
+
+Route::post('/stats', 'AdminController@showFilteredStats')
+        ->name('stats.filtered');
 
 /*Rotte view statiche*/
 Route::view('/', 'home')

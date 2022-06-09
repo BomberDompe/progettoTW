@@ -218,11 +218,6 @@
                         <td></td> 
                     @endif
                 </tr>
-                @auth
-                <tr>
-                    <th colspan="2">Informazioni sul proprietario</th>
-                </tr>
-                @endauth
             </table>
         </div>
     </div>

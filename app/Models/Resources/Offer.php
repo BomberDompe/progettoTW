@@ -30,5 +30,9 @@ class Offer extends Model {
     public function getLoreIdByOfferId($offer_id){
         return $this->where('offerta_id',$offer_id)->get();
     }
+    
+    public function getIdsByType($type){
+        return $this->where('tipologia', $type)->pluck('offerta_id')->toArray();
+    }
 }
 

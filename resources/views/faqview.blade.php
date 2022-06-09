@@ -1,6 +1,6 @@
 @extends('layouts.private')
 
-@section('title', 'F.A.Q. lista')
+@section('title', 'Lista delle F.A.Q.')
 
 @section('content')
 
@@ -47,7 +47,7 @@
             <div class ="col-md-12">
                 <div class="faqlist-buttons">
                     <ul>
-                        <li><a href="{{ route('faqview.updateview') }}" >&ensp;Modifica&ensp;</a></li>
+                        <li><a href="{{ route('faqview.updateview', [$faq->faq_id]) }}" >&ensp;Modifica&ensp;</a></li>
                         <li><a class="confirmation"  href="{{ route('faqview.delete', [$faq->faq_id]) }}" >&ensp;Elimina&ensp;</a></li>
                     </ul>
                 </div>
