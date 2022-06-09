@@ -53,6 +53,59 @@
     </div>
 </div>
 <!-- Services Ends Here -->
+
+<!-- Access Options Start -->
+<div class="access-options">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="accessoptions-heading">
+                    <h2><center>Credenziali di accesso</center></h2>
+                </div>
+            </div>
+            <div class="col-md-12 ">
+                <div class="accessoptions-item">
+
+
+                    <p>
+                        Per usufruire dei servizi ApartRent in primo luogo è necessario
+                        <a href="{{ route('register') }}" style="text-decoration:none;">registrarsi</a> indicando nell'apposita sezione
+                        se si è Locatore o un poteziale Locatario. Si prega di conservare username e password inserite al momento della
+                        registrazione con le quali l'utente potrà effettuare l'<a href="{{ route('login') }}" style="text-decoration:none;">accesso</a>
+                    </p>
+                    <p>
+                        consultare il catalogo delle offerte filtrandolo per i suoi requisiti di locazione desiderata 
+                        nel caso in cui sia interessato ad un offerta ha la possibiltà selezionarla premendo il pulsante OPZIONA in fondo
+                        alla pagina "Dettagli dell'offerta"
+                        ("Offerta nel catalogo"-&gt;"Bottone Dettagli"-&gt;"Dettagli offerta"-&gt;"Opziona").Selezionando un'offerta si metterà 
+                        in contatto con il locatore, nella chat interna 
+                        (raggiungingibile dal menù laterale, bottone "Messaggi", nell'area account).
+                        Tutte le offerte selezionate potranno essere visualizzate dal locatario nella pagina "Le tue opzioni"
+                        ("Account"-&gt;"Offerte selezionate").In tale area avrà anche la possiblità di rimuovere le offerte selezionate, visualizzarne i dettagli e
+                        vedere se è stata aggiuticata.
+                    </p>
+                    <p>
+                        L'utente che accede come Locatore potrà usufruire dei seguenti servizi:
+                    </p>
+                    <p>
+                        può gestire le sue offerte nell'area account nella pagina "Le tue offerte"
+                        ("Account"-&gt;"Le tue offerte"). In quetsa pagina potrà aggiungere una nuova offerta
+                        cliccando sul riquadro "Nuova Offerta" e modificare o rimuovere offerte precedentemente inserite.
+                        Per ogni singola offerta, attravesto il bottone "Proposte", ha la possibilità 
+                        di accedere alla lista di tutti i locatori interessati.
+                        Premendo il bottone "Accetta" posto a fianco ai dati del locatario scelto, può aggiudicare l'offerta.
+                        Ad affare concluso, premendo il pulsante "Contratto", potrà accederre alle informazioni relative al 
+                        contratto d'affitto (mancante di coordinate bancarie e firme).
+                    </p>
+                    <p>
+                        Un utente non registrato potrà visualizzare la home-page, il catalogo, le f.a.q. ed il regolamento.
+                    </p>
+                </div>
+            </div> 
+        </div>
+    </div>
+</div>
+<!-- Access Options End -->
 <!-- Features Starts Here -->
 <div class="features-section">
     <div class="container">
@@ -140,7 +193,9 @@
                         <br>
                         <p style="font-size: 30px;">Lunedì-Venerdì    9:00-13:00 / 16:00-19:00</p>
                         <br>
-                        <p style="font-size: 30px;">Puoi contattarci via e-mail: <a style="text-decoration: none;" href="mailto:assistenza.clienti@apartarent.it">assistenza.clienti@apartarent.it</a> <br>  <br> oppure chiamandoci al 071-555878</p>
+                        <p style="font-size: 30px;">Puoi contattarci via e-mail: <a style="text-decoration: none;" href="mailto:assistenza.clienti@apartarent.it">assistenza.clienti@apartarent.it</a>
+                            <br>  <br> oppure chiamandoci al 071-555878 <br>  <br> <a style="text-decoration: none;" href="{{asset('DocumentazioneProgetto.pdf')}}" target="_blank">Documentazione sito PDF</a>
+                        </p>
                     </div>
 
 
