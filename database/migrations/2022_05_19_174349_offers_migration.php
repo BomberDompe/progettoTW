@@ -41,10 +41,10 @@ class OffersMigration extends Migration
             $table->boolean('supermercato');
             $table->boolean('ristorazione');
             $table->boolean('trasporti');
+            $table->boolean('connessione_internet');
             $table->unsignedInteger('sup_camera')->nullable();
             $table->unsignedInteger('posti_camera')->nullable();
             $table->boolean('angolo_studio')->nullable();
-            $table->boolean('opzionabilita');
             $table->date('data_inserimento');
         });
     }

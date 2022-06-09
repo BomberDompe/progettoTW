@@ -141,6 +141,16 @@
                         <td></td> 
                     @endif
                 </tr>
+                <tr>
+                    <td>Connessione a Internet</td>
+                    @if($offer->connessione_internet)
+                        <td>
+                            @include('icons/checkmark')
+                        </td>  
+                    @else
+                        <td></td> 
+                    @endif
+                </tr>
                 @isset($offer->cucina)
                 <tr>
                     <td>Cucina</td>

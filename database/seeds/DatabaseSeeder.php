@@ -67,14 +67,16 @@ class DatabaseSeeder extends Seeder {
             ['faq_id' => 1, 'domanda' => 'Come faccio ad aggiungere le mie offerte al catalogo ApartRent?', 
                 'risposta' => 'Per poter aggiungere le proprie offerte bisogna aver effettuato l\'accesso in un account'
                 . ' di tipo "Locatore". Successivamente al login o alla registrazione, apparirà nel menù in alto (barra di'
-                . ' navigazione) la voce "Area Riservata". Dall\'Area Riservata, tra le altre funzionalità, vi è anche quella di inserire'
-                . ' nuove offerte. Ogni offerta è visibile a tutti gli utenti del sito.'],
+                . ' navigazione) la voce "Account". Dall\'Account è possibile accedere alla lista di offerte già insserite ("Le tue offerte"):'
+                . ' qui vi è la possibilità di visualizzare, modificare o eliminare le offerte già presenti, e di inserirne di nuove.'
+                . ' L\'inserimento avviene cliccando sulla sezione in alto. Ogni nuova offerta sarà visibile a tutti gli utenti del sito.'],
             ['faq_id' => 2, 'domanda' => 'Come faccio a contattare il proprietario di un\'alloggio?', 
                 'risposta' => 'ApartRent prevede un sistema interno di messaggistica. Questo è tuttavia realizzato in modo'
-                . ' che la comunicazione tra due utenti possa avvenire soltanto in relazione all\'opzionamento di un\'offerta.'
+                . ' che la comunicazione tra due utenti possa avvenire soltanto in relazione a un\'offerta.'
                 . ' Per poter scrivere al proprietario di un\'offerta è pertanto necessario possedere un account di tipo "Locatario",'
-                . ' recarsi nel Catalogo, visualizzare i Dettagli dell\'offerta a cui si è interessati e cliccare su "Opziona". Facendo'
-                . ' ciò, si aprirà nella Bacheca Messaggi una nuova conversazione con l\'utente che ha inserito l\'offerta, con un'
+                . ' recarsi nel Catalogo, visualizzare i Dettagli dell\'offerta a cui si è interessati e cliccare su "Opziona" oppure'
+                . ' su "Chat". Facendo ciò, si aprirà nella Bacheca Messaggi una nuova conversazione con l\'utente che ha inserito'
+                . ' l\'offerta. Nel primo caso verrà anche inviato automaticamente un messaggio predefinito.'
                 . ' messaggio predefinito.'],
             ['faq_id' => 3, 'domanda' => 'Sono presenti offerte di vendita di appartamenti?', 
                 'risposta' => 'No. Il sito contiene soltanto offerte di appartamenti e posti letto in affitto per studenti. Non è'
@@ -82,19 +84,19 @@ class DatabaseSeeder extends Seeder {
             ['faq_id' => 4, 'domanda' => 'Il catalogo presenta la funzionalità di filtraggio delle offerte?', 
                 'risposta' => 'Sì, tuttavia gli utenti non registrati, pur potendo visualizzare tutte le offerte, non hanno accesso'
                 . ' alla funzionalità di filtraggio. Suddetta funzionalità è disponibile esclusivamente per utenti di tipo "Locatario".'],
-            ['faq_id' => 5, 'domanda' => 'Come faccio a cancellare il mio profilo ApartRent e i miei dati personali?',
-                'risposta' => 'Per cancellare il tuo profilo ApartRent, accedi al tuo account inserendo username e password, scelti al'
-                . ' momento della registrazione. Dal menu in alto, clicca sulla voce "Area Riservata". In fondo alla pagina troverai il'
-                . ' tasto "Elimina account". Una volta eliminato, il tuo profilo non potrà più essere riattivato e dovrai effettuare'
-                . ' una nuova registrazione.'],
+            ['faq_id' => 5, 'domanda' => 'Come faccio a modificare il mio profilo ApartRent e i miei dati personali?',
+                'risposta' => 'Per modificare il tuo profilo ApartRent, accedi al tuo account inserendo username e password, scelti al'
+                . ' momento della registrazione. Dal menu laterale, clicca sulla voce "Modifica Account". Si aprirà una form precompilata'
+                . ' con i tuoi dati attuali. Puoi modificare i campi che desideri, e salvare cliccando sul pulsante "Salva" in fondo alla form.'
+                . ' Se la modifica è andata a buon fine, sarai riportato alla pagina del tuo profilo.'],
             ['faq_id' => 6, 'domanda' => 'Come posso accettare un proposta di uno studente a una mia offerta?', 
                 'risposta' => 'Per poter accettare una proposta fatta da uno studente in cerca di alloggio bisogna, dopo aver effettuato'
-                . ' l\'accesso al proprio account di tipo "Locatore", recarsi nell\'Area Riservata. Da lì, clicca su "Gestisci le tue'
-                . ' offerte" per andare alla lista delle offerte da te inserite precedentemente. Per tutte le offerte per cui hai ricevuto'
-                . ' almeno una proposta, un pulsante "Accetta un proposta" ti permetterà di scegliere con chi stipulare il contratto. Si'
-                . ' noti che così facendo, l\'offerta sarà automaticamente resa non più opzionabile (tuttavia è possibile modificare'
-                . ' l\'opzionabilità delle proprie offerte anche manualmente).'
-                . ' nuove offerte. Ogni offerta è visibile a tutti gli utenti del sito.'],
+                . ' l\'accesso al proprio account di tipo "Locatore", recarsi nell\'Account. Da lì, clicca su "Le tue'
+                . ' offerte" per andare alla lista delle offerte da te inserite precedentemente. Cliccando su "Proposte" nel pannello di'
+                . ' un\'offerta, se hai ricevuto'
+                . ' almeno una proposta, un pulsante "Accetta" ti permetterà di scegliere con chi stipulare il contratto. Si'
+                . ' noti che così facendo, l\'offerta sarà automaticamente resa non più opzionabile.'
+                . ' Le offerte assegnate rimarranno visibili nel catalogo a tutti gli utenti del sito.'],
         ]);
 
         /**
@@ -133,7 +135,7 @@ class DatabaseSeeder extends Seeder {
                 'angolo_studio'  => false,
                 'sup_camera'  => 20,
                 'posti_camera'  => 2,
-                'opzionabilita'  => true,
+                'connessione_internet'  => false,
                 'data_inserimento'  => Carbon::parse('2022-02-17'),
             ],
             ['offerta_id'  => 2,
@@ -167,7 +169,7 @@ class DatabaseSeeder extends Seeder {
                 'angolo_studio'  => true,
                 'sup_camera'  => 16,
                 'posti_camera'  => 1,
-                'opzionabilita'  => true,
+                'connessione_internet'  => true,
                 'data_inserimento'  => Carbon::parse('2022-01-18'),
             ],
             ['offerta_id'  => 3,
@@ -201,7 +203,7 @@ class DatabaseSeeder extends Seeder {
                 'angolo_studio'  => true,
                 'sup_camera'  => 22,
                 'posti_camera'  => 1,
-                'opzionabilita'  => true,
+                'connessione_internet'  => true,
                 'data_inserimento'  => Carbon::parse('2022-05-04'),
             ],
             ['offerta_id'  => 4,
@@ -240,7 +242,7 @@ class DatabaseSeeder extends Seeder {
                 'angolo_studio'  => null,
                 'sup_camera'  => null,
                 'posti_camera'  => null,
-                'opzionabilita'  => true,
+                'connessione_internet'  => true,
                 'data_inserimento'  => Carbon::parse('2022-06-30'),
             ],
             ['offerta_id'  => 5,
@@ -275,7 +277,7 @@ class DatabaseSeeder extends Seeder {
                 'angolo_studio'  => null,
                 'sup_camera'  => null,
                 'posti_camera'  => null,
-                'opzionabilita'  => true,
+                'connessione_internet'  => false,
                 'data_inserimento'  => Carbon::parse('2022-07-14'),
             ],
             ['offerta_id'  => 6,
@@ -312,7 +314,7 @@ class DatabaseSeeder extends Seeder {
                 'angolo_studio'  => null,
                 'sup_camera'  => null,
                 'posti_camera'  => null,
-                'opzionabilita'  => true,
+                'connessione_internet'  => true,
                 'data_inserimento'  => Carbon::parse('2022-05-02'),
             ],
         ]);

@@ -14,7 +14,7 @@
 <div class="container-listoffer">
     @can('isLocatore')
     <div class="element-list">
-        <a href="{{ route('offer.insert') }}">
+        <a href="{{ route('offer.insertview') }}">
             <div class="container">
                 <div class="row">
                     <div class ="col-md-3">
@@ -89,7 +89,7 @@
 
                             @can('isLocatore')
                             <li><a  class ="proposte">Proposte</a></li>
-                            <li  class="buttonid" ><a href="{{ route('offer.update') }}">Modifica&ensp;</a></li>
+                            <li  class="buttonid" ><a href="{{ route('offer.updateview', [$offer->offerta_id]) }}">Modifica&ensp;</a></li>
                             <li class="buttonid confirmation" ><a href="{{ route('offerview.delete', [$offer->offerta_id]) }}">&ensp;Elimina &ensp; </a></li>
                             @endcan
                         </ul>
@@ -219,6 +219,16 @@
                         </td>  
                         @else
                         <td>no</td> 
+                        @endif
+                    </tr>
+                    <tr>
+                        <td>Connessione a Internet</td>
+                        @if($offer->connessione_internet)
+                            <td>
+                                si
+                            </td>  
+                        @else
+                            <td>no</td> 
                         @endif
                     </tr>
                     <tr>
