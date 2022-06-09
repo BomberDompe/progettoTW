@@ -28,20 +28,14 @@ class Conversation {
                         $this->messageModel->getSenders($authId),
                         $this->messageModel->getReceivers($authId)));
         }
-        /*
-          foreach ($relatedUsers as $user) {
-          print(' Users: ' . $user);
-          }
-         */
+        
 
         $conversationList = array();
 
         foreach ($relatedUsers as $user) {
             $userData = $this->userModel
                     ->getUserById($user);
-            /*
-              print_r($userData);
-             */
+            
             $users = array($authId, $user);
             $messageListQuery = $this->messageModel
                     ->getMessagesByConversation($users);
@@ -49,24 +43,13 @@ class Conversation {
             $numUnread = $messageListQuery
                             ->where('destinatario_id', $authId)
                             ->where('visualizzato', false)->count();
-            /*
-              print(" Unread: " . $numUnread);
-             */
+            
             $messageList = array("messages" => $messages, "numUnread" => $numUnread);
-            /*
-              foreach ($messages as $message) {
-              print($message);
-              }
-             */
+            
             $conversation = array("userData" => $userData, "messageList" => $messageList);
             array_push($conversationList, $conversation);
         }
 
-        /*
-          foreach ($conversationList as $conversation) {
-          print(' Conversation: ' . $conversation);
-          }
-         */
 
         return $conversationList;
     }

@@ -11,7 +11,7 @@
 
 @push('custom-scripts')      
 <!-- Include file JavaScript per i filtri -->      
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script type="text/javascript" src="{{ asset("assets/js/offerListFunction.js") }}"></script>
 @endpush
 
@@ -81,7 +81,7 @@
                             @break
                             @endif
 
-                            @if($option->data_assegnamento == null && $option->locatario_id == Auth::id())
+                            @if($option->data_assegnamento == null && $option->locatario_id == Auth::id() && $offer->offerta_id == $option->offerta_id)
                             <li class="buttonid" >
                                 <a class="confirmation" href="{{ route('optionedview.delete', [$offer->offerta_id]) }}">&ensp;Rimuovi &ensp; </a>
                             </li>                                 
