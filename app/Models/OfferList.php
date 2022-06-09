@@ -240,6 +240,9 @@ class OfferList {
     }
     
     public function getOptionByOfferLarioId($offer_id, $lario_id) {
-        return $this->optionModel->where('offerta_id',$offer_id)->where('locatario_id', $lario_id)->get();
+        return $this->optionModel->where('offerta_id',$offer_id)->where('locatario_id', $lario_id)->first();
+    }
+    public function verifyAssigned($offer_id) {
+        return $this->optionModel->where('offerta_id',$offer_id)->whereNotNull('data_assegnamento')->get()->count();
     }
 }

@@ -45,10 +45,12 @@ class LocatarioController extends Controller {
         return redirect()->action('PublicController@showDetails',$offer_id);             
     }
     
-    public function showOptionButton($offer){
-         return view('details')
-            ->with('offer', $offer)
-                 ->with('opzioni', $this->offerListModel->getOptionByOfferLarioId($offer->offerta_id, Auth::id()));
+    public function showOptionButton($offer_id){
+         return $this->offerListModel->getOptionByOfferLarioId($offer_id, Auth::id());
+    }
+    
+    public function showButtons($offer_id) {
+        return $this->offerListModel->verifyAssigned($offer_id);
     }
    
 

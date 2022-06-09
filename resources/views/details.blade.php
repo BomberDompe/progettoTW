@@ -221,14 +221,14 @@
             </table>           
         </div>
         @can('isLocatario')
-        
-        @if($opzioni->offerta_id == $offer->offerta_id)
+        @if(!$flag)
+        @isset($option)
         <div class="row">
             <div class="col-md-12">
                 <div class="functional-buttons">
                     <ul>
                         
-                        <li><a href="{{ route('details.option', [$offer->offerta_id] ) }}">C'E' l'opzione</a></li>
+                        <li>L'hai già opzionata</li>
                     
                     </ul>
                 </div>
@@ -245,6 +245,7 @@
             </div>
         </div>       
         
+        @endisset
         @endif
         @endcan
         

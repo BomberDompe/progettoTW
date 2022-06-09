@@ -12,34 +12,37 @@ class PublicController extends Controller {
 
     protected $catalogModel;
     protected $faqModel;
-    
+
     public function __construct() {
         $this->catalogModel = new Catalog;
         $this->faqModel = new Faq;
     }
-    
+
     public function showCatalog() {
         return view('catalog')
-            ->with('catalog', $this->catalogModel->getAllOffers(3))
-            ->with('pagination', true);
+                        ->with('catalog', $this->catalogModel->getAllOffers(3))
+                        ->with('pagination', true);
     }
-    
+
     public function showFaqs() {
         return view('faqs')
-            ->with('faqs', $this->faqModel->getAllFaqs(3));
+                        ->with('faqs', $this->faqModel->getAllFaqs(3));
     }
+
     public function showDetails($offerId) {
         $offer = $this->catalogModel->getOfferById($offerId);
-        $user = new User;
-        if(Auth::check()){
-        if($user->hasRole(Auth::user()->role)){
-            $controller = new LocatarioController;
-            $controller->showOptionButton($offer);
+            if (Auth::check() && Auth::user()->hasRole('locatario')) {
+                $controller = new LocatarioController;
+           
+                return view('details')
+                        ->with('offer', $offer)
+                            ->with('option',$controller->showOptionButton($offer->offerta_id))
+                                ->with('flag',$controller->showButtons($offer->offerta_id));
+            } else {
+
+            return view('details')
+                            ->with('offer', $offer);
         }
-        
-        }
-        return view('details')
-            ->with('offer', $offer);
     }
-    
+
 }

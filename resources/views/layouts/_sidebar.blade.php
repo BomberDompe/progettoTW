@@ -18,7 +18,7 @@
     <br>
     <br>
     <a href="{{ route('faqview') }}">Gestione F.A.Q</a>
-    <a href="{{ route('utente') }}">Statische ApartRent</a>
+    <a href="{{ route('stats') }}">Statische ApartRent</a>
     @endcan
 
 </div>
