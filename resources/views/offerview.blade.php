@@ -1,10 +1,10 @@
 @extends('layouts.private')
 
 @can('isLocatore')
-    @section('title', 'Le tue offerte')
+@section('title', 'Le tue offerte')
 @endcan
 @can('isLocatario')
-    @section('title', 'Le tue opzioni')
+@section('title', 'Le tue opzioni')
 @endcan
 
 @section('content')
@@ -63,7 +63,9 @@
 
                             @if($option->data_assegnamento != null && $option->locatario_id == Auth::id() && $offer->offerta_id == $option->offerta_id)
                             <li class="buttonid">
-                                <a style="background-color: #29a329;" target="_blank" href="{{ route('contract', [$option->opzionamento_id]) }}">Contratto</a>
+                                <p class="laipresa" >
+                                    Ti è stata aggiudicata 
+                                </p>                            
                             </li>  
                             @break
                             @endif
@@ -219,6 +221,16 @@
                     <tr>
                         <td>Climatizzazione</td>
                         @if($offer->climatizzazione)
+                        <td>
+                            si
+                        </td>  
+                        @else
+                        <td>no</td> 
+                        @endif
+                    </tr>
+                    <tr>
+                        <td>Connessione a Internet</td>
+                        @if($offer->connessione_internet)
                         <td>
                             si
                         </td>  

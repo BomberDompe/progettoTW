@@ -1993,6 +1993,15 @@ footer {
 
 }
 
+.laipresa{
+    font-style: oblique;
+    font-size: larger;
+    color: #00cc66;
+    text-transform: uppercase;
+    font-weight: bold;
+
+}
+
 /* Style list faq */
 .container-listfaq{
     margin-top: 10px;
@@ -2165,5 +2174,30 @@ footer {
 
 .insertform-file-input:hover{
     color: #00bcd4
+}
+
+/* Style Opziona in dettagli */
+.option-buttons	ul {
+    margin-top:30px;
+    padding:0;
+}
+.option-buttons	ul li {
+    display: inline-block;
+       margin: 0px 35px;
+}
+.option-buttons	ul li a {
+    display: inline-block;
+    background-color: #00bcd4;
+    border: 2px solid #00bcd4;
+    text-transform: uppercase;
+    font-size: 13px;
+    color: #fff;
+    padding: 6px 20px;
+    letter-spacing: 0.5px;
+    transition: all 0.5s;
+}
+.option-buttons	ul li a:hover {
+    color: #00bcd4;
+    background-color: #fff;
 }
 

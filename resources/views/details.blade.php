@@ -141,6 +141,16 @@
                     <td></td> 
                     @endif
                 </tr>
+                <tr>
+                    <td>Connessione a Internet</td>
+                    @if($offer->connessione_internet)
+                    <td>
+                        @include('icons/checkmark')
+                    </td>  
+                    @else
+                    <td></td> 
+                    @endif
+                </tr>
                 @isset($offer->cucina)
                 <tr>
                     <td>Cucina</td>
@@ -225,42 +235,56 @@
         @isset($option)
         <div class="row">
             <div class="col-md-12">
-                <div class="functional-buttons">
+                <div class="option-buttons flex-center">
                     <ul>
-                        
-                        <li>L'hai già opzionata</li>
-                    
+
+                        <li class="laipresa" >L'hai già opzionata</li>
+                        <li><a href="#">&emsp;Chat&emsp;</a></li>
+
                     </ul>
                 </div>
             </div>
         </div>            
         @else        
         <div class="row">
-            <div class="col-md-12">
-                <div class="functional-buttons">
+            <div class="col-md-12 flex-center">
+                <div class="option-buttons">
                     <ul>
                         <li><a href="{{ route('details.option', [$offer->offerta_id] ) }}">Opziona</a></li>
+                        <li><a href="#"> Chat </a></li>
                     </ul>
                 </div>
             </div>
         </div>       
-        
+
         @endisset
+
+        @else
+        <div class="row">
+            <div class="col-md-12 flex-center">
+                <div class="option-buttons">
+                    <ul>
+                        <li><a href="{{ route('register') }}">&emsp;Chat&emsp;</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>  
         @endif
         @endcan
-        
+
         @guest
         <div class="row">
-            <div class="col-md-12">
-                <div class="functional-buttons">
+            <div class="col-md-12 flex-center">
+                <div class="option-buttons">
                     <ul>
-                        <li><a href="{{ route('register') }}">Opziona</a></li>
+                        <li><a href="{{ route('register') }}"> Opziona </a></li>
+                        <li><a href="{{ route('register') }}">&emsp;Chat&emsp;</a></li>
                     </ul>
                 </div>
             </div>
         </div>  
         @endguest
-        
+
     </div>
 </div>
 @endsection

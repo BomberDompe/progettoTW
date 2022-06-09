@@ -56,8 +56,8 @@ class Catalog {
         if (array_key_exists("trasporti", $filters)) {
             $catalog = $catalog->where('trasporti', true);
         }
-        if (array_key_exists("opzionabilita", $filters)) {
-            $catalog = $catalog->where('opzionabilita', true);
+        if (array_key_exists("connessione_internet", $filters)) {
+            $catalog = $catalog->where('connessione_internet', true);
         }
         
         if ($filters["tipologia"] === '0') {

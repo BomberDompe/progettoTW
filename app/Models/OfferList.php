@@ -114,7 +114,7 @@ class OfferList {
         $this->offerModel->supermercato = isset($data["supermercato"]);
         $this->offerModel->ristorazione = isset($data["ristorazione"]);
         $this->offerModel->trasporti = isset($data["trasporti"]);
-        $this->offerModel->opzionabilita = isset($data["opzionabilita"]);
+        $this->offerModel->connessione_internet = isset($data["connessione_internet"]);
         
         if ($data["tipologia"] === '0') {
             $this->offerModel->tipologia = 0;
@@ -169,7 +169,7 @@ class OfferList {
         $offer->supermercato = isset($data["supermercato"]);
         $offer->ristorazione = isset($data["ristorazione"]);
         $offer->trasporti = isset($data["trasporti"]);
-        $offer->opzionabilita = isset($data["opzionabilita"]);
+        $offer->connessione_internet = isset($data["connessione_internet"]);
         
         if ($data["tipologia"] === '0') {
             $offer->tipologia = 0;
@@ -244,5 +244,10 @@ class OfferList {
     }
     public function verifyAssigned($offer_id) {
         return $this->optionModel->where('offerta_id',$offer_id)->whereNotNull('data_assegnamento')->get()->count();
+    }
+    
+    public function getOfferByIdOffer($offer_id) {
+        return $this->offerModel->getOfferById($offer_id);
+        
     }
 }

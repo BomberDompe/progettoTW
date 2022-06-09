@@ -197,8 +197,8 @@
                         {{ Form::label('trasporti', 'Trasporti', ['class' => 'filter-checkbox-label']) }}
                         </div>
                         <div class="filter-wrap">
-                        {{ Form::checkbox('opzionabilita', '', false, ['class' => 'filter-checkbox-input', 'id' => 'opzionabilita']) }}
-                        {{ Form::label('opzionabilita', 'Opzionabile', ['class' => 'filter-checkbox-label']) }}
+                        {{ Form::checkbox('connessione_internet', '', false, ['class' => 'filter-checkbox-input', 'id' => 'connessione_internet']) }}
+                        {{ Form::label('connessione_internet', 'Conness. Internet', ['class' => 'filter-checkbox-label']) }}
                         </div>
                     </div>  
                 </fieldset>

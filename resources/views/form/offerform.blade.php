@@ -354,11 +354,11 @@
                         </div>
                         <div class="filter-wrap">
                         @isset($offer)
-                        {{ Form::checkbox('opzionabilita', '', "$offer->opzionabilita", ['class' => 'filter-checkbox-input', 'id' => 'opzionabilita']) }}
+                        {{ Form::checkbox('connessione_internet', '', "$offer->connessione_internet", ['class' => 'filter-checkbox-input', 'id' => 'connessione_internet']) }}
                         @else
-                        {{ Form::checkbox('opzionabilita', '', true, ['class' => 'filter-checkbox-input', 'id' => 'opzionabilita']) }}
+                        {{ Form::checkbox('connessione_internet', '', false, ['class' => 'filter-checkbox-input', 'id' => 'connessione_internet']) }}
                         @endisset
-                        {{ Form::label('opzionabilita', 'Opzionabile', ['class' => 'filter-checkbox-label']) }}
+                        {{ Form::label('connessione_internet', 'Conness. Internet', ['class' => 'filter-checkbox-label']) }}
                         </div>
                     </div>  
                 </fieldset>
