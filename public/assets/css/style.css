@@ -2220,16 +2220,16 @@ footer {
   width: 100%;
 }
 
-.card button:hover {
+.card a:hover {
   opacity: 0.7;
 }
 
 .profileform-container {
-    margin: 10px;
+    margin-left: 10px;
 }
 
 .profileform-wrap {
     display: flex;
     flex-direction: column;
-    padding: 10px;
+    padding: 15px;
 }
