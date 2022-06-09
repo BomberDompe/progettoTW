@@ -34,6 +34,15 @@ Route::get('/faqs', 'PublicController@showFaqs')
 Route::view('/account', 'account')
         ->name('utente')->middleware('auth');
 
+Route::get('/profile', 'RegisteredUserController@showProfile')
+        ->name('profile')->middleware('auth');
+
+Route::get('/profile/update', 'RegisteredUserController@showUpdateProfileForm')
+        ->name('profile.updateview');
+
+Route::post('/profile/update', 'RegisteredUserController@updateProfile')
+        ->name('profile.update');
+
 /* Rotte lista offerte Locatore*/
 Route::get('/offerview', 'LocatoreController@showOfferList')
         ->name('offerview');

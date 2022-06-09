@@ -2111,6 +2111,7 @@ footer {
 .insertform-text-input {
     text-align: left;
     width: 200px;
+    height: 30px;
 }
 
 .insertform-text-input:hover {
@@ -2143,6 +2144,7 @@ footer {
 .insertform-date-input {
     text-align: center;
     width: 160px;
+    height: 30px;
 }
 
 .insertform-date-input:hover {
@@ -2154,6 +2156,7 @@ footer {
 .insertform-select-input {
     text-align: left;
     width: 150px;
+    height: 30px;
 }
 
 .insertform-select-input:hover {
@@ -2168,3 +2171,65 @@ footer {
     color: #00bcd4
 }
 
+/* CSS per scheda utente */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 420px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+.card .title {
+  padding: 10px 0px;
+}
+
+.card .title p {
+  font-size: 20px;
+}
+
+.card .paragraph {
+  padding: 10px 0px;
+  border-top: 2px dashed #00bcd4;
+}
+
+.card .paragraph p {
+  font-size: 16px;
+}
+
+.card span {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 12px;
+  color: white;
+  background-color: #00bcd4;
+  text-align: center;
+  width: 100%;
+  font-size: 30px;
+}
+
+.card a {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #00bcd4;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}
+
+.profileform-container {
+    margin: 10px;
+}
+
+.profileform-wrap {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}

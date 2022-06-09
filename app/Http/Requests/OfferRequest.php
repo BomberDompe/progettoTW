@@ -34,7 +34,7 @@ class OfferRequest extends FormRequest {
             'descrizione' => ['required','string', 'max:2000'],
             'prezzo' => ['required', 'numeric', 'min:1', 'max:9999', 'regex:/^([0-9])+$/'],
             'immagine' => ['nullable', 'file', 'mimes:jpg,jpeg,png', 'max:2048'],
-            'citta' => ['required', 'string', 'max:30', 'regex:/^([A-Z])+([A-Za-z àèéìòù\(\)])+$/'],
+            'citta' => ['required', 'string', 'max:30', 'regex:/^([A-Z])+([A-Za-z àèéìòù\(\)\'])+$/'],
             'via' => ['required', 'string', 'max:30', 'regex:/^([A-Za-z0-9 àèéìòù])+$/'], 
             'civico' => ['required', 'integer', 'min:1', 'max:999', 'regex:/^([0-9])+$/'],
             'disponibilita_inizio' => ['required', 'date_format:Y-m-d', 'after:2022-01-01'],

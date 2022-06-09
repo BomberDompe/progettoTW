@@ -58,8 +58,8 @@ class RegisterController extends Controller
             'role' => ['required', 'string'],
             'genere' => ['required', 'string'],
             'telefono' => ['nullable', 'string', 'min:10', 'max:15', 'regex:/^((00|\+)39[\. ]??)??3\d{2}[\. ]??\d{6,7}$/'],
-            'comune_residenza' => ['nullable', 'string', 'max:25', 'regex:/^([A-Z])+([A-Za-z àèéìòù\(\)])+$/'],
-            'data_nascita' => ['required', 'date_format:Y-m-d', 'after:1950-01-01', 'before:2010-01-01'],
+            'comune_residenza' => ['nullable', 'string', 'max:25', 'regex:/^([A-Z])+([A-Za-z àèéìòù\(\)\'])+$/'],
+            'data_nascita' => ['required', 'date_format:Y-m-d', 'after:1900-01-01', 'before:2010-01-01'],
         ]);
     }
 

@@ -20,7 +20,7 @@
                                 <div class="calendario">
                                     {{ Form::label('data_nascita', 'Data di nascita', ['class' => '']) }}
                                     {{ Form::date('data_nascita','', ['class' => 'register__input',
-                                            'id' => 'data_nascita', 'min' => '1950-01-01', 'max' => '2010-01-01']) }}
+                                            'id' => 'data_nascita', 'min' => '1900-01-01', 'max' => '2010-01-01']) }}
                                 </div>
                             </div>
                             <div class="register__fieldset">

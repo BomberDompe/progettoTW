@@ -46,4 +46,17 @@ class User extends Authenticatable {
         return $this->find($userId);
     }
     
+    public function updateUserData($data, $userId) {
+        $user = $this->find($userId);
+        $user->fill($data->validated());
+        if (!isset($data["telefono"])) {
+            $user->telefono = null;
+        } 
+        if (!isset($data["comune_residenza"])) {
+            $user->comune_residenza = null;
+        }
+        $user->save();
+        return redirect()->action('RegisteredUserController@showProfile');
+    }
+    
 }

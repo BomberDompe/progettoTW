@@ -1,14 +1,12 @@
 <div class="sidebar">
-    <a href="{{ route('utente') }}">Dati Account</a>
+    <a href="{{ route('profile') }}">Profilo</a>
     @can('isLocatario')
-    <a href="#">Modifica Account</a>
     <br>
     <br>
-    <a href="{{ route('optionedview') }}" metod>Offerte selezionate</a>
+    <a href="{{ route('optionedview') }}">Offerte selezionate</a>
     <a href="{{ route('chat') }}">Messaggi</a>
     @endcan
     @can('isLocatore')
-    <a href="#">Modifica Account</a>
     <br>
     <br>
     <a href="{{ route('offerview') }}">Le tue offerte</a>
