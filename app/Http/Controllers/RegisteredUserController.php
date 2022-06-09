@@ -23,10 +23,10 @@ class RegisteredUserController extends Controller {
         $this->userModel = new User;
     }
     
-    public function showChat() {
+    public function showChat($user_id = 0) {
         return view('chat')
             ->with('conversationList',
-                $this->conversationModel->getAllConversations(Auth::id()));
+                $this->conversationModel->getAllConversations(Auth::id(), $user_id));
     }
     
     public function saveMessage(NewMessageRequest $request) {

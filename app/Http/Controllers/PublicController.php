@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Resources\Faq;
 use App\Models\Catalog;
 use Illuminate\Support\Facades\Auth;
-use App\User;
 use App\Http\Controllers\LocatarioController;
 
 class PublicController extends Controller {

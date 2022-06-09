@@ -582,6 +582,7 @@ footer {
     background-color: #00bcd4;
     text-align: center;
     padding: 80px 0px 60px 0px;
+    z-index: 750;
 }
 .fa {
     padding: 20px;
@@ -1247,6 +1248,7 @@ footer {
 .sidebar{
     position: fixed;
     padding-top: 20px;
+    min-height: 500px;
 }
 .sidebar a{
     display: block;
@@ -1266,7 +1268,7 @@ footer {
 .filters-section {
     margin-top: 50px;
     background-color: #f7f7f7;
-    z-index: 9999;
+    z-index: 999;
 }
 
 .filter-section-floating {
@@ -1714,7 +1716,7 @@ footer {
 }
 .chat-main .chat-header div{
     margin-left:10px;
-    margin-right:145px;
+    margin-right:20px;
 }
 .chat-main .chat-header h1{
     font-size:20px;

@@ -234,12 +234,12 @@
         @if(!$flag)
         @isset($option)
         <div class="row">
-            <div class="col-md-12">
-                <div class="option-buttons flex-center">
+            <div class="col-md-12 flex-center">
+                <div class="option-buttons">
                     <ul>
 
                         <li class="laipresa" >L'hai già opzionata</li>
-                        <li><a href="#">&emsp;Chat&emsp;</a></li>
+                        <li><a href="{{ route('details.chat', [$offer->user_id]) }}">&emsp;Chat&emsp;</a></li>
 
                     </ul>
                 </div>
@@ -250,8 +250,8 @@
             <div class="col-md-12 flex-center">
                 <div class="option-buttons">
                     <ul>
-                        <li><a href="{{ route('details.option', [$offer->offerta_id] ) }}">Opziona</a></li>
-                        <li><a href="#"> Chat </a></li>
+                        <li><a href="{{ route('details.option', [$offer->offerta_id]) }}">Opziona</a></li>
+                        <li><a href="{{ route('details.chat', [$offer->user_id]) }}">&emsp;Chat&emsp;</a></li>
                     </ul>
                 </div>
             </div>
@@ -264,7 +264,7 @@
             <div class="col-md-12 flex-center">
                 <div class="option-buttons">
                     <ul>
-                        <li><a href="{{ route('register') }}">&emsp;Chat&emsp;</a></li>
+                        <li><a href="{{ route('details.chat', [$offer->user_id]) }}">&emsp;Chat&emsp;</a></li>
                     </ul>
                 </div>
             </div>

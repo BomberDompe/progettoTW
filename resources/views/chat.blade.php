@@ -8,9 +8,19 @@
 <!-- Include file JavaScript per i filtri -->      
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script type="text/javascript" src="{{ asset("assets/js/chatFunctions.js") }}"></script>
+<script>
+    
+    // Imposta le rotte globali
+    $(function () {
+        messageRoute  = "{{ route('chat.message') }}";
+        unreadRoute = "{{ route('chat.unread') }}";
+        audioRoute = "{{ asset('assets/audio/message-sent.mp3') }}";
+    });
+    
+</script>
 @endpush
 
-<!-- Inizio contenuto --> 
+<!-- Inizio ycontenuto --> 
 <div class="container">
     <div id="chat-container">
         <!-- Inizio sezione sinistra --> 

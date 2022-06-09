@@ -8,6 +8,7 @@ use App\Http\Requests\FilteringRequest;
 use App\Models\OfferList;
 use App\Models\Resources\Option;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\RegisteredUserController;
 
 class LocatarioController extends Controller {
 
@@ -50,11 +51,16 @@ class LocatarioController extends Controller {
     }
     
     public function showOptionButton($offer_id){
-         return $this->offerListModel->getOptionByOfferLarioId($offer_id, Auth::id());
+        return $this->offerListModel->getOptionByOfferLarioId($offer_id, Auth::id());
     }
     
     public function showButtons($offer_id) {
         return $this->offerListModel->verifyAssigned($offer_id);
+    }
+    
+    public function newConversation($locatore_id) {
+        $controller = new RegisteredUserController;
+        return $controller->showChat($locatore_id);
     }
    
 

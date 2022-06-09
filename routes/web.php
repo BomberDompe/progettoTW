@@ -25,6 +25,13 @@ Route::post('/catalog', 'LocatarioController@showFilteredCatalog')
 Route::get('/catalog/details/{offerId}', 'PublicController@showDetails')
         ->name('details');
 
+/* Rotte dettagli Locatario */
+Route::get('/catalog/details/optioned/{offerId}', 'LocatarioController@optionedOffer')
+        ->name('details.option');
+
+Route::get('/catalog/details/chat/{userId}', 'LocatarioController@newConversation')
+        ->name('details.chat');
+
 /*Rotte faq*/    
 Route::get('/faqs', 'PublicController@showFaqs')
         ->name('faqs');
@@ -54,9 +61,6 @@ Route::get('/offerview/delete/{offerId}', 'LocatoreController@deleteOffer')
         ->name('offerview.delete');
 
 /* Rotte lista offerte Locatario*/
-
-Route::get('/catalog/details/optioned/{offerId}', 'LocatarioController@optionedOffer')
-        ->name('details.option');
 
 Route::get('/optionedview', 'LocatarioController@showOptionedList')
         ->name('optionedview');
@@ -116,7 +120,7 @@ Route::get('register', 'Auth\RegisterController@showRegistrationForm')
 Route::post('register', 'Auth\RegisterController@register');
 
 // Rotte per la chat
-Route::get('/chat', 'RegisteredUserController@showChat')
+Route::get('/chat/{userId}', 'RegisteredUserController@showChat')
         ->name('chat');
 
 Route::post('/chat/unread', 'RegisteredUserController@updateUnreadMessages')
