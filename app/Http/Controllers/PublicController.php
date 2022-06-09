@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Resources\Faq;
 use App\Models\Catalog;
+use Illuminate\Support\Facades\Auth;
+use App\User;
+use App\Http\Controllers\LocatarioController;
 
 class PublicController extends Controller {
 
@@ -26,8 +29,17 @@ class PublicController extends Controller {
             ->with('faqs', $this->faqModel->getAllFaqs(3));
     }
     public function showDetails($offerId) {
+        $offer = $this->catalogModel->getOfferById($offerId);
+        $user = new User;
+        if(Auth::check()){
+        if($user->hasRole(Auth::user()->role)){
+            $controller = new LocatarioController;
+            $controller->showOptionButton($offer);
+        }
+        
+        }
         return view('details')
-            ->with('offer', $this->catalogModel->getOfferById($offerId));
+            ->with('offer', $offer);
     }
     
 }

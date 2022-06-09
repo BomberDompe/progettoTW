@@ -46,6 +46,9 @@ Route::get('/offerview/delete/{offerId}', 'LocatoreController@deleteOffer')
 
 /* Rotte lista offerte Locatario*/
 
+Route::get('/catalog/details/optioned/{offerId}', 'LocatarioController@optionedOffer')
+        ->name('details.option');
+
 Route::get('/optionedview', 'LocatarioController@showOptionedList')
         ->name('optionedview');
 
@@ -109,14 +112,14 @@ Route::post('/chat/message', 'RegisteredUserController@saveMessage')
 
 // Rotte per la form delle offerte
 Route::get('/offerview/insert', 'LocatoreController@showInsertOfferForm')
-        ->name('offer.insert');
+        ->name('offer.insertview');
 
 Route::post('/offerview/insert', 'LocatoreController@insertOffer')
         ->name('offer.insert');
 
 // Rotte per la modifica delle offerte
 Route::get('/offerview/update/{offerId}', 'LocatoreController@showUpdateOfferForm')
-        ->name('offer.update');
+        ->name('offer.updateview');
 
 Route::post('/offerview/update', 'LocatoreController@updateOffer')
         ->name('offer.update');

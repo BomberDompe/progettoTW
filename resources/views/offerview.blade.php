@@ -1,6 +1,11 @@
 @extends('layouts.private')
 
-@section('title', 'Le tue offerte')
+@can('isLocatore')
+    @section('title', 'Le tue offerte')
+@endcan
+@can('isLocatario')
+    @section('title', 'Le tue opzioni')
+@endcan
 
 @section('content')
 
@@ -14,7 +19,7 @@
 <div class="container-listoffer">
     @can('isLocatore')
     <div class="element-list">
-        <a href="{{ route('offer.insert') }}">
+        <a href="{{ route('offer.insertview') }}">
             <div class="container">
                 <div class="row">
                     <div class ="col-md-3">
@@ -89,7 +94,7 @@
 
                             @can('isLocatore')
                             <li><a  class ="proposte">Proposte</a></li>
-                            <li  class="buttonid" ><a href="{{ route('offer.update') }}">Modifica&ensp;</a></li>
+                            <li  class="buttonid" ><a href="{{ route('offer.updateview', [$offer->offerta_id]) }}">Modifica&ensp;</a></li>
                             <li class="buttonid confirmation" ><a href="{{ route('offerview.delete', [$offer->offerta_id]) }}">&ensp;Elimina &ensp; </a></li>
                             @endcan
                         </ul>
@@ -221,6 +226,7 @@
                         <td>no</td> 
                         @endif
                     </tr>
+                    @isset($offer->cucina)
                     <tr>
                         <td>Cucina</td>
                         @if($offer->cucina)
@@ -232,6 +238,8 @@
                         @endif
                     </tr>
                     <tr>
+                        @endisset
+                        @isset($offer->locale_ricreativo)
                         <td>Locale ricreativo</td>
                         @if($offer->locale_ricreativo)
                         <td>
@@ -241,6 +249,7 @@
                         <td>no</td> 
                         @endif
                     </tr>
+                    @endisset
                     <tr>
                         <td>Parcheggi</td>
                         @if($offer->parcheggi)

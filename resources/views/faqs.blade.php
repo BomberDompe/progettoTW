@@ -1,12 +1,12 @@
 @extends('layouts.public')
 
-@section('title', 'Faq')
+@section('title', 'F.A.Q.')
 
 @section('content')
 <div class="container">
     <div class="faq">
         <div class="section-heading">
-        <h2>Chiedi e sarai risolto</h2>
+        <h2>Domande frequenti</h2>
         </div>
             
         @isset($faqs)

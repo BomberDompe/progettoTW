@@ -39,5 +39,17 @@ class LocatarioController extends Controller {
         }
         return redirect()->action('UserController@index');
     }
+    
+    public function optionedOffer($offer_id){
+        $this->offerListModel->insertOption($offer_id, Auth::id());
+        return redirect()->action('PublicController@showDetails',$offer_id);             
+    }
+    
+    public function showOptionButton($offer){
+         return view('details')
+            ->with('offer', $offer)
+                 ->with('opzioni', $this->offerListModel->getOptionByOfferLarioId($offer->offerta_id, Auth::id()));
+    }
+   
 
 }

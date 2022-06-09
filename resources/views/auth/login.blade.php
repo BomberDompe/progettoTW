@@ -1,6 +1,6 @@
 @extends('layouts.public')
 
-@section('title', 'Regolamento')
+@section('title', 'Accedi')
 
 @section('content')
 <div class="bg_image">

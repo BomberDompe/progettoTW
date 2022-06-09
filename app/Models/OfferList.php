@@ -145,25 +145,21 @@ class OfferList {
         if ($data->hasFile('immagine')) {
             $image = $data->file('immagine');
             $imageName = $image->hashName();
-            echo("\n\Nome immagine nuova: ".$imageName);
+           
             $destinationPath = public_path() . '/images/offers';
             if ($offer->immagine != null) {
                 $currentImageName = $offer->immagine;
-                echo("\n\Nome immagine vecchia: ".$currentImageName);
+               
                 unlink($destinationPath . '/' . $currentImageName);
-                echo("\n\Nome path: ".$destinationPath);
+                
             }
-            echo("\n\Nome immagine nuova (2): ".$imageName);
+            
             $image->move($destinationPath, $imageName);
-            echo("\n\Nome immagine nuova (3): ".$imageName);
-            echo("\n\Nome immagine nuova (4): ".$imageName);
-            echo("\n\ ".$offer->immagine);
+           
         } else {
             $imageName = $offer->immagine;
         }
-        echo("\n\ ".$offer->immagine);
         
-            //unlink($destinationPath . '/' . $currentImageName);
         $offer->fill($data->validated());
         $offer->immagine = $imageName;
         
@@ -203,7 +199,7 @@ class OfferList {
         }
         
         $offer->save();
-        //return response()->json(['redirect' => route('offerview')]);
+        return response()->json(['redirect' => route('offerview')]);
     }
     public function getLarioByOptionId($option_id, $authUser) {
 
@@ -234,5 +230,16 @@ class OfferList {
     public function getOfferByOptionId($option_id) {
         $offer_option = $this->optionModel->getOptionById($option_id);
         return $this->offerModel->getOfferById($offer_option->offerta_id);
+    }
+    
+    public function insertOption($offer_id,$lario_id) {
+        $this->optionModel->offerta_id = $offer_id;
+        $this->optionModel->locatario_id = $lario_id;
+        $this->optionModel->data_opzionamento = date('Y-m-d');
+        $this->optionModel->save();
+    }
+    
+    public function getOptionByOfferLarioId($offer_id, $lario_id) {
+        return $this->optionModel->where('offerta_id',$offer_id)->where('locatario_id', $lario_id)->get();
     }
 }
