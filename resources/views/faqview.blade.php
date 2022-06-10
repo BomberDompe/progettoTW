@@ -12,7 +12,7 @@
 
 
 <div class="container-listfaq">
-
+    <div class="inner-container">
         <div class="container">
             <div class="row">
                 <div class="flip-card">
@@ -32,34 +32,36 @@
             </div>
         </div>
 
-    @isset($faqList)
-    @foreach ($faqList as $faq)
-    <div class="domanda">
-        <div class="container">
+        @isset($faqList)
+        @foreach ($faqList as $faq)
+        <div class="domanda">
+            <div class="container">
+                <div class="row">
+                    <div class ="col-md-12">
+                        <p>{{$faq->domanda}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div  class="risposta container" style="display: none">
             <div class="row">
                 <div class ="col-md-12">
-                    <p>{{$faq->domanda}}</p>
+                    <p>{{$faq->risposta}}</p>
+                </div>
+                <div class ="col-md-12">
+                    <div class="faqlist-buttons flex-center">
+                        <ul>
+                            <li><a href="{{ route('faqview.updateview', [$faq->faq_id]) }}">Modifica</a></li>
+                            <li><a class="confirmation"  href="{{ route('faqview.delete', [$faq->faq_id]) }}" >Elimina</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
+        @endforeach
+        @endisset
     </div>
-    <div  class="risposta container" style="display: none">
-        <div class="row">
-            <div class ="col-md-12">
-                <p>{{$faq->risposta}}</p>
-            </div>
-            <div class ="col-md-12">
-                <div class="faqlist-buttons flex-center">
-                    <ul>
-                        <li><a href="{{ route('faqview.updateview', [$faq->faq_id]) }}">Modifica</a></li>
-                        <li><a class="confirmation"  href="{{ route('faqview.delete', [$faq->faq_id]) }}" >Elimina</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    @endforeach
-    @endisset
+
 </div>
 
 

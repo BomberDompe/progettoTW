@@ -23,8 +23,16 @@
                 <p>Cognome: {{ Auth::user()->surname }}</p>
                 <p>Genere: {{Auth::user()->genere}}</p>
                 <p>Data di nascita: {{date('d/m/Y', strtotime(Auth::user()->data_nascita))}}</p>
+                @isset(Auth::user()->telefono)
                 <p>Telefono: {{Auth::user()->telefono}}</p>
+                @else
+                <p>Telefono: [non specificato]</p>
+                @endisset
+                @isset(Auth::user()->comune_residenza)
                 <p>Comune di residenza: {{Auth::user()->comune_residenza}}</p>
+                @else
+                <p>Comune di residenza: [non specificato]</p>
+                @endisset
                 </div>
                 <a href="{{ route('profile.updateview') }}">Modifica</a>
                 @endcan
