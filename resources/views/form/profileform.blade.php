@@ -44,7 +44,11 @@
                     <div  class="profileform-container">
                         <div  class="insertform-wrap-6 profileform-wrap">
                             {{ Form::label('genere', 'Genere', ['class' => 'insertform-label']) }}
-                            {{ Form::select('genere', ['0' => 'Uomo', '1' => 'Donna'], '$user->genere', ['class' => 'insertform-select-input','id' => 'genere']) }}
+                            @if($user->genere == "Uomo")
+                            {{ Form::select('genere', ['0' => 'Uomo', '1' => 'Donna'], '0', ['class' => 'insertform-select-input','id' => 'genere']) }}
+                            @else
+                            {{ Form::select('genere', ['0' => 'Uomo', '1' => 'Donna'], '1', ['class' => 'insertform-select-input','id' => 'genere']) }}
+                            @endif
                         </div>
                         <div  class="insertform-wrap-6 profileform-wrap">
                             {{ Form::label('data_nascita', 'Data di nascita', ['class' => 'insertform-label']) }}
